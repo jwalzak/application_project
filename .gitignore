@@ -20,7 +20,7 @@ $RECYCLE.BIN/
 #Uneeded bloat
 *.zip
 *.7z
-software.txt
+*.txt
 
 
 # =========================
