@@ -1,10 +1,9 @@
 <?php
 require_once('input_data.php');
-if($_SERVER['REQUEST_MEHTOD'] == 'POST'){
+if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
     $SESSION['f_name'] = $_POST['f_name'];
     $SESSION['l_name'] = $_POST['l_name'];
     $SESSION['backstory'] = $POST['backstory'];
-
 }
 
 

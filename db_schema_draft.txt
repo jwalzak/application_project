@@ -1,3 +1,4 @@
+--------------------------
 user info
 --------------------------
 userid - PK - Auto
@@ -5,16 +6,44 @@ username - varchar
 firstname - varchar
 lastname - varchar
 email - varchar
+oauth - ????
 --------------------------
 character sheet
 --------------------------
 charid - PK - auto
+userid - FK Relate to user info
 charnameF - varchar
 charnameL - varchar
+gender - varchar
+age - int
+race - varchar
+class - varchar
+weight - decimal (4, 1)
+height - decimal (4, 1)
 str - int
+    strmod - int
+    totalstr - int
 dex - int
+    dexmod - int
+    totaldex - int
 char - int
+    charmod - int
+    totalchar - int
 wis - int
+    wismod - int
+    totalwis - int
 int - int
+    intmod - int
+    totalint - int
 charStory - varchar
-
+alignment  - Make sure these are hardcoded
+            - Lawful Good
+            - Neutral Good
+            - Chaotic Good
+            - Lawful Neutral
+            - Neutral
+            - Chaotic Neutral
+            - Lawful Evil
+            - Neutral Evil
+            - Chaotic Evil
+             
