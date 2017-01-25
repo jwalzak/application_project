@@ -63,10 +63,10 @@ CREATE TABLE `character_sheet` (
 --
 
 CREATE TABLE `user_info` (
-  `userid` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `firstname` varchar(20) NOT NULL,
-  `lastname` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(20) NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `oauth` int(11) NOT NULL COMMENT 'Store the user''s oauth credentials here so we can keep the user connected to their account.'
@@ -91,7 +91,7 @@ ALTER TABLE `character_sheet`
 -- Indexes for table `user_info`
 --
 ALTER TABLE `user_info`
-  ADD PRIMARY KEY (`userid`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -106,7 +106,7 @@ ALTER TABLE `character_sheet`
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -115,7 +115,7 @@ ALTER TABLE `user_info`
 -- Constraints for table `character_sheet`
 --
 ALTER TABLE `character_sheet`
-  ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`char_id`) REFERENCES `user_info` (`userid`) ON DELETE CASCADE;
+  ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`char_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

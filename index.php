@@ -35,7 +35,6 @@ if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
             </form>
         </aside>
     </main>
-
     </div>
 </body>
 </html>
