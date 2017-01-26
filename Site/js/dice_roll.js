@@ -1,4 +1,7 @@
 let die1, die2, die3, die4;
+let diceTotal = 0;
+
+
 
 //Generates a random number for what ever number of sided dies we want 
 //This will keep it expandable if we want to open it up to other dice games
@@ -19,13 +22,28 @@ function diceRoll(){
     rolledDice.sort(function(a,b){return b-a});
     //Remove the smallest rolled die
     rolledDice.splice(-1, 1);
-    console.log("Four rolls");
-    console.log(die1);
-    console.log(die2);
-    console.log(die3);
-    console.log(die4);
-    console.log("For loop");
     for(let i = 0; i<rolledDice.length; i++){
         console.log(rolledDice[i]);
     }
+
+    //Add up the three highest dice rolls.
+    for (let i = 0; i < rolledDice.length; i++){
+        diceTotal += rolledDice[i];
+    }
+
+    console.log("The total of the three highest dice is " + diceTotal);
 }
+
+//Create a list of bonuses per race to automatically add to the diceRolls.
+
+//Dwarf
+let dwarfCon = 2;
+let hillDwarfInt = 1;
+//TODO: Hill dwarves get +1 to max health and +1 to health on every level up
+//I'm currently not too sure how to implement it.
+let mtnDwarfStr = 2;
+
+
+
+
+//Create a list of bonuses per class to automatically add to the diceRolls.
