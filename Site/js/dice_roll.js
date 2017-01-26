@@ -43,7 +43,22 @@ let hillDwarfInt = 1;
 //I'm currently not too sure how to implement it.
 let mtnDwarfStr = 2;
 
+//Elf
+let elfDex = 2;
+let highElfInt = 1;
+let woodElfWis = 1;
+
+//Halfling
+let halflingDex = 2;
+let lightfootHalflingCha = 1;
+let stoutHalflingCon = 1;
+
+//Human
+
+
 
 
 
 //Create a list of bonuses per class to automatically add to the diceRolls.
+
+
