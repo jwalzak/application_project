@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="js/dice_roll.js"></script>
 <head>
-    <script src="js/dice_roll.js"></script>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>HERO BURGER</title>
 </head>
-<body onload="diceRoll()">
-    
+<body>
+    <form action="">
+        <input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
+        <label>Strength</label>
+        <input id="strInput" type="text"><br>
+
+        <input value="Roll" type="button" onclick="diceRoll(this.id)" id="dexBut"></input>
+        <label>Dexterity</label>
+        <input id="dexInput" type="text"><br>
+
+        <input value="Roll" type="button" onclick="diceRoll(this.id)" id="conBut"></input>
+        <label>Constitution</label>
+        <input id="conInput" type="text"><br>
+        
+        <input value="Roll" type="button" onclick="diceRoll(this.id)" id="wisBut"></input>
+        <label>Wisdom</label>
+        <input id="wisInput" type="text"><br>
+
+        <input value="Roll" type="button" onclick="diceRoll(this.id)" id="intBut"></input>
+        <label>Intelligence</label>
+        <input id="intInput" type="text"><br>
+
+        <input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut">    
+        </input><label>Charisma</label>
+        <input id="chaInput" type="text"><br>
+    </form>
 </body>
 </html>

@@ -10,7 +10,7 @@ function dice(num) {
    return roll;
 }
 
-function diceRoll(){
+function diceRoll(clicked_id){
     //Roll each die individually, should probably be an array
     die1 = dice(6);
     die2 = dice(6);
@@ -31,7 +31,37 @@ function diceRoll(){
         diceTotal += rolledDice[i];
     }
 
+    var elementId = clicked_id;
+    switch (elementId) {
+        case "strBut":
+        document.getElementById('strInput').value = diceTotal;
+        break;
+
+        case "dexBut":
+        document.getElementById('dexInput').value = diceTotal;
+        break;
+
+        case "conBut":
+        document.getElementById('conInput').value = diceTotal;
+        break;
+
+        case "wisBut":
+        document.getElementById('wisInput').value = diceTotal;
+        break;
+
+        case "intBut":
+        document.getElementById('intInput').value = diceTotal;
+        break;
+
+        case "chaBut":
+        document.getElementById('chaInput').value = diceTotal;
+
+    }
+
+
+
     console.log("The total of the three highest dice is " + diceTotal);
+    diceTotal = 0;
 }
 
 //Create a list of bonuses per race to automatically add to the diceRolls.

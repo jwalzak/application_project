@@ -13,15 +13,15 @@ if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hero Maker</title>
+    <title>Hero Burger</title>
 </head>
 <body>
     <div id="main">
     <header>
-        <h1>Hero Creator</h1>
+        <h1>Hero Burger</h1>
     </header>
     <main>
-        <p>Welcome to HERO CREATOR the premiere RPG character creation site onlinie.</p>
+        <p>Welcome to HERO BURGER the premiere RPG character creation site onlinie.</p>
         <aside>
             <h2>Let's get started</h2>
             <form action="">
