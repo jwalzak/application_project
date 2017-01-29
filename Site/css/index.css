@@ -1,0 +1,72 @@
+html {
+	height: 100%;
+	width: 100%;
+	background: url(../images/bg.png);
+}
+
+body {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	color: #494c49;
+	text-align: justify;
+	line-height: 1.5;
+}
+
+#header {
+	background: url(../images/topbg.jpg) no-repeat; 
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+img {
+	position: absolute;
+    margin: auto;
+    left: 0; 
+    right: 0;
+    top: 6%;
+}
+
+#signin {
+	background: rgba(255,255,255,0.7);
+	padding: 20px;
+	position: absolute;
+	width: 400px;
+	margin: auto;
+    left: 0; 
+    right: 0;
+	bottom: 16%;
+	text-align: center;
+	border: #ffffff dotted 4px;
+}
+
+a {
+	text-decoration: none;
+	color: #494c49;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #355c57;
+	transition: all 1s;
+}
+
+.button {
+	border: #79553b solid 4px;
+	border-radius: 30px;
+	padding: 5px;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	background: #f5eee8;
+	cursor: pointer;
+}
+
+.textbox {
+	border: #79553b solid 4px;
+	border-radius: 30px;
+	margin: 5px 7px 0 0;
+	height: 24px;
+}
