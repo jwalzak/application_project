@@ -28,20 +28,23 @@ img {
     margin: auto;
     left: 0; 
     right: 0;
-    top: 6%;
+    top: 5%;
+	max-width: 80%;
 }
 
 #signin {
 	background: rgba(255,255,255,0.7);
-	padding: 20px;
 	position: absolute;
-	width: 400px;
+	width: 50%;
 	margin: auto;
     left: 0; 
     right: 0;
-	bottom: 16%;
+	bottom: 2%;
 	text-align: center;
-	border: #ffffff dotted 4px;
+	border-top: #ffffff solid 40px;
+	border-bottom: #ffffff solid 40px;
+	border-radius: 30px;
+	/*border: #ffffff dotted 4px;*/
 }
 
 a {

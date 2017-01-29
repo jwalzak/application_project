@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
@@ -13,13 +17,13 @@
 <body>
 
 <div id="header">
-	<p align="center"><img src="images/logo.png" style="height:100px; width:100px;"></p>
+	<p align="center"><img src="images/logosm.png"></p>
 </div>
 	
 <div id="wrap">
 
 <!-- content  -->
-<iframe id="frame" src="about.html">
+<iframe id="frame" src="about.php">
 </iframe>
 
 <!-- sidebar promo content -->
