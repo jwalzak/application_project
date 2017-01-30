@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
 <!-- navigation  -->
 <nav>
 	<ul>
-		<li><a href="#">Create an Account</a></li>
+		<li><a href="account.php">Create an Account</a></li>
 		<li><a href="charvault.php">Character Vault</a></li>
 		<li><a href="creation.php">Hero Creation</a></li>
 		<li><a href="summary.php">Hero Summary</a></li>

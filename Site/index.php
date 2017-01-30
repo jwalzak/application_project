@@ -1,17 +1,24 @@
 <?php
-	//require_once("connect.php");
+	require_once('connect.php');
 	session_start();
+	$_SESSION['username'] = "";
 	
+	//if the session has started previously, skip to next page
+	if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		header("location: account.php");
+	}
+	
+	$username = $_SESSION['username'];
+	$isUser = $conn->query("SELECT * FROM user_info WHERE user_name = '".$username."' LIMIT 1");
+
+	if (isset($username) && $isUser->num_rows == 1) {
+		//user already exists, so don't make another user entry
+		header ("location: content.php");
+	} 
+	
+	//otherwise take in the user's input
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['username'] = $_POST['username'];
-		
-		if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-			
-			header ("location: content.php");
-		} else {	
-			//if no e-mail is entered, make 'em enter one!
-			echo "**Please sign in or create an account";
-		}
 	} //end server post method check
 ?>
 

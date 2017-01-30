@@ -17,10 +17,18 @@ body {
 
 .button {
 	border: #79553b solid 3px;
-	padding: 5px;
-	font-family: 'Fira Sans Condensed', sans-serif;
-	background: #f5eee8;
+	padding: 5px 14px 5px 14px;
+	color: #ffffff;
+	font-size: 18px;
+	font-family: 'Crete Round', serif;
+	background: #83ae1e;
+	cursor: pointer;
 }
+
+/*.button:hover {
+	color: #a1da5a;
+	transition: all 1s;
+}*/
 
 .textbox {
 	border: #79553b solid 3px;
