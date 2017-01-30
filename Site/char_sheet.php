@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('input_data.php');
+require_once('character.php');
 if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
     $SESSION['f_name'] = $_POST['f_name'];
     $SESSION['l_name'] = $_POST['l_name'];
