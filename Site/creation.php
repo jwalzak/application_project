@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('character.php');
-if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
+if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
     $SESSION['f_name'] = $_POST['f_name'];
     $SESSION['l_name'] = $_POST['l_name'];
     $SESSION['backstory'] = $POST['backstory'];
@@ -37,8 +37,8 @@ if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
 	<h1>Hero Creation</h1>
 	
 	<form action="">
-		<p>Let's get some peliminary information out of the way:</p>
-        <p>Fist Name:</p>
+		<p>Let's get some preliminary information out of the way:</p>
+        <p>First Name:</p>
         <input type="text" name="f_name">
         <p>Last Name:</p>
         <input type="text" name="l_name">
