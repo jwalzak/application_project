@@ -114,8 +114,7 @@ ALTER TABLE `user_info`
 --
 -- Constraints for table `character_sheet`
 --
-ALTER TABLE `character_sheet`
-  ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`char_id`) REFERENCES `user_info` (`user_id`) ON DELETE CASCADE;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
