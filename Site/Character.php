@@ -80,19 +80,15 @@ public function setCharChar() {
                 $this->charisma= $charisma; 
         }
 
-	}
+        public function saveCharacter($char_f_name)
+        {
+        global $conn; 
 
+        $query = sprintf("INSERT INTO character_sheet (charname_l) VALUES ('%s')" . $char_l_name);  
 
-public function saveCharacter($char_f_name)
-{
- global $conn; 
+        $conn->query($query); 
 
- $query = sprintf("INSERT INTO character_sheet (charname_l) VALUES ('%s')" . $char_l_name);  
-
-$conn->query($query); 
-
-var_dump($conn);
-}
-}
- 
+        var_dump($conn);
+        }
+} 
 ?>

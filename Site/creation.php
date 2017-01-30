@@ -3,7 +3,7 @@ session_start();
 require_once("navbar.php");
 require_once('character.php');
 
-if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
+if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
     $SESSION['f_name'] = $_POST['f_name'];
     $SESSION['l_name'] = $_POST['l_name'];
     $SESSION['backstory'] = $POST['backstory'];
