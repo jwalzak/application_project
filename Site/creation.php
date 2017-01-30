@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("navbar.php");
 require_once('input_data.php');
 if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])){
     $SESSION['f_name'] = $_POST['f_name'];
@@ -22,23 +23,14 @@ if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
 
 <body>
 <!-- navigation  -->
-<nav>
-	<ul>
-		<li><a href="account.php">Create an Account</a></li>
-		<li><a href="charvault.php">Character Vault</a></li>
-		<li><a href="creation.php">Hero Creation</a></li>
-		<li><a href="summary.php">Hero Summary</a></li>
-		<li><a href="about.php">About</a></li>
-	</ul>
-</nav>
 
 <!-- content  -->
 <div id="content">
 	<h1>Hero Creation</h1>
 	
 	<form action="">
-		<p>Let's get some peliminary information out of the way:</p>
-        <p>Fist Name:</p>
+		<p>Let's get some preliminary information out of the way:</p>
+        <p>First Name:</p>
         <input type="text" name="f_name">
         <p>Last Name:</p>
         <input type="text" name="l_name">

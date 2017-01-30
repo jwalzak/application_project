@@ -1,3 +1,7 @@
+<?php
+	require_once("navbar.php");
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
@@ -12,15 +16,6 @@
 
 <body>
 <!-- navigation  -->
-<nav>
-	<ul>
-		<li><a href="account.php">Create an Account</a></li>
-		<li><a href="charvault.php">Character Vault</a></li>
-		<li><a href="creation.php">Hero Creation</a></li>
-		<li><a href="summary.php">Hero Summary</a></li>
-		<li><a href="about.php">About</a></li>
-	</ul>
-</nav>
 
 <!-- content  -->
 <div id="content">

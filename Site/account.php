@@ -1,5 +1,6 @@
 <?php
 	require_once("connect.php");
+	require_once("navbar.php");
 	session_start();
 	
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -43,15 +44,6 @@
 
 <body>
 <!-- navigation  -->
-<nav>
-	<ul>
-		<li><a href="account.php">Create an Account</a></li>
-		<li><a href="charvault.php">Character Vault</a></li>
-		<li><a href="creation.php">Hero Creation</a></li>
-		<li><a href="summary.php">Hero Summary</a></li>
-		<li><a href="about.php">About</a></li>
-	</ul>
-</nav>
 
 <!-- content  -->
 <div id="content">
