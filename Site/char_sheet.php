@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_MEHTOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
