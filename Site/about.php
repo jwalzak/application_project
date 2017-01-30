@@ -1,5 +1,5 @@
 <?php
-	require_once("navbar.php");
+	require("navbar.php");
 ?>
 
 <!DOCTYPE html>

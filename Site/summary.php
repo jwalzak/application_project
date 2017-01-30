@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("navbar.php");
+require("navbar.php");
 ?>
 
 <!DOCTYPE html>
