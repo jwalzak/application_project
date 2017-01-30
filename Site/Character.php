@@ -6,8 +6,8 @@ $conn->select_db("heroschema");
 
         //Initial property declaration
         private  $char_f_name;
-        private $char_l_name;
-        private $char_class;
+        private  $char_l_name;
+        private  $char_class;
         private  $char_race;
         private  $char_gender; 
         private  $char_history;

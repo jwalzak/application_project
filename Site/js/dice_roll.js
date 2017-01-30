@@ -21,8 +21,6 @@ let halflingDex = 2;
 let lightfootHalflingCha = 1;
 let stoutHalflingCon = 1;
 
-
-
 //Generates a random number for what ever number of sided dies we want 
 //This will keep it expandable if we want to open it up to other dice games
 function dice(num) {
@@ -111,15 +109,3 @@ function diceRoll(clicked_id){
     console.log("The total of the three highest dice is " + diceTotal);
     diceTotal = 0;
 }
-
-
-
-//Human
-
-
-
-
-
-//Create a list of bonuses per class to automatically add to the diceRolls.
-
-
