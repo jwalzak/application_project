@@ -20,13 +20,22 @@
 <!-- content  -->
 <div id="content">
 	<h1>Character Vault</h1>
-	<p>Select a character to view their summary sheet.</p> 
+	<p>Select a character to view their summary sheet.</p>  
 	
-	<?php 
-		while ($row = $allCharacters->fetch_assoc()) {
-			echo '<option name="option" style="border:#ffffff solid 6px;" value="'.$row['charImage'].'">'.'<br/>'.$row['charName'].'</option>';
-		}
-	?> 
+	<div class="image-container">
+		<img src="images/logosm.png" />
+		<div class="after">Character Name</div>
+	</div>
+	
+	<div class="image-container">
+		<img src="images/logosm.png" />
+		<div class="after">Character Name</div>
+	</div>
+	
+	<div class="image-container">
+		<img src="images/logosm.png" />
+		<div class="after">Character Name</div>
+	</div>
 	
 	<p align="right">
 		<a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
