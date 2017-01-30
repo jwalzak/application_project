@@ -93,5 +93,6 @@ $conn->query($query);
 
 var_dump($conn);
 }
+}
  
 ?>
