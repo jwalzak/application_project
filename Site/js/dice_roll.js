@@ -21,6 +21,11 @@ let halflingDex = 2;
 let lightfootHalflingCha = 1;
 let stoutHalflingCon = 1;
 
+//Get the value from the select box in creation.php
+document.addEventListener("change", function(){
+    race = document.getElementById("raceSelect").options.text;
+});
+
 //Generates a random number for what ever number of sided dies we want 
 //This will keep it expandable if we want to open it up to other dice games
 function dice(num) {
@@ -48,14 +53,12 @@ function diceRoll(clicked_id){
     for (let i = 0; i < rolledDice.length; i++){
         diceTotal += rolledDice[i];
     }
-
-    let race = "dwarf";
-
+    // race = "dwarf";
     var elementId = clicked_id;
     switch (elementId) {
 
         case "strBut":
-        if(race === mtnDwarf){
+        if(race === "mtnDwarf"){
             diceTotal += mtnDwarfStr;
         }
         document.getElementById('strInput').value = diceTotal;
@@ -89,7 +92,7 @@ function diceRoll(clicked_id){
 
         case "intBut":
         //Might as well only have one variable here, Hill Dwarves and High Elves both get the same bonus.
-        if(race === hillDwarf || race === "highElf"){
+        if(race === "hillDwarf" || race === "highElf"){
             diceTotal += hillDwarfInt;
         }
         document.getElementById('intInput').value = diceTotal;
