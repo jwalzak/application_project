@@ -16,21 +16,13 @@ session_start();
 
 <body>
 
-<div id="header">
-	<p align="center"><img src="images/logosm.png"></p>
-</div>
-	
-<div id="wrap">
-
-<!-- content  -->
-<iframe id="frame" src="about.php">
-</iframe>
-
 <!-- sidebar promo content -->
 <div id="promo">
-	<p align="center">
-		<img src="images/burg.gif" style="height:200%; width:100%;">
-	</p>
+	
+	<!-- logo header -->
+	<p align="center"><img src="images/logosm.png"></p>
+	
+	<div id="subtitle"><h3>MADE TO ORDER!</h3></div>
 	
 	<!-- footer  -->
 	<div id="footer">
@@ -41,10 +33,14 @@ session_start();
 		</p>
 		
 		<p>&copy; Copyright 2017 The A-Team.<br/>All Rights Reserved.</p>
+		
+		<p align="center"><img src="images/burg.gif"></p>
 	</div>
 </div>
 
-</div> <!-- end #wrap -->
+<!-- content  -->
+<iframe id="frame" src="about.php">
+</iframe>
 
 </body>
 </html>
