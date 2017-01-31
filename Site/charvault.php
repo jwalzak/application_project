@@ -22,19 +22,19 @@
 	<h1>Character Vault</h1>
 	<p>Select a character to view their summary sheet.</p>  
 	
-	<div class="image-container">
-		<img src="images/logosm.png" />
-		<div class="after">Character Name</div>
+	<div id="image-container">
+		<img src="images/logosm.png"/><br/>
+		Character Name
 	</div>
 	
-	<div class="image-container">
-		<img src="images/logosm.png" />
-		<div class="after">Character Name</div>
+	<div id="image-container">
+		<img src="images/logosm.png"/><br/>
+		Character Name
 	</div>
 	
-	<div class="image-container">
-		<img src="images/logosm.png" />
-		<div class="after">Character Name</div>
+	<div id="image-container">
+		<img src="images/logosm.png"/><br/>
+		Character Name
 	</div>
 	
 	<p align="right">

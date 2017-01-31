@@ -21,12 +21,14 @@ require("navbar.php");
 <!-- content  -->
 <div id="content">
 	<h1>Hero Summary</h1>
-	<p><?php echo "$charName"; ?></p>  
+	<p><?php //echo "$charName"; ?></p>  
+	
+	No characters available at this time.
 	
 	<?php 
-		while ($row = $allCharacters->fetch_assoc()) {
-			echo '<option name="option" style="border:#ffffff solid 6px;" value="'.$row['charImage'].'">'.'<br/>'.$row['charName'].'</option>';
-		}
+		//while ($row = $allCharacters->fetch_assoc()) {
+			//echo '<option name="option" style="border:#ffffff solid 6px;" value="'.$row['charImage'].'">'.'<br/>'.$row['charName'].'</option>';
+		//}
 	?>
 	
 	<p align="right">
