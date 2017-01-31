@@ -1,14 +1,46 @@
 <?php
 session_start();
 require("navbar.php");
-require_once('input_data.php');
-require_once('character.php');
+require_once('Char.php');
+
+// This array will be used to populate the race dropdown in the future
+/*$raceArray = []; 
+$raceArray[0] = 'mtnDwarf'; 
+$raceArray[1] = 'hillDwarf';
+$raceArray[2] = 'hightElf';
+$raceArray[3] = 'woodElf';
+$raceArray[4] = 'lightfootHalfling';
+$raceArray[5] = 'stoutHalfling'; 
+$raceArray[6] = ' Human'; 
+*/
+
+//create a new Character object
+$newChar = new Character(); 
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])) {
-		$SESSION['f_name'] = $_POST['f_name'];
-		$SESSION['l_name'] = $_POST['l_name'];
-		$SESSION['backstory'] = $POST['backstory'];
-	}
+
+            $newChar->char_f_name = $_POST['f_name'];
+	 $newChar->char_l_name = $_POST['l_name'];
+            $newChar->char_race = $_POST['raceSelect'];
+                    
+                    if ($_POST['gender'] == 'other') {
+                        $newChar->char_gender = $_POST['otherGender']; 
+                    }
+                    else {
+                        $newChar->char_gender = $_POST['gender']; 
+                    }
+
+            $newChar->char_align = $_POST['alignment']; 
+            $newChar->char_history = $_POST['backstory'];
+            $newChar->strength = $_POST['str'];
+            $newChar->dexterity = $_POST['dex'];
+            $newChar->constitution = $_POST['con']; 
+            $newChar->wisdom = $_POST['wis']; 
+            $newChar->intelligence = $_POST['int']; 
+            $newChar->charisma = $_POST['char']; 
+            var_dump($newChar); 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,50 +62,96 @@ require_once('character.php');
 <!-- content  -->
 <div id="content">
     <h1>Hero Creation</h1>
-    
+     
     <form method="post">
-        <p>Let's get some preliminary information out of the way:</p>
+        <p><h2>Charaction Bio</h2></p>
+        <fieldset style="margin-bottom:2px">
         <p>First Name:</p>
-        <input type="text" name="f_name">
+        <input type="text" name="f_name" value=''<?php echo 'first name' ?>" />
         <p>Last Name:</p>
         <input type="text" name="l_name">
+        </fieldset>
+        <fieldset style="margin-bottom:2px">
         <p>Race</p>
-        <select id="raceSelect">
-            <option value="Dwarf">Dwarf</option>
-            <option value="Elf">Elf</option>
-            <option value="Halfling">Halfling</option>
-            <option value="Halfling">Halfling</option>
+        <select name="raceSelect" id="raceSelect">
+            <option value="mtnDwarf">Mountain Dwarf</option>
+            <option value="hillDwarf">Hill Dwarf</option>
+            <option value="highElf">High Elf</option>
+            <option value="woodElf">Wood Elf</option>
+            <option value="lightfootHalfling">Lightfoot Halfling</option>
+            <option value="stoutHalfling">Stout Halfling</option>
             <option value="Human">Human</option>
         </select>
+
+        <p>Gender</p>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="male"> Male <br>
+        <input type="radio" name="gender" value="other"> Other <input type="text" name="otherGender" />        
+</fieldset>
+
+<fieldset style="margin-bottom:2px">
+        <p>Alignment</p>
+        <table>
+        <tr>
+        <td><input type="radio" name="alignment" value="Lawful Good"> </td>
+        <td><input type="radio" name="alignment" value="Neutral Good"></td> 
+        <td><input type="radio" name="alignment" value="Chaotic Good"> </td>
+        <td><input type="radio" name="alignment" value="Lawful Neutral"></td>
+        <td><input type="radio" name="alignment" value="True Neutral"></td>
+        <td><input type="radio" name="alignment" value="Chaotic Neutral"> </td>
+        <td><input type="radio" name="alignment" value="Neutral Evil"> </td>
+        <td><input type="radio" name="alignment" value="Lawful Evil"> </td>
+        <td><input type="radio" name="alignment" value="Chaotic Evil"> </td>
+        </tr> 
+        <tr>
+        <td>Lawful<br>Good</td>
+        <td>Neutral<br>Good</td>
+        <td>Chaotic<br>Good</td>
+        <td>Lawful<br>Neutral</td>
+        <td>True<br>Neutral</td>
+        <td>Chaotic<br>Neutral</td>
+        <td>Neutral<br>Evil</td>
+        <td>Lawful<br>Evil</td>
+        <td>Chaotic<br>Evil</td>
+        </tr>
+        </table>
+
         <p>Character Backstory</p>
         <textarea rows="4" cols="50" name="backstory"></textarea>   
+        </fieldset>
+<fieldset style="margin-bottom:2px">
+   
     <div id="rolls" class="rolls">
+
         <br/>
+   
+       <p>Attributes</p>  
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
         <label>Strength</label>
-        <input id="strInput" type="text"><br>
+        <input name='str' id="strInput" type="text"><br>
 
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="dexBut"></input>
         <label>Dexterity</label>
-        <input id="dexInput" type="text"><br>
+        <input name='dex' id="dexInput" type="text"><br>
 
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="conBut"></input>
         <label>Constitution</label>
-        <input id="conInput" type="text"><br>
+        <input name='con' id="conInput" type="text"><br>
         
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="wisBut"></input>
         <label>Wisdom</label>
-        <input id="wisInput" type="text"><br>
+        <input name='wis' id="wisInput" type="text"><br>
 
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="intBut"></input>
         <label>Intelligence</label>
-        <input id="intInput" type="text"><br>
+        <input name='int' id="intInput" type="text"><br>
 
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut">    
         </input><label>Charisma</label>
-        <input id="chaInput" type="text"><br>
+        <input name='char' id="chaInput" type="text"><br>
         <input type="submit">
     </div>
+    </fieldset>
     </form>
     
     <p align="right">
