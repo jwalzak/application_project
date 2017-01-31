@@ -13,10 +13,18 @@
 <!-- navigation  -->
 <nav>
 	<ul>
-		<li><a href="account.php">Create an Account</a></li>
 		<li><a href="charvault.php">Character Vault</a></li>
 		<li><a href="creation.php">Hero Creation</a></li>
 		<li><a href="summary.php">Hero Summary</a></li>
+
+		<div class="dropdown">
+			<li><a href="account.php">Account</a></li>
+				<div class="dropdown-content">
+					<a href="account.php">Create an Account</a>
+					<a href="account.php">Manage my Account Info</a>
+				</div>
+		</div>
+
 		<li><a href="about.php">About</a></li>
 	</ul>
 </nav>

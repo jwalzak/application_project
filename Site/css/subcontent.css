@@ -46,6 +46,8 @@ i {
 	margin-top: 10%;
 }
 
+/*  Navigation Bar */
+
 nav {
 	background: rgba(131,174,30,0.8);
 	width: 100%;
@@ -75,7 +77,50 @@ nav a {
 
 nav a:hover {
 	color: #355c57;
-	transition: all 1s;
+	transition: all .5s;
+}
+
+/*  Navigation Dropdown */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    visibility: hidden;
+	transition: 0.2s .1s; /* delay of .1 seconds on hover off to prevent dissapear*/
+    position: absolute;
+    background-color: #f9f9f9;
+	top: 160%; /* Sets drop down nav to be inline with Green Bar */
+	right: -38%; /* Centers drop down nav */
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+	font-size: 18px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover
+	Using off white instead of white */
+.dropdown-content a:hover {
+	background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+	visibility: visible;
+    transition-delay: 0s; /* react immediately on hover */
 }
 
 #image-container {
@@ -99,6 +144,8 @@ nav a:hover {
 	opacity: 1.0;
 	transition: all 1s;
 }
+
+/* Scrollbar */
 
 ::-webkit-scrollbar {
 	width: 5px;
