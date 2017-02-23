@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_
         <h1>Hero Burger</h1>
     </header>
     <main>
-        <p>Welcome to HERO BURGER the premiere RPG character creation site onlinie.</p>
+        <p>Welcome to HERO BURGER the premiere RPG character creation site online.</p>
         <aside>
             <h2>Let's get started</h2>
             <form action="">

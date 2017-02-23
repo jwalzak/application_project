@@ -54,6 +54,7 @@ $newChar = new Character();
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/97f2d469d8.js"></script>
     <script src="js/dice_roll.js"></script>
+    <script src="js/saving_throws.js"></script>
 </head>
 
 <body>
@@ -115,6 +116,13 @@ $newChar = new Character();
         <td>Chaotic<br>Evil</td>
         </tr>
         </table>
+
+        <input type="radio" name="saveThrow" id="strength">
+        <input type="radio" name="saveThrow" id="constitution">
+        <input type="radio" name="saveThrow" id="dexterity">
+        <input type="radio" name="saveThrow" id="intelligence">
+        <input type="radio" name="saveThrow" id="wisdom">
+        <input type="radio" name="saveThrow" id="charisma">
 
         <p>Character Backstory</p>
         <textarea rows="4" cols="50" name="backstory"></textarea>   

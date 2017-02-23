@@ -107,8 +107,6 @@ function diceRoll(clicked_id){
 
     }
 
-
-
     console.log("The total of the three highest dice is " + diceTotal);
     diceTotal = 0;
 }
