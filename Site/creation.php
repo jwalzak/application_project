@@ -86,8 +86,9 @@ $newChar = new Character();
             <option value="stoutHalfling">Stout Halfling</option>
             <option value="Human">Human</option>
         </select>
+        <!--Class-->
         <p>Class</p>
-        <select>
+        <select id="classSelect">
             <option value="cleric">Cleric</option>
             <option value="fighter">Fighter</option>
             <option value="thief">Thief</option>
@@ -167,18 +168,15 @@ $newChar = new Character();
     <!--Saving Throws-->
     <fieldset style="margin-bottom:2px">
      <p>Saving Throws</p>
-        <input type="radio" name="saveThrow" id="strength"><label for="strength">Strength</label><br/>
-        <input type="radio" name="saveThrow" id="constitution"><label for="constitution">Constitution</label><br/>
-        <input type="radio" name="saveThrow" id="dexterity"><label for="dexterity">Dexterity</label><br/>
-        <input type="radio" name="saveThrow" id="intelligence"><label for="intelligence">Intelligence</label><br/>
-        <input type="radio" name="saveThrow" id="wisdom"><label for="wisdom">Wisdom</label><br/>
-        <input type="radio" name="saveThrow" id="charisma"><label for="charisma">Charisma</label><br />
+        <input type="radio" name="saveThrow" id="saveStr"><label for="saveStr">Strength</label><br/>
+        <input type="radio" name="saveThrow" id="saveCon"><label for="saveCon">Constitution</label><br/>
+        <input type="radio" name="saveThrow" id="saveDex"><label for="saveDex">Dexterity</label><br/>
+        <input type="radio" name="saveThrow" id="saveInt"><label for="saveInt">Intelligence</label><br/>
+        <input type="radio" name="saveThrow" id="saveWis"><label for="saveWis">Wisdom</label><br/>
+        <input type="radio" name="saveThrow" id="saveChar"><label for="saveChar">Charisma</label><br />
 
         <input type="text" name="save" id="save"><input type="button" value="Roll" onclick="saveRoll(this.id)">
     </fieldset>
-
-
-
 
     </form>
     
