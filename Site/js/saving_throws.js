@@ -38,6 +38,8 @@ let rolledSave, savingThrow;
 
 
 //Classes
+//There has got to be a better way to do this.
+//On page laod jQuery will prevent the default action of the radio buttons based on character class.
 $(document).ready(function(){
     let saveClass = "wizard";
     if(saveClass == "theif"){
