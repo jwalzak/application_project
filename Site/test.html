@@ -12,6 +12,16 @@
 </head>
 <body>
     <form action="" method="post">
+    <select name="raceSelect" id="raceSelect">
+            <option value="mtnDwarf">Mountain Dwarf</option>
+            <option value="hillDwarf">Hill Dwarf</option>
+            <option value="highElf">High Elf</option>
+            <option value="woodElf">Wood Elf</option>
+            <option value="lightfootHalfling">Lightfoot Halfling</option>
+            <option value="stoutHalfling">Stout Halfling</option>
+            <option value="Human">Human</option>
+        </select>
+        <br />
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
         <label>Strength</label>
         <input id="strInput" type="text"><br>
@@ -42,6 +52,8 @@
         <input type="radio" name="saveThrow" id="saveInt"><label for="saveInt">Intelligence</label><br/>
         <input type="radio" name="saveThrow" id="saveWis"><label for="saveWis">Wisdom</label><br/>
         <input type="radio" name="saveThrow" id="saveChar"><label for="saveChar">Charisma</label><br/>
+
+        <input type="text" name="save" id="save"><input type="button" value="Roll" onclick="saveRoll(this.id)">
 
     </form>
 
