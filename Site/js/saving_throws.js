@@ -24,12 +24,78 @@
  * 
  */
 
+/**
+ *Saves - Represents an attempt to resist a spell, trap, poison disease or similar thread
+ *
+ *Saving throw, roll a D20 + modifier.
+ */
+
 
 //Saving throws are a D20 roll
 let saveDie = 20;
-let rolledSave;
-
+let rolledSave, savingThrow;
 //Get the type of radio button clicked for a saving throw
-var save = document.querySelector('input[name = "saveThrows"]:checked').id;
 
-console.log(save);
+
+//Classes
+$(document).ready(function(){
+    let saveClass = "wizard";
+    if(saveClass == "theif"){
+        $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveChar").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+    }//End if
+    else if (saveClass == "wizard"){
+        $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveChar").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+    }//end else if
+    else if(saveClass == "fighter"){
+        $("#saveChar").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+    }//End else if
+    else if(saveClass == "cleric"){
+        $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+        $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+    }
+
+
+});

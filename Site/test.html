@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 <script src="js/dice_roll.js"></script>
 <script src="js/saving_throws.js"></script>
 <head>
@@ -31,14 +35,16 @@
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut">    
         </input><label>Charisma</label>
         <input id="chaInput" type="text"><br>
+    
+        <input type="radio" name="saveThrow" id="saveStr"><label for="saveStr">Strength</label><br/>
+        <input type="radio" name="saveThrow" id="saveCon"><label for="saveCon">Constitution</label><br/>
+        <input type="radio" name="saveThrow" id="saveDex"><label for="saveDex">Dexterity</label><br/>
+        <input type="radio" name="saveThrow" id="saveInt"><label for="saveInt">Intelligence</label><br/>
+        <input type="radio" name="saveThrow" id="saveWis"><label for="saveWis">Wisdom</label><br/>
+        <input type="radio" name="saveThrow" id="saveChar"><label for="saveChar">Charisma</label><br/>
+
     </form>
 
-    <input type="radio" name="saveThrow" value="strength" id="strength">
-    <input type="radio" name="saveThrow" value="constitution" id="constitution">
-    <input type="radio" name="saveThrow" value="dexterity" id="dexterity">
-    <input type="radio" name="saveThrow" value="intelligence" id="intelligence">
-    <input type="radio" name="saveThrow" value="wisdom" id="wisdom">
-    <input type="radio" name="saveThrow" value="charisma" id="charisma">
 
 </body>
 </html>

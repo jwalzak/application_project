@@ -117,12 +117,12 @@ $newChar = new Character();
         </tr>
         </table>
 
-        <input type="radio" name="saveThrow" id="strength">
-        <input type="radio" name="saveThrow" id="constitution">
-        <input type="radio" name="saveThrow" id="dexterity">
-        <input type="radio" name="saveThrow" id="intelligence">
-        <input type="radio" name="saveThrow" id="wisdom">
-        <input type="radio" name="saveThrow" id="charisma">
+        <input type="radio" name="saveThrow" id="strength"><label for="strength">Strength</label><br/>
+        <input type="radio" name="saveThrow" id="constitution"><label for="constitution">Constitution</label><br/>
+        <input type="radio" name="saveThrow" id="dexterity"><label for="dexterity">Dexterity</label><br/>
+        <input type="radio" name="saveThrow" id="intelligence"><label for="intelligence">Intelligence</label><br/>
+        <input type="radio" name="saveThrow" id="wisdom"><label for="wisdom">Wisdom</label><br/>
+        <input type="radio" name="saveThrow" id="charisma"><label for="charisma">Charisma</label>
 
         <p>Character Backstory</p>
         <textarea rows="4" cols="50" name="backstory"></textarea>   

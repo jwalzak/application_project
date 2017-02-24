@@ -53,7 +53,8 @@ function diceRoll(clicked_id){
     for (let i = 0; i < rolledDice.length; i++){
         diceTotal += rolledDice[i];
     }
-    // race = "dwarf";
+
+     //race = "dwarf";
     var elementId = clicked_id;
     switch (elementId) {
 
