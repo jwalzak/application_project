@@ -52,6 +52,9 @@ $newChar = new Character();
 
     <link rel="stylesheet" href="css/subcontent.css"/>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/97f2d469d8.js"></script>
     <script src="js/dice_roll.js"></script>
     <script src="js/saving_throws.js"></script>
