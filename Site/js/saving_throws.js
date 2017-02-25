@@ -53,23 +53,6 @@ document.addEventListener("change", function(){
 //Players can roll on each of the skills, but they get a bonus to two skill based on their class.
 $(document).ready(function(){
 
-    if(saveClass == "theif"){
-        $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveChar").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
-        $("label[for='saveInt']").text("Intelligence ++");
-        $("label[for='saveDex']").text("Dexterity ++");
-        
-    }//End if
     else if (saveClass == "wizard"){
         $("#saveStr").click(function(e){
             e.preventDefault();
@@ -116,13 +99,145 @@ $(document).ready(function(){
         });
         $("#saveInt").click(function(e){
             e.preventDefault();
+            });
+        $("label[for='saveWis']").text("Wisdom ++");
+        $("label[for='saveChar']").text("Charisma ++");
+    }//End else if
+
+    else if(saveClass == "bard"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveDex']").text("Dexterity ++");
+        $("label[for='saveChar']").text("Charisma ++");
+    }//Else if
+
+    else if(saveClass == "druid"){
+       $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#savechar").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveWis']").text("Wisdom ++");
+        $("label[for='saveInt']").text("Intelligence ++");
+    }//Else if
+
+    else if(saveClass == "monk"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveChar").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveDex']").text("Dexterity ++");
+        $("label[for='saveStr']").text("Strength ++");
+    }//Else if
+
+    else if(saveClass == "paladin"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
         });
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveChar']").text("Charisma ++");
-    }
+    }//Else if
 
-//Save proficeiency
+    else if(saveClass == "ranger"){
+       $("#saveChar").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveDex']").text("Dexterity ++");
+        $("label[for='saveInt']").text("Intelligence ++");
+    }//Else if
 
+    else if(saveClass == "rogue"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveChar").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveDex']").text("Dexterity ++");
+        $("label[for='saveWis']").text("Wisdom ++");
+    }//Else if
 
+    else if(saveClass == "sorcerer"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveCon']").text("Constitution ++");
+        $("label[for='saveChar']").text("Charisma ++");
+    }//Else if
+
+    else if(saveClass == "warlock"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveStr").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCon").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveWis']").text("Wisdom ++");
+        $("label[for='saveChar']").text("Charisma ++");
+    }//Else if
 
 });

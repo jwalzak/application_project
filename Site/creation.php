@@ -89,9 +89,17 @@ $newChar = new Character();
         <!--Class-->
         <p>Class</p>
         <select id="classSelect">
+            <option value="barbarian">Barbarian</option>
+            <option value="bard">Bard</option>
             <option value="cleric">Cleric</option>
+            <option value="druid">Druid</option>
             <option value="fighter">Fighter</option>
-            <option value="thief">Thief</option>
+            <option value="monk">Monk</option>
+            <option value="paladin">Palidin</option>
+            <option value="ranger">Ranger</option>
+            <option value="rogue">Rogue</option>
+            <option value="sorcerer">Sorcerer</option>
+            <option value="warlock">Warlock</option>
             <option value="wizard">Wizard</option>
         </select>
 
