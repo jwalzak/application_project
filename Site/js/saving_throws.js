@@ -53,7 +53,7 @@ document.addEventListener("change", function(){
 //Players can roll on each of the skills, but they get a bonus to two skill based on their class.
 $(document).ready(function(){
 
-    else if (saveClass == "wizard"){
+    if (saveClass == "wizard"){
         $("#saveStr").click(function(e){
             e.preventDefault();
         });
