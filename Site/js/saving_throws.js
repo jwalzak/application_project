@@ -48,7 +48,7 @@ document.addEventListener("change", function(){
   saveClass = e.options[e.selectedIndex].value;
 });
 //There has got to be a better way to do this.
-//On page laod jQuery will prevent the default action of the radio buttons based on character class.
+//On page load jQuery will prevent the default action of the radio buttons based on character class.
 //Saving throws are based on a 20 sided die
 //Players can roll on each of the skills, but they get a bonus to two skill based on their class.
 $(document).ready(function(){
@@ -121,8 +121,6 @@ $(document).ready(function(){
         $("label[for='saveChar']").text("Charisma ++");
     }
 
-//Save proficeiency
-
-
+//Save proficiency
 
 });
