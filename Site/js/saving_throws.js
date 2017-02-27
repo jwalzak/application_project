@@ -44,7 +44,7 @@ let saveRoll = function(){
 
 //Classes
 document.addEventListener("change", function(){
-  let e = document.getElementById("classSelect");
+  let e = document.getElementById("slct1");
   saveClass = e.options[e.selectedIndex].value;
 });
 //There has got to be a better way to do this.
