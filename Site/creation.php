@@ -79,6 +79,7 @@ $newChar = new Character();
         <fieldset style="margin-bottom:2px">
         <p>Race</p>
         <select name="raceSelect" id="raceSelect">
+            <option value="">Pick a Race</option>
             <option value="mtnDwarf">Mountain Dwarf</option>
             <option value="hillDwarf">Hill Dwarf</option>
             <option value="highElf">High Elf</option>
