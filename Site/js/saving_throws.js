@@ -46,6 +46,7 @@ let saveRoll = function(){
 document.addEventListener("change", function(){
   let e = document.getElementById("slct1");
   saveClass = e.options[e.selectedIndex].value;
+  classSlct();
 });
 //There has got to be a better way to do this.
 //On page laod jQuery will prevent the default action of the radio buttons based on character class.
@@ -53,6 +54,11 @@ document.addEventListener("change", function(){
 //Players can roll on each of the skills, but they get a bonus to two skill based on their class.
 $(document).ready(function(){
 
+    classSlct();
+
+});
+
+let classSlct = function(){
     if (saveClass == "wizard"){
         $("#saveStr").click(function(e){
             e.preventDefault();
@@ -239,5 +245,4 @@ $(document).ready(function(){
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveChar']").text("Charisma ++");
     }//Else if
-
-});
+}
