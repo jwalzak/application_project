@@ -79,7 +79,7 @@ $newChar = new Character();
         <fieldset style="margin-bottom:2px">
         <p>Race</p>
         <select name="raceSelect" id="raceSelect">
-            <option value="">Pick a Race</option>
+            <option value="">Select Race</option>
             <option value="mtnDwarf">Mountain Dwarf</option>
             <option value="hillDwarf">Hill Dwarf</option>
             <option value="highElf">High Elf</option>
@@ -92,7 +92,7 @@ $newChar = new Character();
         <!--Class-->
         <p>Class</p>
         <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
-            <option value="">Pick a Class</option>
+            <option value="">Select Class</option>
             <option value="barbarian">Barbarian</option>
             <option value="bard">Bard</option>
             <option value="cleric">Cleric</option>
@@ -107,11 +107,6 @@ $newChar = new Character();
             <option value="wizard">Wizard</option>
         </select>
 
-        <!-- Skills -->
-        <p>Skills</p>
-        <p id="pText">Choose a Class to begin...</p>
-        <div id="slct2"></div>
-
         <!-- Gender -->
         <p>Gender</p>
         <input type="radio" name="gender" value="female"> Female<br>
@@ -119,6 +114,7 @@ $newChar = new Character();
         <input type="radio" name="gender" value="other"> Other <input type="text" name="otherGender" />        
 </fieldset>
 
+        <!-- Alignment --> 
 <fieldset style="margin-bottom:2px">
         <p>Alignment</p>
         <table>
@@ -146,6 +142,7 @@ $newChar = new Character();
         </tr>
         </table>
         
+        <!-- Character Backstory -->
         <p>Character Backstory</p>
         <textarea rows="4" cols="50" name="backstory"></textarea>   
         </fieldset>
@@ -153,8 +150,12 @@ $newChar = new Character();
    
     <div id="rolls" class="rolls">
 
-        <br/>
+        <!-- Skills -->
+        <p>Skills</p>
+        <p id="pText">Choose a Class to begin...</p>
+        <div id="slct2"></div>
    
+       <!-- Attributes -->
        <p>Attributes</p>  
         <input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
         <label>Strength</label>
