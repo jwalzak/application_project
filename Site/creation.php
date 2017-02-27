@@ -58,6 +58,7 @@ $newChar = new Character();
     <script src="https://use.fontawesome.com/97f2d469d8.js"></script>
     <script src="js/dice_roll.js"></script>
     <script src="js/saving_throws.js"></script>
+    <script src="js/skills.js"></script>
 </head>
 
 <body>
@@ -71,7 +72,7 @@ $newChar = new Character();
         <p><h2>Charaction Bio</h2></p>
         <fieldset style="margin-bottom:2px">
         <p>First Name:</p>
-        <input type="text" name="f_name" value=''<?php echo 'first name' ?>" />
+        <input type="text" name="f_name" value=''<?php echo 'first name' ?>/>
         <p>Last Name:</p>
         <input type="text" name="l_name">
         </fieldset>
@@ -86,16 +87,18 @@ $newChar = new Character();
             <option value="stoutHalfling">Stout Halfling</option>
             <option value="Human">Human</option>
         </select>
+
         <!--Class-->
         <p>Class</p>
-        <select id="classSelect">
+        <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
+            <option value="">Pick a Class</option>
             <option value="barbarian">Barbarian</option>
             <option value="bard">Bard</option>
             <option value="cleric">Cleric</option>
             <option value="druid">Druid</option>
             <option value="fighter">Fighter</option>
             <option value="monk">Monk</option>
-            <option value="paladin">Palidin</option>
+            <option value="paladin">Paladin</option>
             <option value="ranger">Ranger</option>
             <option value="rogue">Rogue</option>
             <option value="sorcerer">Sorcerer</option>
@@ -103,6 +106,12 @@ $newChar = new Character();
             <option value="wizard">Wizard</option>
         </select>
 
+        <!-- Skills -->
+        <p>Skills</p>
+        <p id="pText">Choose a Class to begin...</p>
+        <div id="slct2"></div>
+
+        <!-- Gender -->
         <p>Gender</p>
         <input type="radio" name="gender" value="female"> Female<br>
         <input type="radio" name="gender" value="male"> Male <br>
