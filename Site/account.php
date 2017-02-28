@@ -81,7 +81,7 @@
 			<input type="text" name="lname" class="textbox" value="<?php if(isset($_SESSION['lname'])) { echo $_SESSION['lname']; } ?>"/></p>	
 		
 		<p><strong>Password</strong><br/>
-			<input type="text" name="pword" class="textbox" value="<?php if(isset($_SESSION['pword'])) { echo $_SESSION['pword']; } ?>"/></p>
+			<input type="password" name="pword" class="textbox" value="<?php if(isset($_SESSION['pword'])) { echo $_SESSION['pword']; } ?>"/></p>
 		</div>
 		
 		<div id="userinforight" style="float:left; margin-left:4%;">

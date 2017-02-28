@@ -30,8 +30,8 @@
 	<title>Hero Burger &#x2605; Made to Order!</title>
 
 	<link rel="stylesheet" href="css/index.css"/>
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto" rel="stylesheet">
-	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto">
 </head>
 
 <body>
@@ -44,10 +44,11 @@
 		<!-- sign in information -->
 		<div id="signin">	
 			<h2>Already a Member?</h2>
-			Login with your username below:<br/>
+			Login with your username and password below:<br/>
 			
 			<form method="POST">
-				<input type="text" class="textbox" name="username" placeholder="&nbsp;&nbsp;username" value="<?php if(isset($_SESSION['username'])){ echo $_SESSION['username'];} ?>"/> 
+				<input type="text" class="textbox" name="username" placeholder="&nbsp;&nbsp;username" value="<?php if(isset($_SESSION['username'])){ echo $_SESSION['username'];} ?>"/>
+				<input type="password" class="textbox" name="password" placeholder="&nbsp;&nbsp;password"/>
 				
 				<input type="submit" name="start" class="button" value="Go"/>
 			</form>

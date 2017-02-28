@@ -9,8 +9,8 @@
 
     $first_name_f = arr("Leanne", "Sonya", "Heather", "Glenda", "Abella", "Aililve", "Alura", "Calista", "Carita", "Cein" "Chrissanth", "Cleantha", "Delica", "Deva", "Elidie", "Evvie", "Eliska", "Faye", "Faylinn", "Gaea");
     $first_name_m = arr("Isaiah", "Jason", "Matt", "Qole", "Merek", "Carac", "Ulric", "Rowan", "Althalos", "Brom", "Grom", "Jarin", "Joturn", "Asher", "Frodo" );
-    $last_name_f = arr();
-    $last_name_m = arr();
+    $last_name_f = arr("Magi", "Wander", "Eldem", "Swanson", "Sumner", "Aescar", "Pinder", "Bailey", "Hill", "Goah");
+    $last_name_m = arr("Magi", "Wander", "Eldem", "Swanson", "Sumner", "Aescar", "Pinder", "Bailey", "Hill", "Goah");
 }
 
 
