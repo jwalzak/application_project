@@ -63,30 +63,37 @@ let wizardProf = ["daggers", "darts", "slings", "quarterstaffs", "light crossbow
 //Make a for loop to go thorugh each item for the class array. If the item matches a direct weapon name, displayon HTML. If it is a name of a group of weapons, loop through those and display each through HTML
 
 function weaponProf(classProf){
+    let weapon;
     for(var i = 0; i<classProf.length; i++){
         if(classProf[i] == "simple_mel"){
             //Go through the array of each items in a for loop
             for(var j = 0; j<weapons.simple_mel.length; j++){
                 console.log(weapons.simple_mel[j]);
+                weapon += weapons.simple_mel[j] + "<br />";
             }//end inner for
         }//end if
         else if(classProf[i] == "simple_rang"){
             for(var j = 0; j<weapons.simple_rang.length; j++){
                 console.log(weapons.simple_rang[j]);
+                weapon += weapons.simple_rang[j] + "<br />";
             }//End else if for
         }//End else if
         else if(classProf[i] == "martial_mel"){
             for(var j = 0; j<weapons.martial_mel.length; j++){
                 console.log(weapons.martial_mel[j]);
+                weapon += weapons.martial_mel[j] + "<br />";
             }//End for
         }//end else if
         else if(classProf[i] == "martial_rang"){
             for(var j = 0; j< weapons.martial_rang.length; j++){
                 console.log(weapons.martial_rang[j]);
+                weapon += weapons.martial_rang[j] + "<br />";
             }//End for
         }//End else if
         else{
             console.log(classProf[i]);
+            weapon += classProf[i] + "<br />";
         }//End else
     }//End for loop
+    document.getElementById("weaponList").innerHTML = weapon;
 }//End function
