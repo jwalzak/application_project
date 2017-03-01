@@ -63,7 +63,7 @@ let wizardProf = ["daggers", "darts", "slings", "quarterstaffs", "light crossbow
 //Make a for loop to go thorugh each item for the class array. If the item matches a direct weapon name, displayon HTML. If it is a name of a group of weapons, loop through those and display each through HTML
 
 function weaponProf(classProf){
-    let weapon;
+    let weapon = "";
     for(var i = 0; i<classProf.length; i++){
         if(classProf[i] == "simple_mel"){
             //Go through the array of each items in a for loop
