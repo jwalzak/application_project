@@ -54,8 +54,8 @@ document.addEventListener("change", function() {
 //When the class dropdown menu is changed the saving throw profs will be updated. At the bottom of the page.
 function classSaveThrow() {
 	$("label[for='saveChar']").text("Charisma");
-	$("label[for='saveChar']").text("Wisdom");
-	$("label[for='saveChar']").text("Dexterity");
+	$("label[for='saveWis']").text("Wisdom");
+	$("label[for='saveDex']").text("Dexterity");
 	$("label[for='saveInt']").text("Intelligence");
 	$("label[for='saveStr']").text("Strength");
 	$("label[for='saveCon']").text("Constitution");
