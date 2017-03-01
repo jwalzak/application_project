@@ -47,8 +47,8 @@ let weapons = {
 
 //Each class gets prof in two weapon types
 let barbProf = ["simple_mel", "simple_rang", "martial_rang", "martial_mel"];
-let bardProf = ["simple weapons", "hand crossbows", "longswords", "rapiers", "short swords"];
-let clericProf = ["simple weapons"];
+let bardProf = ["simple_mel", "simple_rang", "hand crossbows", "longswords", "rapiers", "short swords"];
+let clericProf = ["simple_mel", "simple_rang"];
 let druidProf = ["clubs", "daggers", "darts", "javelin", "maces", "quarter staff", "scimtars", "sickles", "slings", "spears"];
 let fighterProf = ["simple_mel", "martial_mel", "simple_rang", "martial_rang"];
 let monkProf = ["simple_mel", "shortsword"];
