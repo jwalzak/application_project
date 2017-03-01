@@ -2,7 +2,6 @@
 //Elves -- Fey Ancestry -- advantage on saving throws against charmed and magic can't put you to sleep
 //Halfling --braves -- Advantage on saving throws against being frightened
 //Human -- Stout Resilience -- Advantage on saving throws against poison damage
-//
 
 /**
  *Class Saving throws
@@ -14,7 +13,7 @@
  * Fighter Saving Throws
  *     - Strength
  *     - Constitution
- * Theif Saving Throws
+ * Thief Saving Throws
  *     - Dexterity
  *     - Intelligence
  *     - At 15th level Wisdom
@@ -22,13 +21,14 @@
  *     - Intelligence
  *     - Wisdom
  * 
- */
-
+ **/
+ 
 /**
  *Saves - Represents an attempt to resist a spell, trap, poison disease or similar thread
  *
  *Saving throw, roll a D20 + modifier.
- */
+ **/
+ 
 let saveClass = "cleric";
 let result = 0;
 let prof = 0;
@@ -47,13 +47,15 @@ document.addEventListener("change", function(){
   let e = document.getElementById("classSelect");
   saveClass = e.options[e.selectedIndex].value;
 });
+
 //There has got to be a better way to do this.
-//On page laod jQuery will prevent the default action of the radio buttons based on character class.
+
+//On page load jQuery will prevent the default action of the radio buttons based on character class.
 //Saving throws are based on a 20 sided die
 //Players can roll on each of the skills, but they get a bonus to two skill based on their class.
 $(document).ready(function(){
 
-    if(saveClass == "theif"){
+    if(saveClass == "thief"){
         $("#saveStr").click(function(e){
             e.preventDefault();
         });
@@ -121,8 +123,5 @@ $(document).ready(function(){
         $("label[for='saveChar']").text("Charisma ++");
     }
 
-//Save proficeiency
-
-
-
+//Save proficiency
 });
