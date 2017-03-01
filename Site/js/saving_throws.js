@@ -46,18 +46,24 @@ let saveRoll = function(){
 
 //Classes
 document.addEventListener("change", function(){
-  let e = document.getElementById("classSelect");
+  let e = document.getElementById("slct1");
   saveClass = e.options[e.selectedIndex].value;
+  classSaveThrow();
 });
 
-//There has got to be a better way to do this.
+//When the class dropdown menu is changed the saving throw profs will be updated. At the bottom of the page.
 
-//On page load jQuery will prevent the default action of the radio buttons based on character class.
-//Saving throws are based on a 20 sided die
-//Players can roll on each of the skills, but they get a bonus to two skill based on their class.
-$(document).ready(function(){
+function classSaveThrow(){
 
-if (saveClass == "wizard"){
+
+$("label[for='saveChar']").text("Charisma");
+$("label[for='saveChar']").text("Wisdom");
+$("label[for='saveChar']").text("Dexterity");
+$("label[for='saveInt']").text("Intelligence");
+$("label[for='saveStr']").text("Strength");
+$("label[for='saveCon']").text("Constitution");
+
+    if (saveClass == "wizard"){
         $("#saveStr").click(function(e){
             e.preventDefault();
         });
@@ -88,7 +94,7 @@ if (saveClass == "wizard"){
             e.preventDefault();
         });
         $("label[for='saveCon']").text("Constitution ++");
-        $("label[for='saveStr']").text("Strength ++");
+        $("label[for='saveCon']").text("Strength ++");
         
     }//End else if
     else if(saveClass == "cleric"){
@@ -244,5 +250,4 @@ if (saveClass == "wizard"){
         $("label[for='saveChar']").text("Charisma ++");
     }//Else if
    
-
-});
+}//End classSaveThrow
