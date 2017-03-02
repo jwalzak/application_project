@@ -1,7 +1,11 @@
 <?php
 	session_start();
 	require("navbar.php");
-	require_once('Char.php');
+	//require_once('Char.php');
+	require("connect.php");
+
+$races = array();
+
 
 
 	//create a new Character object
@@ -107,14 +111,16 @@ border-right:1px solid grey;
     		<div class='col-sm-4'>   	
 			<select name="raceSelect" id="raceSelect">
 				<option selected disabled>Choose your Race</option>
-				<option value="mtnDwarf" id="mtnDwarf">Mountain Dwarf</option>
-				<option value="hillDwarf" id="hillDwarf">Hill Dwarf</option>
-				<option value="highElf" id="highElf">High Elf</option>
-				<option value="woodElf" id="woodElf">Wood Elf</option>
-				<option value="lightfootHalfling" id="lightfootHalfling">Lightfoot Halfling</option>
-				<option value="stoutHalfling" id="stoutHalfling">Stout Halfling</option>
-				<option value="human" id="human">Human</option>
-				
+				<?php
+				$qry = 'SELECT race from tblRace';
+				if($result = $conn->query($qry)) {
+       				 for ($i = 0; $i < $result->num_rows; $i++) { 
+						$row = $result->fetch_assoc();
+            			$races['optionId'] = str_replace(' ', '_', $row['race']);
+        				$races['race'] = $row['race']; ?>
+							<option value="<?php echo $races['optionId']; ?>">
+								<?php echo $races['race']; }} ?>
+							</option>
 			</select><br>
 			
 			<br/>

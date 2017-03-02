@@ -53,7 +53,7 @@ document.addEventListener("change", function() {
 
 //When the class dropdown menu is changed the saving throw profs will be updated. At the bottom of the page.
 function classSaveThrow() {
-	$("label[for='saveChar']").text("Charisma");
+	$("label[for='saveCha']").text("Charisma");
 	$("label[for='saveWis']").text("Wisdom");
 	$("label[for='saveDex']").text("Dexterity");
 	$("label[for='saveInt']").text("Intelligence");
@@ -67,7 +67,7 @@ function classSaveThrow() {
         $("#saveDex").click(function(e){
             e.preventDefault();
         });
-        $("#saveChar").click(function(e){
+        $("#saveCha").click(function(e){
             e.preventDefault();
         });
         $("#saveCon").click(function(e){
@@ -77,7 +77,7 @@ function classSaveThrow() {
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
     else if(saveClass == "fighter"){
-        $("#saveChar").click(function(e){
+        $("#saveCha").click(function(e){
             e.preventDefault();
         });
         $("#saveDex").click(function(e){
@@ -106,7 +106,7 @@ function classSaveThrow() {
             e.preventDefault();
             });
         $("label[for='saveWis']").text("Wisdom ++");
-        $("label[for='saveChar']").text("Charisma ++");
+        $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "bard"){
        $("#saveInt").click(function(e){
@@ -122,7 +122,7 @@ function classSaveThrow() {
             e.preventDefault();
         });
         $("label[for='saveDex']").text("Dexterity ++");
-        $("label[for='saveChar']").text("Charisma ++");
+        $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "druid"){
        $("#saveDex").click(function(e){
@@ -131,7 +131,7 @@ function classSaveThrow() {
        $("#saveStr").click(function(e){
             e.preventDefault();
         });
-       $("#savechar").click(function(e){
+       $("#saveCha").click(function(e){
             e.preventDefault();
         });
        $("#saveCon").click(function(e){
@@ -144,7 +144,7 @@ function classSaveThrow() {
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
-       $("#saveChar").click(function(e){
+       $("#saveCha").click(function(e){
             e.preventDefault();
         });
        $("#saveWis").click(function(e){
@@ -170,10 +170,10 @@ function classSaveThrow() {
             e.preventDefault();
         });
         $("label[for='saveWis']").text("Wisdom ++");
-        $("label[for='saveChar']").text("Charisma ++");
+        $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "ranger"){
-       $("#saveChar").click(function(e){
+       $("#saveCha").click(function(e){
             e.preventDefault();
         });
        $("#saveStr").click(function(e){
@@ -195,7 +195,7 @@ function classSaveThrow() {
        $("#saveStr").click(function(e){
             e.preventDefault();
         });
-       $("#saveChar").click(function(e){
+       $("#saveCha").click(function(e){
             e.preventDefault();
         });
        $("#saveCon").click(function(e){
@@ -218,7 +218,7 @@ function classSaveThrow() {
             e.preventDefault();
         });
         $("label[for='saveCon']").text("Constitution ++");
-        $("label[for='saveChar']").text("Charisma ++");
+        $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "warlock"){
        $("#saveInt").click(function(e){
@@ -234,7 +234,7 @@ function classSaveThrow() {
             e.preventDefault();
         });
         $("label[for='saveWis']").text("Wisdom ++");
-        $("label[for='saveChar']").text("Charisma ++");
+        $("label[for='saveCha']").text("Charisma ++");
     }//end else if
 }//End classSaveThrow
 
@@ -242,31 +242,31 @@ function classSaveThrow() {
 //Saving throw checklist options populate based on class choice
 //If you're a ___, then you can see ____
 function raceBonuses() {
-    if(raceSelect == "mtnDwarf") {
+    if(raceSelect == "Mountain_Dwarf") {
         $("#saveStr").show();
 		$("#saveCon").show();
-    } else if(raceSelect == "hillDwarf") {
+    } else if(raceSelect == "Hill_Dwarf") {
         $("#saveCon").show();
 		$("#saveWis").show();
-    } else if(raceSelect == "highElf") {
+    } else if(raceSelect == "High_Elf") {
         $("#saveDex").show();
 		$("#saveInt").show();
-    } else if(raceSelect == "woodElf") {
+    } else if(raceSelect == "Wood_Elf") {
         $("#saveDex").show();
 		$("#saveWis").show();
-    } else if(raceSelect == "lightfootHalfling") {
+    } else if(raceSelect == "Lightfoot_Halfling") {
         $("#saveDex").show();
-		$("#saveChar").show();
-    } else if(raceSelect == "stoutHalfling") {
+		$("#saveCha").show();
+    } else if(raceSelect == "Stout_Halfling") {
         $("#saveDex").show();
 		$("#saveCon").show();
-    } else if(raceSelect == "human") {
+    } else if(raceSelect == "Human") {
         $("#saveStr").show();
 		$("#saveCon").show();
 		$("#saveDex").show();
 		$("#saveInt").show();
 		$("#saveWis").show();
-		$("#saveChar").show();
+		$("#saveCha").show();
     }
 }
 
@@ -279,7 +279,7 @@ $(document).ready(function(){
 	$("saveDex").hide();
 	$("saveInt").hide();
 	$("saveWis").hide();
-	$("saveChar").hide();
+	$("saveCha").hide();
 	
 	raceBonuses();
 	classBonuses();
