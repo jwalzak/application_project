@@ -56,13 +56,12 @@
 <style>
 
 .row {
-	border-radius:50px;
-	border:1px solid grey;
-	padding:2%;
+border-bottom:1px solid grey;
+	padding:1%;
 }
 
 .col-sm-4 {
-
+border-right:1px solid grey;
 }
 #charName {
 	width:100%;
@@ -145,7 +144,7 @@
 
 	<div class='row'>
 					
-				<div id="rolls" class="col-sm-6"><br/>
+				<div id="rolls" class="col-sm-6">
 				
 				<p>Attributes</p>  
 				
@@ -227,7 +226,7 @@
 			
 			<div class='col-sm-6'>
 				<p>Character Backstory</p>
-				<textarea rows="10" cols="80" name="backstory"></textarea>   
+				<textarea rows="10" cols="60" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure blah"></textarea>   
         </div>
 </div>
 			
