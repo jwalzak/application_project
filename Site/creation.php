@@ -8,14 +8,26 @@ $races = array();
 $classes = array();
 
 
-	//create a new Character object
-	/*$newChar = new Character(); 
+	if($_SERVER['REQUEST_METHOD'] == 'POST') {
+	
+$char = (object) [ 
+'name' => $_POST['charName'],
+'age' => $_POST['charAge'],
+'gender' => $_POST['gender'],
+'height' => $_POST['height'],
+'weight' => $_POST['weight'],
+'race' => str_replace('_', ' ', $_POST['raceSelect']),
+'class' => $_POST['classSelect']
+];
 
-	if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])) {
-
+echo '<pre>';
+print_r($char);
+echo '</pre>';
 	}
 
-*/
+	
+
+
 ?>
 
 <!DOCTYPE html>
@@ -64,11 +76,17 @@ border-bottom:1px solid grey;
 	padding:1%;
 }
 
-.col-sm-4 {
+
+
+.col-sm-3 {
 border-right:1px solid grey;
 }
 #charName {
 	width:100%;
+}
+
+fieldset {
+	border:1px grey solid;
 }
 
 </style>
@@ -98,7 +116,7 @@ border-right:1px solid grey;
         <p><h2>Character Bio</h2></p>
         
 			<div class='row'>
-			<div class='col-sm-4'>
+			<div class='col-sm-3'>
 
 			<input id='charName' type="text" placeholder='Character name' name="charName"><br>
 			<input type='text' placeholder='Age' name='charAge'><br><br>
@@ -107,8 +125,14 @@ border-right:1px solid grey;
 			<input type="radio" name="gender" value="male"> Male <br>
 			<input type="radio" name="gender" value="other"> Other <input type="text" name="otherGender"></p>
 			</div>
-    
-    		<div class='col-sm-4'>   	
+
+			<div class='col-sm-3'>
+            <input type='text' placeholder='height' name='height'><br><br>
+            <input type='text' placeholder='weight' name='weight'>
+            </div>
+    		
+    		<div class='col-sm-3'>   	
+			
 			<select name="raceSelect" id="raceSelect">
 				<option selected disabled>Choose your Race</option>
 				<?php
@@ -121,10 +145,12 @@ border-right:1px solid grey;
 							<option value="<?php echo $races['optionId']; ?>">
 								<?php echo $races['race']; }} ?>
 							</option>
-			</select><br>
+			</select>
 			
+			<br>
 			<br/>
-			<select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
+
+			<select id="slct1" name="classSelect" onchange="populate(this.id, 'slct2')">
 					<option selected disabled>Choose your Class</option>
 			<?php
 				$qry = 'SELECT class from tblclass';
@@ -134,12 +160,11 @@ border-right:1px solid grey;
         				$classes['class'] = $row['class']; ?>
 							<option value="<?php echo $classes['class']; ?>">
 								<?php echo $classes['class']; }} ?>
-							</option>
-
-							
+							</option>				
 			</select>
 			</div>
-			<div class='col-sm-4'>
+
+			<div class='col-sm-3'>
 			Skills
 			<p id="pText">Choose a Class to begin</p>
 			<div id="slct2"></div>
@@ -150,7 +175,7 @@ border-right:1px solid grey;
 					
 				<div id="rolls" class="col-sm-6">
 				
-				<p>Attributes</p>  
+				<p>Ability Scores</p>  
 				
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
 				<label>Strength</label>
@@ -186,7 +211,7 @@ border-right:1px solid grey;
 			<input type="radio" name="saveThrow" id="saveDex"><label for="saveDex">Dexterity</label><br/>
 			<input type="radio" name="saveThrow" id="saveInt"><label for="saveInt">Intelligence</label><br/>
 			<input type="radio" name="saveThrow" id="saveWis"><label for="saveWis">Wisdom</label><br/>
-			<input type="radio" name="saveThrow" id="saveChar"><label for="saveChar">Charisma</label><br/>
+			<input type="radio" name="saveThrow" id="saveCha"><label for="saveCha">Charisma</label><br/>
 
 			<p><input type="button" value="Roll" onclick="saveRoll(this.id)"><input type="text" name="save" id="save"></p>
 		</div>
@@ -194,52 +219,71 @@ border-right:1px solid grey;
 
 
 
+	<div class='row'>				
+		<div class='col-sm-7'>	
+			<legend>Alignment</legend>
+			
 			<div class='row'>
-					
-					<div class='col-sm-6'>	
-					<fieldset>
-					<legend>Alignment</legend>
 
-					<div class='row'>
-					<div class='col-sm-4'>
+				<div class='col-sm-4'>
 					<label for='lGood'>Lawful Good</label>
 					<input class='align' type="radio" id='lGood' name="alignment" value="Lawful Good">
 					<label for='nGood'>Neutral Good</label>
 					<input class='align' type="radio" id='nGood' name="alignment" value="Neutral Good"> <label for='cGood'>Chaotic Good</label>
 					<input class='align' type="radio" id='cGood' name="alignment" value="Chaotic Good"> 
-					</div>
-					<div class='col-sm-4'>
+				</div>
+					
+				<div class='col-sm-4'>
 					<label for='lNeutral'>Lawful Neutral</label>
 					<input class='align' type="radio" id='lNeutral' name="alignment" value="Lawful Neutral">
 					<label for='tNeutral'>True Neutral</label>
 					<input class='align' type="radio" id='tNeutral' name="alignment" value="True Neutral">
 					<label for='cNeutral'>Chaotic Neutral</label>
 					<input class='align' type="radio" id='cNeutral' name="alignment" value="Chaotic Neutral"> 
-					</div>
-					<div class='col-sm-4'>
+				</div>
+					
+				<div class='col-sm-4'>
 					<label for='nEvil'>Neutral Evil</label>
 					<input class='align' type="radio" id='nEvil' name="alignment" value="Neutral Evil"> 
 					<label for='lEvil'>Lawful Evil</label>
 					<input class='align' type="radio" id='lEvil' name="alignment" value="Lawful Evil"> 
 					<label for='cEvil'>Chaotic Evil</label>
 					<input class='align' type="radio" id='cEvil' name="alignment" value="Chaotic Evil"> 
-					</div>
-					</div>
-					</fieldset>
-					</div>
+				</div>
+			</div>
+		</div>
 			
-			<div class='col-sm-6'>
-				<p>Character Backstory</p>
-				<textarea rows="10" cols="60" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure blah"></textarea>   
-        </div>
-</div>
-			
-    	<p><input type="submit"></p>
-    </form>
+		<div class='col-sm-5'>
+	
+				<legend>Character Backstory</legend>
+				<textarea rows="6" cols="60" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure blah"></textarea>   
+        </div>	
     
-    <p align="right">
-        <a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
-    </p>
+    </div>
+			
+		<div class='row'>
+			<div class='col-sm-6'>
+				Known Languages:
+				<select id='languages'>
+				<option value='common'>Common</option>
+				<option value='elven'>Elven</option>
+				<option value='dwarven'>Dwarven</option>
+				<option value='orcish'>Orcish</option>
+				<option value='gnomish'>Gnomish</option>
+				</select>
+			</div>
+						
+			<div class='col-sm-6'>
+    			<input type="submit" value='Save Character'>
+    		</div>
+
+    	</div>
+
+</form>
+    
+ <p align="right">
+ <a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
+ </p>
 </div>
 
 </body>
