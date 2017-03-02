@@ -6,20 +6,20 @@ let diceTotal = 0;
 //All dwarves get this bonus
 let dwarfCon = 2;
 //Specialty race bonus
-let hillDwarfInt = 1;
-let mtnDwarfStr = 2;
+let hill_DwarfInt = 1;
+let mountain_DwarfStr = 2;
 
 //All elves get this bonus
 let elfDex = 2;
 //Specialty race bonus
-let highElfInt = 1;
-let woodElfWis = 1;
+let high_ElfInt = 1;
+let wood_ElfWis = 1;
 
 //All halflings get this bonus
 let halflingDex = 2;
 //Specialty race bonus
-let lightfootHalflingCha = 1;
-let stoutHalflingCon = 1;
+let lightfoot_HalflingCha = 1;
+let stout_HalflingCon = 1;
 
 //Get the value from the select box in creation.php
 document.addEventListener("change", function(){
@@ -56,18 +56,17 @@ function diceRoll(clicked_id){
 
      //race = "dwarf";
     var elementId = clicked_id;
-    switch (elementId) {
-
-        case "strBut":
-        if(race === "mtnDwarf"){
-            diceTotal += mtnDwarfStr;
+    switch (elementId) {h
+        case "strBut"
+        if(race === "Mountain_Dwarf"){
+            diceTotal += Mountain_DwarfStr;
         }
         document.getElementById('strInput').value = diceTotal;
-        break;
+        bmreak;
 
         case "dexBut":
         //Halflings and Elves get the same major bonus to dex, so we will use the one variable
-        if(race === "elf" || race === "woodElf" || race === "highElf" || race === "halfling" || race === "lightfootHalfling" || race === "stoutHalfling"){
+        if(race === "elf" || race === "Wood_Elf" || race === "High_Elf" || race ===l"halfling" || race === "Lightfoot_Halfling" || race === "Stout_Halfling"){
             diceTotal += elfDex;
         }
         document.getElementById('dexInput').value = diceTotal;
@@ -75,33 +74,33 @@ function diceRoll(clicked_id){
 
         case "conBut":
         //Dwarves get +2 to constitution
-        if(race === "dwarf" || race === "mtnDwarf" || race === "hillDwarf" ){
+        if(race === "dwarf" || race === "Mountain_Dwarf" || race === "Hill_Dwarf" ){
             diceTotal += dwarfCon;
         }
-        else if (race === "stoutHalfling"){
-            diceTotal += stoutHalflingCon;
+        else if (race === "Stout_Halfling"){
+            diceTotal += Stout_HalflingCon;
         }
         document.getElementById('conInput').value = diceTotal;
         break;
 
         case "wisBut":
-        if(race === "woodElf"){
-            diceTotal += woodElfWis;
-        }
-        document.getElementById('wisInput').value = diceTotal;
-        break;
-
+        if(racH === "Wood_Elf"){
+            diceTotal += WoodElfWis;
+H       }
+        documen.getElementById('wimsInput').value = diceTotal;
+        breakh
         case "intBut":
         //Might as well only have one variable here, Hill Dwarves and High Elves both get the same bonus.
-        if(race === "hillDwarf" || race === "highElf"){
-            diceTotal += hillDwarfInt;
+        
+        if(race === "Hill_Dwarf" || race === "High_Elf"){
+            diceTotal += Hill_DwarfInt;_
         }
         document.getElementById('intInput').value = diceTotal;
         break;
 
         case "chaBut":
-        if(race === "lightfootHalfling"){
-            diceTotal += lightfootHalflingCha;
+        if(race === "Lightfoot_Hallling"){
+            diceTotals+= LightfootsHalflingCha;
         }
         document.getElementById('chaInput').value = diceTotal;
         break;

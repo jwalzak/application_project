@@ -26,6 +26,7 @@
  */
 
 //populate the select boxes
+
     function populate(slct1, slct2) {
         var s1 = document.getElementById(slct1);
         var s2 = document.getElementById(slct2);
@@ -33,51 +34,51 @@
 
         //change dhtml checkboxes on change of each class
         //change p tag on each class select
-        if (s1.value == "barbarian") {
+        if (s1.value == "Barbarian") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"];
 
-        } else if (s1.value == "bard") {
+        } else if (s1.value == "Bard") {
             document.getElementById("pText").innerHTML = "Choose 3 of the following...";
             var optionArray = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"];
 
-        } else if (s1.value == "cleric") {
+        } else if (s1.value == "Cleric") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["History", "Insight", "Medicine", "Persuasion", "Religion"];
 
-        } else if (s1.value == "druid") {
+        } else if (s1.value == "Druid") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"];
 
-        } else if (s1.value == "fighter") {
+        } else if (s1.value == "Fighter") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Acrobatics", " Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"];
 
-        } else if (s1.value == "monk") {
+        } else if (s1.value == "Monk") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"];
 
-        } else if (s1.value == "paladin") {
+        } else if (s1.value == "Paladin") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"];
 
-        } else if (s1.value == "ranger") {
+        } else if (s1.value == "Ranger") {
             document.getElementById("pText").innerHTML = "Choose 3 of the following...";
             var optionArray = ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"];
 
-        } else if (s1.value == "rogue") {
+        } else if (s1.value == "Rogue") {
             document.getElementById("pText").innerHTML = "Choose 4 of the following...";
             var optionArray = ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"];
 
-        } else if (s1.value == "sorcerer") {
+        } else if (s1.value == "Sorcerer") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"];
 
-        } else if (s1.value == "warlock") {
+        } else if (s1.value == "Warlock") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"];
 
-        } else if (s1.value == "wizard") {
+        } else if (s1.value == "Wizard") {
             document.getElementById("pText").innerHTML = "Choose 2 of the following...";
             var optionArray = ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"];
         }

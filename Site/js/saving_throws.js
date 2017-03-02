@@ -60,7 +60,7 @@ function classSaveThrow() {
 	$("label[for='saveStr']").text("Strength");
 	$("label[for='saveCon']").text("Constitution");
 
-    if (saveClass == "wizard"){
+    if (saveClass == "Wizard"){
         $("#saveStr").click(function(e){
             e.preventDefault();
         });
@@ -76,7 +76,7 @@ function classSaveThrow() {
         $("label[for='saveInt']").text("Intelligence ++");
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
-    else if(saveClass == "fighter"){
+    else if(saveClass == "Fighter"){
         $("#saveCha").click(function(e){
             e.preventDefault();
         });
@@ -92,7 +92,7 @@ function classSaveThrow() {
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveCon']").text("Strength ++");
     }//end else if
-    else if(saveClass == "cleric"){
+    else if(saveClass == "Cleric"){
         $("#saveStr").click(function(e){
             e.preventDefault();
         });
@@ -108,7 +108,7 @@ function classSaveThrow() {
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
-    else if(saveClass == "bard"){
+    else if(saveClass == "Bard"){
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
@@ -124,7 +124,7 @@ function classSaveThrow() {
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
-    else if(saveClass == "druid"){
+    else if(saveClass == "Druid"){
        $("#saveDex").click(function(e){
             e.preventDefault();
         });
@@ -140,7 +140,7 @@ function classSaveThrow() {
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveInt']").text("Intelligence ++");
     }//end else if
-    else if(saveClass == "monk"){
+    else if(saveClass == "Monk"){
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
@@ -156,7 +156,7 @@ function classSaveThrow() {
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveStr']").text("Strength ++");
     }//end else if
-    else if(saveClass == "paladin"){
+    else if(saveClass == "Paladin"){
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
@@ -172,7 +172,7 @@ function classSaveThrow() {
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
-    else if(saveClass == "ranger"){
+    else if(saveClass == "Ranger"){
        $("#saveCha").click(function(e){
             e.preventDefault();
         });
@@ -188,7 +188,7 @@ function classSaveThrow() {
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveInt']").text("Intelligence ++");
     }//end else if
-    else if(saveClass == "rogue"){
+    else if(saveClass == "Rogue"){
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
@@ -204,7 +204,7 @@ function classSaveThrow() {
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
-    else if(saveClass == "sorcerer"){
+    else if(saveClass == "Sorcerer"){
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
@@ -220,7 +220,7 @@ function classSaveThrow() {
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
-    else if(saveClass == "warlock"){
+    else if(saveClass == "Warlock"){
        $("#saveInt").click(function(e){
             e.preventDefault();
         });
@@ -282,6 +282,6 @@ $(document).ready(function(){
 	$("saveCha").hide();
 	
 	raceBonuses();
-	classBonuses();
+	//classBonuses();
 //Save proficiency
 });

@@ -5,7 +5,7 @@
 	require("connect.php");
 
 $races = array();
-
+$classes = array();
 
 
 	//create a new Character object
@@ -126,18 +126,16 @@ border-right:1px solid grey;
 			<br/>
 			<select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
 					<option selected disabled>Choose your Class</option>
-				<option value="barbarian">Barbarian</option>
-				<option value="bard">Bard</option>
-				<option value="cleric">Cleric</option>
-				<option value="druid">Druid</option>
-				<option value="fighter">Fighter</option>
-				<option value="monk">Monk</option>
-				<option value="paladin">Paladin</option>
-				<option value="ranger">Ranger</option>
-				<option value="rogue">Rogue</option>
-				<option value="sorcerer">Sorcerer</option>
-				<option value="warlock">Warlock</option>
-				<option value="wizard">Wizard</option>
+			<?php
+				$qry = 'SELECT class from tblclass';
+				if($result = $conn->query($qry)) {
+       				 for ($i = 0; $i < $result->num_rows; $i++) { 
+						$row = $result->fetch_assoc();
+        				$classes['class'] = $row['class']; ?>
+							<option value="<?php echo $classes['class']; ?>">
+								<?php echo $classes['class']; }} ?>
+							</option>
+
 							
 			</select>
 			</div>
