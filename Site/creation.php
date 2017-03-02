@@ -3,43 +3,15 @@
 	require("navbar.php");
 	require_once('Char.php');
 
-	// This array will be used to populate the race dropdown in the future
-	/*
-	$raceArray = []; 
-	$raceArray[0] = 'mtnDwarf'; 
-	$raceArray[1] = 'hillDwarf';
-	$raceArray[2] = 'hightElf';
-	$raceArray[3] = 'woodElf';
-	$raceArray[4] = 'lightfootHalfling';
-	$raceArray[5] = 'stoutHalfling'; 
-	$raceArray[6] = ' Human'; 
-	*/
 
 	//create a new Character object
-	$newChar = new Character(); 
+	/*$newChar = new Character(); 
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['f_name']) && !empty($_POST['l_name']) && !empty($_POST['backstory'])) {
 
-		$newChar->char_f_name = $_POST['f_name'];
-		$newChar->char_l_name = $_POST['l_name'];
-		$newChar->char_race = $_POST['raceSelect'];
-                    
-		if ($_POST['gender'] == 'other') {
-			$newChar->char_gender = $_POST['otherGender']; 
-		} else {
-			$newChar->char_gender = $_POST['gender']; 
-		}
-
-        $newChar->char_align = $_POST['alignment']; 
-        $newChar->char_history = $_POST['backstory'];
-        $newChar->strength = $_POST['str'];
-        $newChar->dexterity = $_POST['dex'];
-        $newChar->constitution = $_POST['con']; 
-        $newChar->wisdom = $_POST['wis']; 
-        $newChar->intelligence = $_POST['int']; 
-        $newChar->charisma = $_POST['char']; 
-        var_dump($newChar); 
 	}
+
+*/
 ?>
 
 <!DOCTYPE html>
@@ -49,38 +21,93 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Hero Burger &#x2605; Made to Order!</title>
 
-    <link rel="stylesheet" href="css/subcontent.css"/>
+  
+    <script src="https://use.fontawesome.com/97f2d469d8.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto" rel="stylesheet">
-    
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
 			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 			crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/97f2d469d8.js"></script>
+    
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+    
+
+  <script
+  src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+  	<link rel="stylesheet" href="css/subcontent.css"/>
+    
     <script src="js/dice_roll.js"></script>
     <script src="js/saving_throws.js"></script>
 	<script src="js/skills.js"></script>
+
+<style>
+
+.row {
+	border-radius:50px;
+	border:1px solid grey;
+	padding:2%;
+}
+
+.col-sm-4 {
+
+}
+#charName {
+	width:100%;
+}
+
+</style>
+
+<script>
+  $( function() {
+    $( ".align" ).checkboxradio({
+      icon: false
+    });
+  } );
+  </script>
+
 </head>
 
 <body>
 
+
+
+
+
+
 <!-- content  -->
-<div id="content">
+<div id="content" class='container'>
     <h1>Hero Creation</h1>
      
     <form method="post">
         <p><h2>Character Bio</h2></p>
         
-		<fieldset style="margin-bottom:2px">
-			<p>First Name:<br/>
-			<input type="text" name="f_name"></p>
-			<p>Last Name:<br/>
-			<input type="text" name="l_name"></p>
-        </fieldset>
-        
-		<fieldset style="margin-bottom:2px">
-			<p>Race<br/>
+			<div class='row'>
+			<div class='col-sm-4'>
+
+			<input id='charName' type="text" placeholder='Character name' name="charName"><br>
+			<input type='text' placeholder='Age' name='charAge'><br><br>
+			Gender<br/>
+			<input type="radio" name="gender" value="female"> Female<br>
+			<input type="radio" name="gender" value="male"> Male <br>
+			<input type="radio" name="gender" value="other"> Other <input type="text" name="otherGender"></p>
+			</div>
+    
+    		<div class='col-sm-4'>   	
 			<select name="raceSelect" id="raceSelect">
-				<option value=""/></option>
+				<option selected disabled>Choose your Race</option>
 				<option value="mtnDwarf" id="mtnDwarf">Mountain Dwarf</option>
 				<option value="hillDwarf" id="hillDwarf">Hill Dwarf</option>
 				<option value="highElf" id="highElf">High Elf</option>
@@ -88,11 +115,12 @@
 				<option value="lightfootHalfling" id="lightfootHalfling">Lightfoot Halfling</option>
 				<option value="stoutHalfling" id="stoutHalfling">Stout Halfling</option>
 				<option value="human" id="human">Human</option>
-			</select></p>
+				
+			</select><br>
 			
-			<p>Class<br/>
+			<br/>
 			<select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
-				<option value=""/></option>
+					<option selected disabled>Choose your Class</option>
 				<option value="barbarian">Barbarian</option>
 				<option value="bard">Bard</option>
 				<option value="cleric">Cleric</option>
@@ -104,52 +132,21 @@
 				<option value="rogue">Rogue</option>
 				<option value="sorcerer">Sorcerer</option>
 				<option value="warlock">Warlock</option>
-				<option value="wizard">Wizard</option>				
-			</select></p>
-			
-			<p>Skills</p>
+				<option value="wizard">Wizard</option>
+							
+			</select>
+			</div>
+			<div class='col-sm-4'>
+			Skills
 			<p id="pText">Choose a Class to begin</p>
 			<div id="slct2"></div>
-			
-			<p>Gender<br/>
-			<input type="radio" name="gender" value="female"> Female<br>
-			<input type="radio" name="gender" value="male"> Male <br>
-			<input type="radio" name="gender" value="other"> Other <input type="text" name="otherGender"></p>
-		</fieldset>
+			</div>
+			</div>
 
-		<fieldset style="margin-bottom:2px">
-			<p>Alignment<br/>
-			<table cellspacing=20>
-				<tr>
-					<td><input type="radio" name="alignment" value="Lawful Good"> </td>
-					<td><input type="radio" name="alignment" value="Neutral Good"></td> 
-					<td><input type="radio" name="alignment" value="Chaotic Good"> </td>
-					<td><input type="radio" name="alignment" value="Lawful Neutral"></td>
-					<td><input type="radio" name="alignment" value="True Neutral"></td>
-					<td><input type="radio" name="alignment" value="Chaotic Neutral"> </td>
-					<td><input type="radio" name="alignment" value="Neutral Evil"> </td>
-					<td><input type="radio" name="alignment" value="Lawful Evil"> </td>
-					<td><input type="radio" name="alignment" value="Chaotic Evil"> </td>
-				</tr> 
-				<tr>
-					<td>Lawful<br>Good</td>
-					<td>Neutral<br>Good</td>
-					<td>Chaotic<br>Good</td>
-					<td>Lawful<br>Neutral</td>
-					<td>True<br>Neutral</td>
-					<td>Chaotic<br>Neutral</td>
-					<td>Neutral<br>Evil</td>
-					<td>Lawful<br>Evil</td>
-					<td>Chaotic<br>Evil</td>
-				</tr>
-			</table></p>
-			
-			<p>Character Backstory</p>
-			<textarea rows="4" cols="50" name="backstory"></textarea>   
-        </fieldset>
-
-		<fieldset style="margin-bottom:2px">
-			<div id="rolls" class="rolls"><br/>
+	<div class='row'>
+					
+				<div id="rolls" class="col-sm-6"><br/>
+				
 				<p>Attributes</p>  
 				
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
@@ -176,11 +173,10 @@
 				<label>Charisma</label>
 				<input name='char' id="chaInput" type="text"><br>
         
-				<p><input type="submit"></p>
+		
 			</div>
-		</fieldset>
-    
-		<fieldset style="margin-bottom:2px">
+		
+			<div class='col-sm-6'>		
 			<p>Saving Throws</p>
 			<input type="radio" name="saveThrow" id="saveStr"><label for="saveStr">Strength</label><br/>
 			<input type="radio" name="saveThrow" id="saveCon"><label for="saveCon">Constitution</label><br/>
@@ -190,8 +186,52 @@
 			<input type="radio" name="saveThrow" id="saveChar"><label for="saveChar">Charisma</label><br/>
 
 			<p><input type="button" value="Roll" onclick="saveRoll(this.id)"><input type="text" name="save" id="save"></p>
-		</fieldset>
+		</div>
+		</div>
 
+
+
+			<div class='row'>
+					
+					<div class='col-sm-6'>	
+					<fieldset>
+					<legend>Alignment</legend>
+
+					<div class='row'>
+					<div class='col-sm-4'>
+					<label for='lGood'>Lawful Good</label>
+					<input class='align' type="radio" id='lGood' name="alignment" value="Lawful Good">
+					<label for='nGood'>Neutral Good</label>
+					<input class='align' type="radio" id='nGood' name="alignment" value="Neutral Good"> <label for='cGood'>Chaotic Good</label>
+					<input class='align' type="radio" id='cGood' name="alignment" value="Chaotic Good"> 
+					</div>
+					<div class='col-sm-4'>
+					<label for='lNeutral'>Lawful Neutral</label>
+					<input class='align' type="radio" id='lNeutral' name="alignment" value="Lawful Neutral">
+					<label for='tNeutral'>True Neutral</label>
+					<input class='align' type="radio" id='tNeutral' name="alignment" value="True Neutral">
+					<label for='cNeutral'>Chaotic Neutral</label>
+					<input class='align' type="radio" id='cNeutral' name="alignment" value="Chaotic Neutral"> 
+					</div>
+					<div class='col-sm-4'>
+					<label for='nEvil'>Neutral Evil</label>
+					<input class='align' type="radio" id='nEvil' name="alignment" value="Neutral Evil"> 
+					<label for='lEvil'>Lawful Evil</label>
+					<input class='align' type="radio" id='lEvil' name="alignment" value="Lawful Evil"> 
+					<label for='cEvil'>Chaotic Evil</label>
+					<input class='align' type="radio" id='cEvil' name="alignment" value="Chaotic Evil"> 
+					</div>
+					</div>
+					</fieldset>
+					</div>
+			
+			<div class='col-sm-6'>
+				<p>Character Backstory</p>
+				<textarea rows="10" cols="80" name="backstory"></textarea>   
+        </div>
+</div>
+			
+    	<p><input type="submit"></p>
     </form>
     
     <p align="right">
