@@ -236,6 +236,22 @@ function classSaveThrow() {
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
+      else if(saveClass == "Barbarian"){
+       $("#saveInt").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveWis").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveDex").click(function(e){
+            e.preventDefault();
+        });
+       $("#saveCha").click(function(e){
+            e.preventDefault();
+        });
+        $("label[for='saveStr']").text("Strength ++");
+        $("label[for='saveCon']").text("Constitution ++");
+    }//end else if
 }//End classSaveThrow
 
 //RACIAL BONUSES
