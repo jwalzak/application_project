@@ -37,14 +37,15 @@ let classProf;
 let saveRoll = function(){
     let saveDie = 20;
     let result = dice(saveDie);
-    if($('input:radio[name=saveThrow]:checked').length > 0){
-        prof = 2;
-    }//End if
-    result = result + prof;
+    //Will have to make differnt saves for each classes prof.
     document.getElementById('save').value = result;
 }//End saveRoll
 
-//Classes
+////////////
+//Classes //
+////////////
+
+//This function will trigger when the dropdown menu for classes is changed.
 document.addEventListener("change", function() {
   let e = document.getElementById("slct1");
   saveClass = e.options[e.selectedIndex].value;
@@ -53,6 +54,7 @@ document.addEventListener("change", function() {
 
 //When the class dropdown menu is changed the saving throw profs will be updated. At the bottom of the page.
 function classSaveThrow() {
+    //Reset the text values for each saving throw label.
 	$("label[for='saveCha']").text("Charisma");
 	$("label[for='saveWis']").text("Wisdom");
 	$("label[for='saveDex']").text("Dexterity");
@@ -60,63 +62,53 @@ function classSaveThrow() {
 	$("label[for='saveStr']").text("Strength");
 	$("label[for='saveCon']").text("Constitution");
 
+    //Change the display of each classes saving throw proficiency.
+    //A ++ beside the name represents proficiency.
     if (saveClass == "Wizard"){
-        
         $("label[for='saveInt']").text("Intelligence ++");
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
     else if(saveClass == "Fighter"){
-        
         $("label[for='saveCon']").text("Constitution ++");
-        $("label[for='saveCon']").text("Strength ++");
+        $("label[for='saveStr']").text("Strength ++");
     }//end else if
     else if(saveClass == "Cleric"){
-       
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Bard"){
-      
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Druid"){
-      
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveInt']").text("Intelligence ++");
     }//end else if
     else if(saveClass == "Monk"){
-       
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveStr']").text("Strength ++");
     }//end else if
     else if(saveClass == "Paladin"){
-       
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Ranger"){
-       
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveInt']").text("Intelligence ++");
     }//end else if
     else if(saveClass == "Rogue"){
-      
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
     else if(saveClass == "Sorcerer"){
-       
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Warlock"){
-       
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
       else if(saveClass == "Barbarian"){
-       
         $("label[for='saveStr']").text("Strength ++");
         $("label[for='saveCon']").text("Constitution ++");
     }//end else if
