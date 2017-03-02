@@ -206,12 +206,12 @@ fieldset {
 		
 			<div class='col-sm-6'>		
 			<p>Saving Throws</p>
-			<input type="radio" name="saveThrow" id="saveStr"><label for="saveStr">Strength</label><br/>
-			<input type="radio" name="saveThrow" id="saveCon"><label for="saveCon">Constitution</label><br/>
-			<input type="radio" name="saveThrow" id="saveDex"><label for="saveDex">Dexterity</label><br/>
-			<input type="radio" name="saveThrow" id="saveInt"><label for="saveInt">Intelligence</label><br/>
-			<input type="radio" name="saveThrow" id="saveWis"><label for="saveWis">Wisdom</label><br/>
-			<input type="radio" name="saveThrow" id="saveCha"><label for="saveCha">Charisma</label><br/>
+			<label for="saveStr">Strength</label><br/>
+			<label for="saveCon">Constitution</label><br/>
+			<label for="saveDex">Dexterity</label><br/>
+			<label for="saveInt">Intelligence</label><br/>
+			<label for="saveWis">Wisdom</label><br/>
+			<label for="saveCha">Charisma</label><br/>
 
 			<p><input type="button" value="Roll" onclick="saveRoll(this.id)"><input type="text" name="save" id="save"></p>
 		</div>

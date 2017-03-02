@@ -61,194 +61,62 @@ function classSaveThrow() {
 	$("label[for='saveCon']").text("Constitution");
 
     if (saveClass == "Wizard"){
-        $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+        
         $("label[for='saveInt']").text("Intelligence ++");
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
     else if(saveClass == "Fighter"){
-        $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
+        
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveCon']").text("Strength ++");
     }//end else if
     else if(saveClass == "Cleric"){
-        $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-        $("#saveInt").click(function(e){
-            e.preventDefault();
-            });
+       
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Bard"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+      
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Druid"){
-       $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+      
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveInt']").text("Intelligence ++");
     }//end else if
     else if(saveClass == "Monk"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+       
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveStr']").text("Strength ++");
     }//end else if
     else if(saveClass == "Paladin"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+       
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Ranger"){
-       $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+       
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveInt']").text("Intelligence ++");
     }//end else if
     else if(saveClass == "Rogue"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+      
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveWis']").text("Wisdom ++");
     }//end else if
     else if(saveClass == "Sorcerer"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
+       
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
     else if(saveClass == "Warlock"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveStr").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCon").click(function(e){
-            e.preventDefault();
-        });
+       
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
     }//end else if
       else if(saveClass == "Barbarian"){
-       $("#saveInt").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveWis").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveDex").click(function(e){
-            e.preventDefault();
-        });
-       $("#saveCha").click(function(e){
-            e.preventDefault();
-        });
+       
         $("label[for='saveStr']").text("Strength ++");
         $("label[for='saveCon']").text("Constitution ++");
     }//end else if
