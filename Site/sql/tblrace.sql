@@ -42,7 +42,14 @@ INSERT INTO `tblrace` (`raceId`, `race`) VALUES
 (4, 'Wood Elf'),
 (5, 'Lightfoot Halfling'),
 (6, 'Stout Halfling'),
-(7, 'Human');
+(7, 'Human'),
+(8, 'Dragonborn'),
+(9, 'Forest Gnome'),
+(10, 'Rock Gnome'),
+(11, 'Half Elf'),
+(12, 'Half Orc'),
+(13, 'Tiefling');
+
 
 --
 -- Indexes for dumped tables
