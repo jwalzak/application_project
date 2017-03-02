@@ -27,6 +27,9 @@
 
 //populate the select boxes
 
+
+
+
     function populate(slct1, slct2) {
         var s1 = document.getElementById(slct1);
         var s2 = document.getElementById(slct2);
@@ -86,20 +89,31 @@
     
     for (var option in optionArray) {
         if (optionArray.hasOwnProperty(option)) {
-            var pair = optionArray[option];
+            var skills = optionArray[option];
             var checkbox = document.createElement("input");
             checkbox.type = "checkbox";
-            checkbox.name = pair;
-            checkbox.value = pair;
-            checkbox.class = "";
+            checkbox.name = skills;
+            checkbox.value = skills;
+            checkbox.class = "skill";
             s2.appendChild(checkbox);
     
             var label = document.createElement('label')
-            label.htmlFor = pair;
-            label.appendChild(document.createTextNode(pair));
+            label.htmlFor = skills;
+            label.appendChild(document.createTextNode(skills));
 
             s2.appendChild(label);
             s2.appendChild(document.createElement("br"));    
         }
+
+
+$('input[type=checkbox]').on('change', function (e) {
+    if ($('input[type=checkbox]:checked').length > 2) {
+        $(this).prop('checked', false);
+        alert("allowed only 2");
     }
+});
+
+    }
+
+
 }

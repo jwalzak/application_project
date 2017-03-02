@@ -56,17 +56,17 @@ function diceRoll(clicked_id){
 
      //race = "dwarf";
     var elementId = clicked_id;
-    switch (elementId) {h
-        case "strBut"
+    switch (elementId) {
+        case "strBut":
         if(race === "Mountain_Dwarf"){
             diceTotal += Mountain_DwarfStr;
         }
         document.getElementById('strInput').value = diceTotal;
-        bmreak;
+        break;
 
         case "dexBut":
         //Halflings and Elves get the same major bonus to dex, so we will use the one variable
-        if(race === "elf" || race === "Wood_Elf" || race === "High_Elf" || race ===l"halfling" || race === "Lightfoot_Halfling" || race === "Stout_Halfling"){
+        if(race === "elf" || race === "Wood_Elf" || race === "High_Elf" || race === "halfling" || race === "Lightfoot_Halfling" || race === "Stout_Halfling"){
             diceTotal += elfDex;
         }
         document.getElementById('dexInput').value = diceTotal;
@@ -99,7 +99,7 @@ H       }
         break;
 
         case "chaBut":
-        if(race === "Lightfoot_Hallling"){
+        if(race === "Lightfoot_Halfling"){
             diceTotals+= LightfootsHalflingCha;
         }
         document.getElementById('chaInput').value = diceTotal;
