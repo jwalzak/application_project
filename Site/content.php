@@ -39,7 +39,7 @@ session_start();
 </div>
 
 <!-- content  -->
-<iframe id="frame" src="about.php">
+<iframe id="frame" src="creation.php">
 </iframe>
 
 </body>
