@@ -72,25 +72,22 @@ echo '</pre>';
 
 
 <style>
-
 .row {
 border-bottom:1px solid grey;
 	padding:1%;
 }
-
-
-
 .col-sm-3 {
 border-right:1px solid grey;
 }
 #charName {
 	width:100%;
 }
-
 fieldset {
 	border:1px grey solid;
 }
-
+body {
+	background: transparent;
+}
 </style>
 
 <script>
@@ -99,14 +96,11 @@ fieldset {
       icon: false
     });
   } );
-  </script>
+</script>
 
 </head>
 
 <body>
-
-
-
 
 
 
@@ -170,6 +164,12 @@ fieldset {
 			Skills
 			<p id="pText">Choose a Class to begin</p>
 			<div id="slct2"></div>
+			</div>
+			
+			<div class='col-sm-3'>
+			Spells
+			<p id="spellText">Choose a Class to begin</p>
+			<div id="slct3"></div>
 			</div>
 			</div>
 
