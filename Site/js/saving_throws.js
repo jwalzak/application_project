@@ -67,50 +67,62 @@ function classSaveThrow() {
     if (saveClass == "Wizard"){
         $("label[for='saveInt']").text("Intelligence ++");
         $("label[for='saveWis']").text("Wisdom ++");
+        weaponProf(wizardProf);
     }//end else if
     else if(saveClass == "Fighter"){
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveStr']").text("Strength ++");
+        weaponProf(fighterProf);
     }//end else if
     else if(saveClass == "Cleric"){
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
+        weaponProf(clericProf);
     }//end else if
     else if(saveClass == "Bard"){
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveCha']").text("Charisma ++");
+        weaponProf(bardProf);
     }//end else if
     else if(saveClass == "Druid"){
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveInt']").text("Intelligence ++");
+        weaponProf(druidProf);
     }//end else if
     else if(saveClass == "Monk"){
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveStr']").text("Strength ++");
+        weaponProf(monkProf);
     }//end else if
     else if(saveClass == "Paladin"){
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
+        weaponProf(paladinProf);
     }//end else if
     else if(saveClass == "Ranger"){
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveInt']").text("Intelligence ++");
+        weaponProf(rangerProf);
     }//end else if
     else if(saveClass == "Rogue"){
         $("label[for='saveDex']").text("Dexterity ++");
         $("label[for='saveWis']").text("Wisdom ++");
+        weaponProf(rogueProf);
     }//end else if
     else if(saveClass == "Sorcerer"){
         $("label[for='saveCon']").text("Constitution ++");
         $("label[for='saveCha']").text("Charisma ++");
+        weaponProf(sorcererProf);
     }//end else if
     else if(saveClass == "Warlock"){
         $("label[for='saveWis']").text("Wisdom ++");
         $("label[for='saveCha']").text("Charisma ++");
+        weaponProf(warlockProf);
     }//end else if
       else if(saveClass == "Barbarian"){
         $("label[for='saveStr']").text("Strength ++");
         $("label[for='saveCon']").text("Constitution ++");
+        weaponProf(barbProf);
     }//end else if
 }//End classSaveThrow
 

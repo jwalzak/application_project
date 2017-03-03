@@ -56,7 +56,7 @@ let paladinProf = ["simple_mel", "martial_mel", "simple_rang", "martial_rang"];
 let rangerProf = ["simple_mel", "martial_mel", "simple_rang", "martial_rang"];
 let rogueProf = ["simple_mel", "simple_rang", "hand crossbow", "longswords", "rapier", "shortswords"];
 let sorcererProf = ["daggers", "darts", "slings", "quarterstaff", "light crossbow"];
-let warlockProf = ["simple_mel", "simpel_rang"];
+let warlockProf = ["simple_mel", "simple_rang"];
 let wizardProf = ["daggers", "darts", "slings", "quarterstaffs", "light crossbows"];
 
 
@@ -64,6 +64,7 @@ let wizardProf = ["daggers", "darts", "slings", "quarterstaffs", "light crossbow
 
 function weaponProf(classProf){
     let weapon = "";
+    document.getElementById("weaponList").innerHTML = "<h3>Weapons</h3>";
     for(var i = 0; i<classProf.length; i++){
         if(classProf[i] == "simple_mel"){
             //Go through the array of each items in a for loop
@@ -95,5 +96,6 @@ function weaponProf(classProf){
             weapon += classProf[i] + "<br />";
         }//End else
     }//End for loop
-    document.getElementById("weaponList").innerHTML = weapon;
+    document.getElementById("weaponList").innerHTML += weapon;
 }//End function
+

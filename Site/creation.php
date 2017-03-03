@@ -67,7 +67,9 @@ echo '</pre>';
     
     <script src="js/dice_roll.js"></script>
     <script src="js/saving_throws.js"></script>
-	<script src="js/skills.js"></script>
+    <script src="js/skills.js"></script>
+	<script src="js/weapon_prof.js"></script>
+
 
 <style>
 
@@ -260,26 +262,29 @@ fieldset {
         </div>	
     
     </div>
-			
-		<div class='row'>
-			<div class='col-sm-6'>
-				Known Languages:
-				<select id='languages'>
-				<option value='common'>Common</option>
-				<option value='elven'>Elven</option>
-				<option value='dwarven'>Dwarven</option>
-				<option value='orcish'>Orcish</option>
-				<option value='gnomish'>Gnomish</option>
-				</select>
-			</div>
-						
-			<div class='col-sm-6'>
-    			<input type="submit" value='Save Character'>
-    		</div>
+        </form>
+            
+        <div class='row'>
+            <div class='col-sm-6'>
+                Known Languages:
+                <select id='languages'>
+                <option value='common'>Common</option>
+                <option value='elven'>Elven</option>
+                <option value='dwarven'>Dwarven</option>
+                <option value='orcish'>Orcish</option>
+                <option value='gnomish'>Gnomish</option>
+                </select>
+            </div>
+                        
+            <div class='col-sm-6'>
+                <input type="submit" value='Save Character'>
+            </div>
 
-    	</div>
+        </div>
 
-</form>
+    <div id="weaponList" class="col-sm-6">
+        <h3>Weapons</h3>
+    </div>
     
  <p align="right">
  <a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
