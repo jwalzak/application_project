@@ -1,15 +1,15 @@
 <?php
-	session_start();
-	require("navbar.php");
-	//require_once('Char.php');
-	require("connect.php");
+    session_start();
+    require("navbar.php");
+    //require_once('Char.php');
+    require("connect.php");
 
 $races = array();
 $classes = array();
+$_SESSION['charId']="";
 
-
-	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-	
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
 $char = (object) [ 
 'name' => $_POST['charName'],
 'age' => $_POST['charAge'],
@@ -20,12 +20,16 @@ $char = (object) [
 'class' => $_POST['classSelect']
 ];
 
-echo '<pre>';
-print_r($char);
-echo '</pre>';
-	}
+$_SESSION['newChar'] = $char; 
 
-	
+$saveQry = 'INSERT INTO tblChar (name, age, gender, height, weight, race, class) values ("' . $char->name . '", "' . $char->age . '", "'. $char->gender .'","'. $char->height .'","'.$char->weight .'","'.$char->race .'","'.$char->class .'");';
+
+$conn->query($saveQry);
+$_SESSION['charId'] = $conn->insert_id; 
+echo '<pre>';
+var_dump($_SESSION['charId']); 
+echo '</pre>';
+    }
 
 
 ?>
@@ -276,16 +280,13 @@ body {
                 </select>
             </div>
                         
-            <div class='col-sm-6'>
-                <input type="submit" value='Save Character'>
+            <div id='weaponList' class='col-sm-6'>
+            <legend>Weapon Proficiencies</legend>
             </div>
 
         </div>
 
-    <div id="weaponList" class="col-sm-6">
-        <h3>Weapons</h3>
-    </div>
-    
+        <input type="submit" value='Save Character'>
  <p align="right">
  <a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
  </p>

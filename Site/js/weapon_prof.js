@@ -64,36 +64,36 @@ let wizardProf = ["daggers", "darts", "slings", "quarterstaffs", "light crossbow
 
 function weaponProf(classProf){
     let weapon = "";
-    document.getElementById("weaponList").innerHTML = "<h3>Weapons</h3>";
+    document.getElementById("weaponList").innerHTML = "<h4>Weapon Proficiencies</h4>";
     for(var i = 0; i<classProf.length; i++){
         if(classProf[i] == "simple_mel"){
             //Go through the array of each items in a for loop
             for(var j = 0; j<weapons.simple_mel.length; j++){
                 console.log(weapons.simple_mel[j]);
-                weapon += weapons.simple_mel[j] + "<br />";
+                weapon += weapons.simple_mel[j] + ", ";
             }//end inner for
         }//end if
         else if(classProf[i] == "simple_rang"){
             for(var j = 0; j<weapons.simple_rang.length; j++){
                 console.log(weapons.simple_rang[j]);
-                weapon += weapons.simple_rang[j] + "<br />";
+                weapon += weapons.simple_rang[j] + ", ";
             }//End else if for
         }//End else if
         else if(classProf[i] == "martial_mel"){
             for(var j = 0; j<weapons.martial_mel.length; j++){
                 console.log(weapons.martial_mel[j]);
-                weapon += weapons.martial_mel[j] + "<br />";
+                weapon += weapons.martial_mel[j] + ", ";
             }//End for
         }//end else if
         else if(classProf[i] == "martial_rang"){
             for(var j = 0; j< weapons.martial_rang.length; j++){
                 console.log(weapons.martial_rang[j]);
-                weapon += weapons.martial_rang[j] + "<br />";
+                weapon += weapons.martial_rang[j] + ", ";
             }//End for
         }//End else if
         else{
             console.log(classProf[i]);
-            weapon += classProf[i] + "<br />";
+            weapon += classProf[i] + ", ";
         }//End else
     }//End for loop
     document.getElementById("weaponList").innerHTML += weapon;
