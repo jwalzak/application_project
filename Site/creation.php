@@ -250,7 +250,6 @@ body {
 			<label for="saveWis">Wisdom</label><br/>
 			<label for="saveCha">Charisma</label><br/>
 
-			<p><input type="button" value="Roll" onclick="saveRoll(this.id)"><input type="text" name="save" id="save"></p>
 		</div>
 		</div>
 
