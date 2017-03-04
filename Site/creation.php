@@ -91,7 +91,7 @@ echo '</pre>';
     
     <script src="js/dice_roll.js"></script>
     <script src="js/saving_throws.js"></script>
-    <script src="js/skills.js"></script>
+    <script src="js/hp_and_skills.js"></script>
 	<script src="js/weapon_prof.js"></script>
     <script src="js/spells.js"></script>
 
