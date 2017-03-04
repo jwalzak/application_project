@@ -163,7 +163,6 @@ $('input[type=checkbox]').on('change', function (e) {
 //HP function tied to "Roll HP" onClick
 //This is all assuming the player has 0hp and is above level 1
 //after this sprint we can add level 1 and then twique this to do the math automatically, its all prepped
-
 function rollHitPoints() {
 
         if (window.whatsTheClass == "Barbarian") {
@@ -197,10 +196,6 @@ function rollHitPoints() {
             let parsedCon = parseFloat(tempCon);
             document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
-
-        if(temporaryConstitution = null){
-                alert("Make sure to roll Constitution!");
-        }
 }//end function
 
         //temporary Jasons dice thingy
