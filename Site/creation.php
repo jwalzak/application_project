@@ -6,10 +6,13 @@
 
 $races = array();
 $classes = array();
-$_SESSION['charId']="";
 
+if(!isset($_SESSION['currentCharId'])) {
+$_SESSION['currentCharId']="";
+}
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+
+$userId = $_SESSION['userId'];
 $char = (object) [ 
 'name' => $_POST['charName'],
 'age' => $_POST['charAge'],
@@ -22,7 +25,7 @@ $char = (object) [
 
 $_SESSION['newChar'] = $char; 
 
-$saveQry = 'INSERT INTO tblChar (name, age, gender, height, weight, race, class) values ("' . $char->name . '", "' . $char->age . '", "'. $char->gender .'","'. $char->height .'","'.$char->weight .'","'.$char->race .'","'.$char->class .'");';
+$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race, class) values ("' . $userId . '", "' . $char->name . '", "' . $char->age . '", "'. $char->gender .'","'. $char->height .'","'.$char->weight .'","'.$char->race .'","'.$char->class .'");';
 
 $conn->query($saveQry);
 $_SESSION['charId'] = $conn->insert_id; 
@@ -296,7 +299,7 @@ body {
         </div>	
     
     </div>
-        </form>
+       
             
         <div class='row' id='proficencies'>
             <div class='col-sm-6'>
@@ -317,6 +320,7 @@ body {
         </div>
 
         <input type="submit" value='Save Character'>
+         </form>
  <p align="right">
  <a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
  </p>

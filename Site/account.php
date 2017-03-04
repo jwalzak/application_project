@@ -1,8 +1,10 @@
 <?php
+	
 	require_once("connect.php");
 	require("navbar.php");
 	session_start();
-	
+	echo $_SESSION['userId'];
+
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		//if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 			
@@ -24,6 +26,8 @@
 				$conn->query("INSERT INTO user_info (user_name, first_name, last_name, email,
 				password) VALUES ('".$_SESSION['username']."', '".$_SESSION['fname']."', 
 				'".$_SESSION['lname']."', '".$_SESSION['email']."', '".$_SESSION['pword']."')");
+
+				$_SESSION['userId'] = $conn->insert_id;
 				
 				$errors['success'] = "<font color=red>Your account has been created!<br/>You may login with your username, " . $_SESSION['username'] . " in the future to access your <strong>Hero Burger</strong> creations!</font color>";
 			} 
@@ -64,7 +68,7 @@
 	<form method="POST">
 		<div id="userinfoleft" style="float:left;">
 		<p><strong>E-mail</strong><br/>
-			<input type="text" name="email" class="textbox" value="<?php if(isset($_SESSION['email'])) { echo $_SESSION['email']; } ?>"/></p>	
+			<input type="text" name="email" class="textbox" value="<?php if(isset($_SESSION['userId'])) { echo $_SESSION['userId']; } ?>"/></p>	
 		
 		<p><strong>Confirm E-mail</strong><br/>
 			<input type="text" name="emailconf" class="textbox" value="<?php if(isset($_SESSION['emailconf'])) { echo $_SESSION['emailconf']; } ?>"/></p>

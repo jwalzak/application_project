@@ -1,7 +1,12 @@
 <?php
 	require_once('connect.php');
 	session_start();
+	
+	if(!isset($_SESSION['userId'])){
+	$_SESSION['userId'] = "";
 	$_SESSION['username'] = "";
+	}
+	$user = array();
 	
 	//if the session has started previously, skip to next page
 	if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
@@ -13,9 +18,13 @@
 	
 		$username = $_SESSION['username'];
 		$isUser = $conn->query("SELECT * FROM user_info WHERE user_name = '".$username."' LIMIT 1");
+		
 
 		if (isset($username) && $isUser->num_rows == 1) {
 			//user already exists, so don't make another user entry
+		
+	$user = $isUser->fetch_assoc();
+			$_SESSION['userId'] = $user['user_id'];
 			header ("location: content.php");
 		} 
 	
