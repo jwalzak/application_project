@@ -150,7 +150,7 @@ body {
 			<br>
 			<br/>
 
-			<select id="slct1" name="classSelect" onchange="populate(this.id, 'slct2')">
+			<select id="slct1" name="classSelect" onchange="populate(this.id, 'slct2', 'slct3')">
 					<option selected disabled>Choose your Class</option>
 			<?php
 				$qry = 'SELECT class from tblclass';
@@ -206,8 +206,6 @@ body {
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut"></input>
 				<label>Charisma</label>
 				<input name='char' id="chaInput" type="text"><br>
-        
-		
 			</div>
 		
 			<div class='col-sm-6'>		
