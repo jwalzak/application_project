@@ -26,7 +26,7 @@
  */
 
 //In honor of my brand new game show: "whats the class"
-var whatsTheClass = ""; 
+var whatsTheClass; 
 
 //populate the select boxes
     function populate(slct1, slct2) {
@@ -197,6 +197,10 @@ function rollHitPoints() {
             let parsedCon = parseFloat(tempCon);
             document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
+
+        if(temporaryConstitution = null){
+                alert("Make sure to roll Constitution!");
+        }
 }//end function
 
         //temporary Jasons dice thingy
