@@ -55,10 +55,6 @@ echo '</pre>';
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-
-
-    
-
   <script
   src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
@@ -73,9 +69,26 @@ echo '</pre>';
     <script src="js/saving_throws.js"></script>
     <script src="js/skills.js"></script>
 	<script src="js/weapon_prof.js"></script>
-
+    <script src="js/spells.js"></script>
 
 <style>
+
+#container {
+    font-size: 130%;
+}
+
+#age {
+    width:90%;
+    height:40px;
+}
+
+label {
+    font-size:120%;
+}
+#genderSelect {
+    width:45%;
+    margin-left:2%;
+}
 .row {
 border-bottom:1px solid grey;
 	padding:1%;
@@ -113,28 +126,45 @@ body {
     <h1>Hero Creation</h1>
      
     <form method="post">
-        <p><h2>Character Bio</h2></p>
+
         
-			<div class='row'>
-			<div class='col-sm-3'>
-
-			<input id='charName' type="text" placeholder='Character name' name="charName"><br>
-			<input type='text' placeholder='Age' name='charAge'><br><br>
-			Gender<br/>
-			<input type="radio" name="gender" value="female"> Female<br>
-			<input type="radio" name="gender" value="male"> Male <br>
-			<input type="radio" name="gender" value="other"> Other <input type="text" name="otherGender"></p>
-			</div>
-
-			<div class='col-sm-3'>
-            <input type='text' placeholder='height' name='height'><br><br>
-            <input type='text' placeholder='weight' name='weight'>
+		<div class='row' id='personal1'>
+		  
+          <div class='col-sm-6'>
+		      <input id='charName' type="text" placeholder='Character name' name="charName"><br>
+		      <label for='charName'>Character Name</label>
             </div>
-    		
-    		<div class='col-sm-3'>   	
+            <div class='col-sm-3'>
+            <input type='text' placeholder='Age' id='age' name='charAge'><br>
+            <label for='age'>Age</label>
+             
+            </div>
+            <div class='col-sm-3'>
+            <select name='gender' id='genderSelect'>
+		          <option selected disabled>Gender</option>
+                  <option value='female'>Female</option>
+                  <option value='male'>Male</option>
+                  <option value='other'>Other</option>
+              </select>
+              <br>
+              <label for='genderSelect'>Gender</label>
+              </div>
+		  </div><!--end row personal-->
+
+        <div class='row' id='personal2'>  
+		  <div class='col-sm-6'>
+            <input type='text' placeholder='height' name='height'>
+          </div>
+          <div class='col-sm-6'>  
+            <input type='text' placeholder='weight' name='weight'>
+        </div>
+    	</div> <!--end row personal2-->	
+    	
+        <div class='row' id='raceNclass'>
+            <div class='col-sm-4'>   	
 			
-			<select name="raceSelect" id="raceSelect">
-				<option selected disabled>Choose your Race</option>
+		      <select name="raceSelect" id="raceSelect">
+			     <option selected disabled>Choose your Race</option>
 				<?php
 				$qry = 'SELECT race from tblRace';
 				if($result = $conn->query($qry)) {
@@ -145,14 +175,13 @@ body {
 							<option value="<?php echo $races['optionId']; ?>">
 								<?php echo $races['race']; }} ?>
 							</option>
-			</select>
-			
-			<br>
-			<br/>
-
-			<select id="slct1" name="classSelect" onchange="populate(this.id, 'slct2', 'slct3')">
+		       </select><br>
+               <label for='raceSelect'>Choose Race</label>
+		  <br>
+            
+			<select id="slct1" name="classSelect" onchange="populate(this.id, 'slct2'),spells(this.id,'slct3')">
 					<option selected disabled>Choose your Class</option>
-			<?php
+			    <?php
 				$qry = 'SELECT class from tblclass';
 				if($result = $conn->query($qry)) {
        				 for ($i = 0; $i < $result->num_rows; $i++) { 
@@ -162,20 +191,22 @@ body {
 								<?php echo $classes['class']; }} ?>
 							</option>				
 			</select>
+                 <label for='slct1'>Choose Class</label>
+          
 			</div>
 
-			<div class='col-sm-3'>
+            <div class='col-sm-4'> 
 			Skills
 			<p id="pText">Choose a Class to begin</p>
 			<div id="slct2"></div>
 			</div>
 			
-			<div class='col-sm-3'>
-			Spells
-			<p id="spellText">Choose a Class to begin</p>
+			<div class='col-sm-4'>
+			     Spells
+			     <p id="spellText">Choose a Class to begin</p>
 			<div id="slct3"></div>
 			</div>
-			</div>
+		</div>
 
 	<div class='row'>
 					
@@ -206,6 +237,8 @@ body {
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut"></input>
 				<label>Charisma</label>
 				<input name='char' id="chaInput" type="text"><br>
+        
+		
 			</div>
 		
 			<div class='col-sm-6'>		
@@ -223,11 +256,11 @@ body {
 
 
 
-	<div class='row'>				
+	<div class='row' id='story'>				
 		<div class='col-sm-7'>	
 			<legend>Alignment</legend>
 			
-			<div class='row'>
+			<div class='row' id='alignment'>
 
 				<div class='col-sm-4'>
 					<label for='lGood'>Lawful Good</label>
@@ -266,7 +299,7 @@ body {
     </div>
         </form>
             
-        <div class='row'>
+        <div class='row' id='proficencies'>
             <div class='col-sm-6'>
                 Known Languages:
                 <select id='languages'>
