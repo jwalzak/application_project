@@ -197,9 +197,3 @@ function rollHitPoints() {
             document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
 }//end function
-
-        //temporary Jasons dice thingy
-            function dice(num) {
-                let roll = Math.floor((Math.random() * num) + 1);
-                return roll;
-        }
