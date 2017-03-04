@@ -1,5 +1,4 @@
 let die1, die2, die3, die4;
-let diceTotal = 0;
 
 //Create a list of bonuses per race to automatically add to the diceRolls.
 
@@ -20,6 +19,8 @@ let halflingDex = 2;
 //Specialty race bonus
 let lightfoot_HalflingCha = 1;
 let stout_HalflingCon = 1;
+//Declare race as a empty value
+let race= '';
 
 //Get the value from the select box in creation.php
 document.addEventListener("change", function(){
@@ -34,6 +35,7 @@ function dice(num) {
 }
 
 function diceRoll(clicked_id){
+    let diceTotal = 0;
     //Roll each die individually, should probably be an array
     die1 = dice(6);
     die2 = dice(6);
