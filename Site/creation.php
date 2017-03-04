@@ -20,8 +20,29 @@ $char = (object) [
 'height' => $_POST['height'],
 'weight' => $_POST['weight'],
 'race' => str_replace('_', ' ', $_POST['raceSelect']),
-'class' => $_POST['classSelect']
+'class' => $_POST['classSelect'],
+'skills' => array(), 
+'spells' => array(), 
+'str' => $_POST['str'], 
+'dex' => $_POST['dex'], 
+'int' => $_POST['int'],
+'wis' => $_POST['wis'],
+'con' => $_POST['con'],
+'cha' => $_POST['cha'],
+'alignment' => $_POST['alignment'],
+'backstory' => $_POST['backstory'],
+'languages' => $_POST['languages']  
 ];
+
+if(isset($_POST['Acrobatics'])){
+    $x = 'Acrobatics';
+$char->skills = array_push($char->skills, $x); 
+
+
+}
+
+
+
 
 $_SESSION['newChar'] = $char; 
 
@@ -30,7 +51,7 @@ $saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race
 $conn->query($saveQry);
 $_SESSION['charId'] = $conn->insert_id; 
 echo '<pre>';
-var_dump($_SESSION['charId']); 
+print_r($char);
 echo '</pre>';
     }
 
@@ -239,7 +260,7 @@ body {
 
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut"></input>
 				<label>Charisma</label>
-				<input name='char' id="chaInput" type="text"><br>
+				<input name='cha' id="chaInput" type="text"><br>
         
 		
 			</div>
@@ -304,7 +325,7 @@ body {
         <div class='row' id='proficencies'>
             <div class='col-sm-6'>
                 Known Languages:
-                <select id='languages'>
+                <select name='languages' id='languages'>
                 <option value='common'>Common</option>
                 <option value='elven'>Elven</option>
                 <option value='dwarven'>Dwarven</option>
@@ -317,6 +338,17 @@ body {
             <legend>Weapon Proficiencies</legend>
             </div>
 
+        </div>
+
+        <div class='row'>
+        <div class='col-sm-6' id='hpRoll'>
+        <legend>Hit Point Calculator</legend>
+            <input type="button" id="setHitPoints" onclick="rollHitPoints()" value="Roll HP">
+            <input type="text" id="hitPointText">
+        </div>
+        <div class='col-sm-6'>
+        <legend>Armour Proficiencies</legend>
+        </div>
         </div>
 
         <input type="submit" value='Save Character'>
