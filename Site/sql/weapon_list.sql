@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2017 at 12:07 AM
+-- Generation Time: Mar 04, 2017 at 12:30 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -68,6 +68,17 @@ CREATE TABLE `weapon_list` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `weapon_list`
+--
+
+INSERT INTO `weapon_list` (`id`, `class`, `Club`, `Dagger`, `Graeatclub`, `Handaxe`, `Javelin`, `Light Hammer`, `Mace`, `Quarter Staff`, `Sickle`, `Spear`, `Light Crossbow`, `Dart`, `Shortbow`, `Sling`, `Battleaxe`, `Flail`, `Glaive`, `Greataxe`, `Greatsword`, `Halberd`, `Lance`, `Shortsword`, `Maul`, `Morningstar`, `Pike`, `Rapier`, `Scimtar`, `Trident`, `War Pick`, `Warhammer`, `Whip`, `Blowgun`, `Hand Crossbow`, `Heavy Crossbow`, `Longbow`, `Net`) VALUES
+(1, 'wizard', 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2, 'barbarian', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(3, 'fighter', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(4, 'paladin', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(5, 'ranger', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -85,7 +96,6 @@ ALTER TABLE `weapon_list`
 -- AUTO_INCREMENT for table `weapon_list`
 --
 ALTER TABLE `weapon_list`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
