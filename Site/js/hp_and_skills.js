@@ -168,22 +168,34 @@ function rollHitPoints() {
 
         if (window.whatsTheClass == "Barbarian") {
             let roll = dice(12);
-            document.getElementById('hitPointText').value = (roll + " HP");
+            let tempCon = document.getElementById('conInput').value;
+            let parsedRoll = parseFloat(roll);
+            let parsedCon = parseFloat(tempCon);
+            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
 
         else if (window.whatsTheClass == "Fighter" || window.whatsTheClass == "Paladin" || window.whatsTheClass == "Ranger") {
             let roll = dice(10);
-            document.getElementById('hitPointText').value = (roll + " HP");
+            let tempCon = document.getElementById('conInput').value;
+            let parsedRoll = parseFloat(roll);
+            let parsedCon = parseFloat(tempCon);
+            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
 
         else if (window.whatsTheClass == "Bard" || window.whatsTheClass == "Cleric" || window.whatsTheClass == "Druid" || window.whatsTheClass == "Monk" || window.whatsTheClass == "Rogue" || window.whatsTheClass == "Warlock") {
             let roll = dice(8);
-            document.getElementById('hitPointText').value = (roll + " HP");
+            let tempCon = document.getElementById('conInput').value;
+            let parsedRoll = parseFloat(roll);
+            let parsedCon = parseFloat(tempCon);
+            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
 
         else if (window.whatsTheClass == "Sorcerer" || window.whatsTheClass == "Wizard") {
             let roll = dice(6);
-            document.getElementById('hitPointText').value = (roll + " HP");
+            let tempCon = document.getElementById('conInput').value;
+            let parsedRoll = parseFloat(roll);
+            let parsedCon = parseFloat(tempCon);
+            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
         }
 }//end function
 
