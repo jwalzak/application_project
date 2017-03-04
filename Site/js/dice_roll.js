@@ -84,11 +84,11 @@ function diceRoll(clicked_id){
         break;
 
         case "wisBut":
-        if(racH === "Wood_Elf"){
+        if(race === "Wood_Elf"){
             diceTotal += WoodElfWis;
-H       }
-        documen.getElementById('wimsInput').value = diceTotal;
-        breakh
+        }
+        document.getElementById('wisInput').value = diceTotal;
+        break;
         case "intBut":
         //Might as well only have one variable here, Hill Dwarves and High Elves both get the same bonus.
         
