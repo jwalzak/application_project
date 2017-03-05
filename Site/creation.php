@@ -103,7 +103,6 @@ echo '</pre>';
 
 #age {
     width:90%;
-    height:40px;
 }
 
 label {

@@ -1,5 +1,3 @@
-
- 
  /** SPELLS 
  *
  * Spell Casting Classes
@@ -52,11 +50,9 @@ function spells(slct1,slct3) {
 
         } else if (s1.value == "Paladin") {
             document.getElementById("spellText").innerHTML = "You cannot choose spells";
-            var spellArray = ["Bless", "Command","Compelled Duel", "Cure Wounds", "Detect Evil and Good", "Detect Magic", "Detect Poison and Disease", "Divine Favor", "Heroism", "Protection from Evil and Good", "Purify Food and Drink", "Searing Smite", "Shield of Faith", "Thunderous Smite", "Wrathful Smite"];
 
         } else if (s1.value == "Ranger") {
             document.getElementById("spellText").innerHTML = "You cannot choose spells";
-            var spellArray = ["Alarm", "Animal Friendship", "Cure Wounds", "Detect Magic", "Detect Poison and Disease", "Ensnaring Strike", "Fog Cloud", "Goodberry", "Hail of Thorns", "Hunter’s Mark", "Jump", "Longstrider", "Speak with Animals"];
 
         } else if (s1.value == "Rogue") {
             document.getElementById("spellText").innerHTML = "You cannot choose spells";

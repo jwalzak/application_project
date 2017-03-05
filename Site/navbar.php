@@ -9,8 +9,6 @@
 <!-- navigation  -->
 <nav>
 	<ul>
-		<li><a href="charvault.php">Character Vault</a></li>
-		
 		<div class="dropdown">
 			<li><a href="creation.php">Hero Creation</a></li>
 				<div class="dropdown-content">
@@ -25,6 +23,8 @@
 		
 		<li><a href="summary.php" style="margin-left: 4%;">Hero Summary</a></li>
 
+		<li><a href="charvault.php">Character Vault</a></li>
+		
 		<div class="dropdown">
 			<li><a href="account.php">Account</a></li>
 				<div class="dropdown-content">
@@ -32,7 +32,5 @@
 					<a href="#">Manage my Account</a>
 				</div>
 		</div>
-
-		<li><a href="about.php" style="margin-left: 4%;">About</a></li>
 	</ul>
 </nav>
