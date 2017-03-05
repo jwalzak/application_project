@@ -1,11 +1,10 @@
-//Dwarves -- Dwarven Resilience -- advantage on saving throws against poison
-//Elves -- Fey Ancestry -- advantage on saving throws against charmed and magic can't put you to sleep
-//Halfling --braves -- Advantage on saving throws against being frightened
-//Human -- Stout Resilience -- Advantage on saving throws against poison damage
-
 /**
- *Class Saving throws
- *-------------------
+ * Saves - Represents an attempt to resist a spell, trap, poison disease or similar thread
+ * Saving throw, roll a D20 + modifier
+ *
+ * -------------------
+ * CLASS SAVING THROWS
+ * -------------------
  *
  * Cleric Saving Throws
  *     - Wisdom
@@ -19,14 +18,8 @@
  *     - At 15th level Wisdom
  * Wizard Saving Throws
  *     - Intelligence
- *     - Wisdom
- * 
- **/
- 
-/**
- *Saves - Represents an attempt to resist a spell, trap, poison disease or similar thread
+ *     - Wisdom 
  *
- *Saving throw, roll a D20 + modifier.
  **/
  
 let saveClass = "";
@@ -37,13 +30,9 @@ let classProf;
 let saveRoll = function(){
     let saveDie = 20;
     let result = dice(saveDie);
-    //Will have to make differnt saves for each classes prof.
+    //Will have to make different saves for each classes prof.
     document.getElementById('save').value = result;
 }//End saveRoll
-
-////////////
-//Classes //
-////////////
 
 //This function will trigger when the dropdown menu for classes is changed.
 document.addEventListener("change", function() {
@@ -136,51 +125,3 @@ function classSaveThrow() {
         weaponProf(wizardProf);
     }//end else if
 }//End classSaveThrow
-
-//RACIAL BONUSES
-//Saving throw checklist options populate based on class choice
-//If you're a ___, then you can see ____
-function raceBonuses() {
-    if(raceSelect == "Mountain_Dwarf") {
-        $("#saveStr").show();
-		$("#saveCon").show();
-    } else if(raceSelect == "Hill_Dwarf") {
-        $("#saveCon").show();
-		$("#saveWis").show();
-    } else if(raceSelect == "High_Elf") {
-        $("#saveDex").show();
-		$("#saveInt").show();
-    } else if(raceSelect == "Wood_Elf") {
-        $("#saveDex").show();
-		$("#saveWis").show();
-    } else if(raceSelect == "Lightfoot_Halfling") {
-        $("#saveDex").show();
-		$("#saveCha").show();
-    } else if(raceSelect == "Stout_Halfling") {
-        $("#saveDex").show();
-		$("#saveCon").show();
-    } else if(raceSelect == "Human") {
-        $("#saveStr").show();
-		$("#saveCon").show();
-		$("#saveDex").show();
-		$("#saveInt").show();
-		$("#saveWis").show();
-		$("#saveCha").show();
-    }
-}
-
-//On page load jQuery will prevent the default action of the radio buttons based on character class.
-//Saving throws are based on a 20 sided die
-//Players can roll on each of the skills, but they get a bonus to two skill based on their class.
-$(document).ready(function(){
-	$("saveStr").hide();
-	$("saveCon").hide();
-	$("saveDex").hide();
-	$("saveInt").hide();
-	$("saveWis").hide();
-	$("saveCha").hide();
-	
-	raceBonuses();
-	//classBonuses();
-//Save proficiency
-});
