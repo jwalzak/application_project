@@ -22,6 +22,13 @@ let stout_HalflingCon = 1;
 //Declare race as a empty value
 let race= '';
 
+let mod = 0;
+
+function modifiers(dt){
+    if(dt == 1) mod = -5; else if(dt == 2 || dt == 3) mod = -4; else if(dt == 4 || dt == 4 ) mod = -3; else if(dt == 6 || dt == 7) mod = -2; else if(dt == 8 || dt == 9 ) mod = -1; else if(dt == 10 || dt == 11 ) mod = 0; else if(dt == 12 || dt == 13 ) mod = 1; else if(dt == 14 || dt == 15 ) mod = 2; else if(dt == 16 || dt == 17) mod = 3; else if(dt == 18 || dt == 19) mod = 4; else if (dt == 20 || 21) mod = 5; 
+    return mod; 
+}
+
 //Get the value from the select box in creation.php
 document.addEventListener("change", function(){
     race = document.getElementById("raceSelect").options.text;
@@ -47,7 +54,7 @@ function diceRoll(clicked_id){
     rolledDice.sort(function(a,b){return b-a});
     //Remove the smallest rolled die
     rolledDice.splice(-1, 1);
-    for(let i = 0; i<rolledDice.length; i++){
+    for(let i = 0; i <rolledDice.length; i++){
         console.log(rolledDice[i]);
     }
 
@@ -60,6 +67,7 @@ function diceRoll(clicked_id){
     var elementId = clicked_id;
     switch (elementId) {
         case "strBut":
+        
         if(race === "Mountain_Dwarf"){
             diceTotal += Mountain_DwarfStr;
         }
@@ -83,6 +91,10 @@ function diceRoll(clicked_id){
             diceTotal += Stout_HalflingCon;
         }
         document.getElementById('conInput').value = diceTotal;
+            
+            mod = modifiers(diceTotal);
+            console.log("Your Constitution modifier is " + mod);
+            
         break;
 
         case "wisBut":
@@ -109,6 +121,5 @@ function diceRoll(clicked_id){
 
     }
 
-    console.log("The total of the three highest dice is " + diceTotal);
     diceTotal = 0;
 }

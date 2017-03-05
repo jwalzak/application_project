@@ -117,12 +117,14 @@ var whatsTheClass;
         }
 
 //Limits checkboxing dynamically
+/* Needs work!!!!!!!!!!!
 $('input[type=checkbox]').on('change', function (e) {
     if ($('input[type=checkbox]:checked').length > 2) {
         $(this).prop('checked', false);
         alert("allowed only 2");
     }
 });
+*/
     }//end FOR
 }//end POPULATE
 
@@ -167,33 +169,31 @@ function rollHitPoints() {
 
         if (window.whatsTheClass == "Barbarian") {
             let roll = dice(12);
-            let tempCon = document.getElementById('conInput').value;
             let parsedRoll = parseFloat(roll);
-            let parsedCon = parseFloat(tempCon);
-            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
+            document.getElementById('hitPointText').value = (parsedRoll + mod + " HP");
+            console.log('Class: ' + whatsTheClass + '   Hit Dice: 12   Roll: ' + parsedRoll + '  Constitution modifier: ' + mod  + "  HP: " + (parsedRoll + mod));
         }
 
         else if (window.whatsTheClass == "Fighter" || window.whatsTheClass == "Paladin" || window.whatsTheClass == "Ranger") {
             let roll = dice(10);
-            let tempCon = document.getElementById('conInput').value;
             let parsedRoll = parseFloat(roll);
-            let parsedCon = parseFloat(tempCon);
-            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
-        }
+            document.getElementById('hitPointText').value = (parsedRoll + mod + " HP");
+            console.log('Class: ' + whatsTheClass + '  Hit Dice 10    Roll: ' + parsedRoll + '   Constitution modifier: ' + mod + "  HP: " + (parsedRoll + mod));
+            }
 
         else if (window.whatsTheClass == "Bard" || window.whatsTheClass == "Cleric" || window.whatsTheClass == "Druid" || window.whatsTheClass == "Monk" || window.whatsTheClass == "Rogue" || window.whatsTheClass == "Warlock") {
             let roll = dice(8);
-            let tempCon = document.getElementById('conInput').value;
             let parsedRoll = parseFloat(roll);
-            let parsedCon = parseFloat(tempCon);
-            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
-        }
+            document.getElementById('hitPointText').value = (parsedRoll + mod + " HP");
+            console.log('Class: ' + whatsTheClass + '  Hit Dice: 8   Roll: ' + parsedRoll + '  Constitution modifier: ' + mod + "  HP: " + (parsedRoll + mod));
+        
+        }
 
         else if (window.whatsTheClass == "Sorcerer" || window.whatsTheClass == "Wizard") {
             let roll = dice(6);
-            let tempCon = document.getElementById('conInput').value;
             let parsedRoll = parseFloat(roll);
-            let parsedCon = parseFloat(tempCon);
-            document.getElementById('hitPointText').value = (parsedRoll + parsedCon + " HP");
-        }
+            document.getElementById('hitPointText').value = (parsedRoll + mod + " HP");
+            console.log('Class: ' + whatsTheClass + ' Hit Dice: 6   Roll: ' + parsedRoll + ' Constitution modifier: ' + mod + "  HP: " + (parsedRoll + mod));
+        
+        }
 }//end function
