@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2017 at 11:06 PM
+-- Generation Time: Mar 05, 2017 at 11:13 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -47,7 +47,7 @@ CREATE TABLE `weapons` (
 --
 
 INSERT INTO `weapons` (`id`, `bard`, `barbarian`, `cleric`, `druid`, `fighter`, `monk`, `paladin`, `ranger`, `rogue`, `sorcerer`, `warlock`, `wizard`) VALUES
-(1, 'Club, Dagger, Greatclub, Handaxe, Javelin, Light Hammer, Mace, Quarter Staff, Sickle, Spear, Light Crossbow, Dart, Shortbow, Sling, Hand Crossbow, Longsword, Rapiers, Short Swords', '', '', '', '', '', '', '', '', '', '', '');
+(1, 'Club, Dagger, Greatclub, Handaxe, Javelin, Light Hammer, Mace, Quarter Staff, Sickle, Spear, Light Crossbow, Dart, Shortbow, Sling, Hand Crossbow, Longsword, Rapiers, Short Swords', 'Club, Dagger, Greatclub, Handaxe, Javelin, Light Hammer, Mace, Quarter Staff, Sickle, Spear, Light Crossbow, Dart, Shortbow, Sling, Battleaxe, Flail, Glaive, Greataxe, Greatsword, Halberd, Lance, Shortsword, Maul, Morningstart, Pike, Rapier, Scimtar, Shortsword, Trident, War Pick, Warhammer, Whip, Blowgun, Hand Crossbow, Heavy Crossbow, Longbow, Net', '', '', 'Club, Dagger, Greatclub, Handaxe, Javelin, Light Hammer, Mace, Quarter Staff, Sickle, Spear, Light Crossbow, Dart, Shortbow, Sling, Battleaxe, Flail, Glaive, Greataxe, Greatsword, Halberd, Lance, Shortsword, Maul, Morningstart, Pike, Rapier, Scimtar, Shortsword, Trident, War Pick, Warhammer, Whip, Blowgun, Hand Crossbow, Heavy Crossbow, Longbow, Net', '', 'Club, Dagger, Greatclub, Handaxe, Javelin, Light Hammer, Mace, Quarter Staff, Sickle, Spear, Light Crossbow, Dart, Shortbow, Sling, Battleaxe, Flail, Glaive, Greataxe, Greatsword, Halberd, Lance, Shortsword, Maul, Morningstart, Pike, Rapier, Scimtar, Shortsword, Trident, War Pick, Warhammer, Whip, Blowgun, Hand Crossbow, Heavy Crossbow, Longbow, Net', 'Club, Dagger, Greatclub, Handaxe, Javelin, Light Hammer, Mace, Quarter Staff, Sickle, Spear, Light Crossbow, Dart, Shortbow, Sling, Battleaxe, Flail, Glaive, Greataxe, Greatsword, Halberd, Lance, Shortsword, Maul, Morningstart, Pike, Rapier, Scimtar, Shortsword, Trident, War Pick, Warhammer, Whip, Blowgun, Hand Crossbow, Heavy Crossbow, Longbow, Net', '', '', '', '');
 
 --
 -- Indexes for dumped tables
