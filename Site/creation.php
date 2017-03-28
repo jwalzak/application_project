@@ -247,41 +247,6 @@
 			<div class="col-xs-12" id="char-rolls"></div>
 			<hr style="border:1px solid red"/>
 		</div>
-		
-		<div class='row' id='story'>				
-			<div class='col-sm-7'>	
-				<legend>Alignment</legend>
-			
-				<div class='row' id='alignment'>
-					<div class='col-sm-4'>
-						<label for='lGood'>Lawful Good</label>
-						<input class='align' type="radio" id='lGood' name="alignment" value="Lawful Good">
-						<label for='nGood'>Neutral Good</label>
-						<input class='align' type="radio" id='nGood' name="alignment" value="Neutral Good">
-						<label for='cGood'>Chaotic Good</label>
-						<input class='align' type="radio" id='cGood' name="alignment" value="Chaotic Good"> 
-					</div>
-					
-					<div class='col-sm-4'>
-						<label for='lNeutral'>Lawful Neutral</label>
-						<input class='align' type="radio" id='lNeutral' name="alignment" value="Lawful Neutral">
-						<label for='tNeutral'>True Neutral</label>
-						<input class='align' type="radio" id='tNeutral' name="alignment" value="True Neutral">
-						<label for='cNeutral'>Chaotic Neutral</label>
-						<input class='align' type="radio" id='cNeutral' name="alignment" value="Chaotic Neutral"> 
-					</div>
-					
-					<div class='col-sm-4'>
-						<label for='nEvil'>Neutral Evil</label>
-						<input class='align' type="radio" id='nEvil' name="alignment" value="Neutral Evil"> 
-						<label for='lEvil'>Lawful Evil</label>
-						<input class='align' type="radio" id='lEvil' name="alignment" value="Lawful Evil"> 
-						<label for='cEvil'>Chaotic Evil</label>
-						<input class='align' type="radio" id='cEvil' name="alignment" value="Chaotic Evil"> 
-					</div>
-				</div>
-			</div>
-		</div> <!-- end story-->
 			
 		<div class='row'>				
 			<div class='col-xs-12'>	
@@ -381,6 +346,7 @@
 
 			<div class='col-sm-6' id='levels'>
 				<p class="category">Leveling</p>
+				<input id='leveling' type="text" placeholder='a textbox for isaiah' name="leveling"></p>
 			</div>
 		</div>
 		</form>
