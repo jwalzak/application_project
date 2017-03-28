@@ -17,7 +17,6 @@
 	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	crossorigin="anonymous"></script>
 	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>
-	
 	<script src="js/charvault.js"></script>
 </head>
 
@@ -47,7 +46,7 @@
 	<p align="right">
 		<a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
 	</p>
-	<form action="creation.php" id="editChar" method="POST">
+	<form id="editChar" method="POST">
 		<input type="submit" value="Edit Character">
 	</form>
 </div>

@@ -1,6 +1,6 @@
 <?php
-require_once("connect.php");
-// $conn->slect_db("heroschema");
+require("connect.php");
+$conn->select_db("heroschema");
 
 if(isset($_GET['action'])){
     if($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == 'char'){
@@ -8,11 +8,11 @@ if(isset($_GET['action'])){
     }
 }
 
-    function char($conn){
+    function char($connection){
         $listArray = array();
         
-        $query = "SELECT * FROM character_sheet";
-        $rs = $conn->query($query);
+        $query = "SELECT * FROM tblchar";
+        $rs = $connection->query($query);
 
         while($info = $rs->fetch_assoc()){
             //Get each character from the db
@@ -21,8 +21,6 @@ if(isset($_GET['action'])){
     $rs->close();
 
     echo json_encode($listArray);
-
-
     }//End char();
 
 
