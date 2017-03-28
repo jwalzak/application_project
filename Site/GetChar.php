@@ -1,23 +1,14 @@
 <?php
 require_once("connect.php");
-$conn->slect_db("heroschema");
+// $conn->slect_db("heroschema");
 
-class GetChar {
+if(isset($_GET['action'])){
+    if($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == 'char'){
+        char($conn);
+    }
+}
 
-        private  $char_f_name;
-        private  $char_l_name;
-        private  $char_class;
-        private  $char_race;
-        private  $char_gender; 
-        private  $char_history;
-        private  $strength;
-        private  $dexterity;
-        private  $constitution;
-        private  $wisdom;
-        private  $intelligence;
-        private  $charisma;
-
-    function char(){
+    function char($conn){
         $listArray = array();
         
         $query = "SELECT * FROM character_sheet";
@@ -33,6 +24,6 @@ class GetChar {
 
 
     }//End char();
-}
+
 
 ?>
