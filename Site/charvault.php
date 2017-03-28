@@ -1,5 +1,6 @@
 <?php
 	require_once("navbar.php");
+	require_once("GetChar.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +13,10 @@
 	<link rel="stylesheet" href="css/subcontent.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto" rel="stylesheet">
 	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			crossorigin="anonymous"></script>
+	<script src="js/charvault.js"></script>
 </head>
 
 <body>
@@ -40,6 +45,9 @@
 	<p align="right">
 		<a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
 	</p>
+	<form action="creation.php" id="editChar" method="POST">
+		<input type="submit" value="Edit Character">
+	</form>
 </div>
 
 </body>
