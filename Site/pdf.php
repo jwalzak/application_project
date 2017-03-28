@@ -56,7 +56,7 @@ function Footer()
     $this->SetFont('Arial','I',8);
 
     // Page number
-    $this->Cell(0,10,'Page ' . $this->PageNo().'/{nb}'.$pdfName,0,0,'C');
+    $this->Cell(0,10,'Page ' . $this->PageNo().'/{nb}',0,0,'C');
 }
 }
 
@@ -71,7 +71,7 @@ $pdf->Cell(0,10,'Gender: ' . $pdfGender, 0, 1);
 $pdf->Cell(0,10,'Age: ' . $pdfAge, 0, 1);
 $pdf->Cell(0,10,'Height/Weight: ' . $pdfHeight . "/" . $pdfWeight, 0, 1);
 
-$pdf->Line(20, 45, 210-20, 45); // 20mm from each edge
+$pdf->Cell(0,10,'________________', 0, 1);
 
 $pdf->Cell(0,10,'Race: ' . $pdfRace, 0, 1);
 $pdf->Cell(0,10,'Class: ' . $pdfClass, 0, 1);
