@@ -1,12 +1,7 @@
 <?php
 	require_once('connect.php');
 	session_start();
-	
-	if(!isset($_SESSION['userId'])){
-	$_SESSION['userId'] = "";
 	$_SESSION['username'] = "";
-	}
-	$user = array();
 	
 	//if the session has started previously, skip to next page
 	if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
@@ -18,13 +13,9 @@
 	
 		$username = $_SESSION['username'];
 		$isUser = $conn->query("SELECT * FROM user_info WHERE user_name = '".$username."' LIMIT 1");
-		
 
 		if (isset($username) && $isUser->num_rows == 1) {
 			//user already exists, so don't make another user entry
-		
-	$user = $isUser->fetch_assoc();
-			$_SESSION['userId'] = $user['user_id'];
 			header ("location: content.php");
 		} 
 	
@@ -38,14 +29,32 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Hero Burger &#x2605; Made to Order!</title>
 
-	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/index.css" media="screen"/>
 	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto">
+	
+	<style>
+	@media screen and (max-width: 384px) {
+		img {
+			top: 100px;
+		}	
+		#signin {
+			width: 90%;
+		}
+		.textbox {
+			width: 80%;
+			margin-top: 5px;
+		}
+		.button {
+			margin-top: 10px;
+		}
+	}
+	</style>
 </head>
 
 <body>
-	<!-- header  -->
-	<div id="header">
+	<!-- main frame  -->
+	<div id="main">
 	
 		<!-- logo image -->
 		<img src="images/logo1.png"/>
@@ -56,10 +65,10 @@
 			Login with your username and password below:<br/>
 			
 			<form method="POST">
-				<input type="text" class="textbox" name="username" placeholder="&nbsp;&nbsp;username" value="<?php if(isset($_SESSION['username'])){ echo $_SESSION['username'];} ?>"/>
+				<input type="text" class="textbox" name="username" placeholder="&nbsp;&nbsp;username" value="<?php if(isset($_SESSION['username'])){ echo $_SESSION['username'];} ?>"/><br class="newline"/>
 				<input type="password" class="textbox" name="password" placeholder="&nbsp;&nbsp;password"/>
-				
-				<input type="submit" name="start" class="button" value="Go"/>
+				<br class="newline"/>
+				<input type="submit" name="start" class="button" value="GO"/>
 			</form>
 			
 			<p><br/><a href="account.php">Create an Account</a> or <a href="content.php">Continue without signing in</a></p>

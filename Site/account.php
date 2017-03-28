@@ -1,7 +1,5 @@
 <?php
-	
 	require_once("connect.php");
-	require("navbar.php");
 	session_start();
 	echo $_SESSION['userId'];
 
@@ -53,50 +51,61 @@
 	<title>Hero Burger &#x2605; Made to Order!</title>
 
 	<link rel="stylesheet" href="css/subcontent.css"/>
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galindo|Fira+Sans+Condensed|Frijole|Press+Start+2P|Crete+Round|Droid+Serif">
+	
 	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>	
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			crossorigin="anonymous"></script>
 </head>
 
 <body>
-<!-- navigation  -->
-
-<!-- content  -->
-<div id="content">
-	<h1>Account Info</h1>
-	<p>With an account, you're able to save your <strong>Hero Burger</strong> creations for later use! Register below.</p>
+	<!-- content  -->
+	<div id="content">
+		<h1>Create an Account</h1>
 	
-	<form method="POST">
-		<div id="userinfoleft" style="float:left;">
-		<p><strong>E-mail</strong><br/>
-			<input type="text" name="email" class="textbox" value="<?php if(isset($_SESSION['userId'])) { echo $_SESSION['userId']; } ?>"/></p>	
+		<form method="POST">
+			<div id="userinfoleft" style="float:left;">
+				<p class="category">First Name<br/>
+				<input type="text" name="fname" class="textbox" placeholder="first name" value="<?php if(isset($_SESSION['fname'])) { echo $_SESSION['fname']; } ?>"/></p>
 		
-		<p><strong>Confirm E-mail</strong><br/>
-			<input type="text" name="emailconf" class="textbox" value="<?php if(isset($_SESSION['emailconf'])) { echo $_SESSION['emailconf']; } ?>"/></p>
+				<p class="category">Last Name<br/>
+				<input type="text" name="lname" class="textbox" placeholder="last name" value="<?php if(isset($_SESSION['lname'])) { echo $_SESSION['lname']; } ?>"/></p>
+				
+				<p class="category">E-mail<br/>
+				<input type="text" name="email" class="textbox" placeholder="e-mail" value="<?php if(isset($_SESSION['email'])) { echo $_SESSION['email']; } ?>"/></p>	
 		
-		<p><strong>Username</strong><br/>
-			<input type="text" name="username" class="textbox" value="<?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; } ?>"/></p>	
-		</div>
+				<p class="category">Confirm E-mail<br/>
+				<input type="text" name="emailconf" class="textbox" placeholder="e-mail" value="<?php if(isset($_SESSION['emailconf'])) { echo $_SESSION['emailconf']; } ?>"/></p>
 		
-		<div id="userinformid" style="float:left; margin-left:4%;">
-		<p><strong>First Name</strong><br/>
-			<input type="text" name="fname" class="textbox" value="<?php if(isset($_SESSION['fname'])) { echo $_SESSION['fname']; } ?>"/></p>
+				<p class="category">Username<br/>
+				<input type="text" name="username" class="textbox" placeholder="username" value="<?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; } ?>"/></p>	
+			
+				<p class="category">Password<br/>
+				<input type="password" name="pword" class="textbox" placeholder="password" value="<?php if(isset($_SESSION['pword'])) { echo $_SESSION['pword']; } ?>"/></p>
+				
+				<p><br/><input type="submit" class="button" value="Register"/></p>
+			</div>
 		
-		<p><strong>Last Name</strong><br/>
-			<input type="text" name="lname" class="textbox" value="<?php if(isset($_SESSION['lname'])) { echo $_SESSION['lname']; } ?>"/></p>	
-		
-		<p><strong>Password</strong><br/>
-			<input type="password" name="pword" class="textbox" value="<?php if(isset($_SESSION['pword'])) { echo $_SESSION['pword']; } ?>"/></p>
-		</div>
-		
-		<div id="userinforight" style="float:left; margin-left:4%;">
-		<p><br/><input type="submit" class="button" value="Register" style="border: #79553b solid 3px; padding: 5px 14px 5px 14px; color: #ffffff; font-size: 18px; font-family: 'Crete Round', serif; background: #83ae1e;	cursor: pointer;"/></p>
-		<?php if (isset($errors['invalid'])){ echo $errors['invalid'] . "<br/>"; } ?>
-		<?php if (isset($errors['match'])){ echo $errors['match']; } ?>
-		<?php if (isset($errors['success'])){ echo $errors['success']; } ?>
-		</div>
-	</form>
-
-</div>
+			<div id="userinforight" style="float:left; margin-left:4%;">
+				<p>With an account, you're able to save your <strong>Hero Burger</strong> creations for later use! Register below.</p>
+				
+				<?php if (isset($errors['invalid'])){ echo $errors['invalid'] . "<br/>"; } ?>
+				<?php if (isset($errors['match'])){ echo $errors['match']; } ?>
+				<?php if (isset($errors['success'])){ echo $errors['success']; } ?>
+			</div>
+		</form>
+	</div>
+	
+	<div>
+		<img src="images/burg.gif" style="max-width:30%; float:right; padding: 0 4% 4% 0">
+	</div>
+	
+	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>
 	
 </body>
 </html>

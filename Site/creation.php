@@ -1,6 +1,5 @@
 <?php
     session_start();
-    require("navbar.php");
     require("connect.php");
 
 	$races = array();
@@ -54,16 +53,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Hero Burger &#x2605; Made to Order!</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hero Burger &#x2605; Made to Order!</title>
 
-	<link rel="stylesheet" href="css/subcontent.css"/>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Permanent+Marker|Crete+Round|Droid+Serif|Roboto">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
-    <script src="https://use.fontawesome.com/97f2d469d8.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galindo|Fira+Sans+Condensed|Frijole|Press+Start+2P|Crete+Round|Droid+Serif">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/creation.css"/>
+	
+	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>	
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
 			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 			crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -77,178 +76,178 @@
     <script src="js/spells.js"></script>
 	<script src="js/racebonuses.js"></script>
 
-<style>
-#container {
-    font-size: 130%;
-}
-#age {
-    width:90%;
-}
-label {
-    font-size:120%;
-}
-#genderSelect {
-    width:45%;
-    margin-left:2%;
-}
-.row {
-border-bottom:1px solid grey;
-	padding:1%;
-}
-.col-sm-3 {
-border-right:1px solid grey;
-}
-#charName {
-	width:100%;
-}
-fieldset {
-	border:1px grey solid;
-}
-body {
-	background: transparent;
-}
-</style>
-
-<script>
-$( function() {
-	$( ".align" ).checkboxradio({
-		icon: false
-	});
-} );
-</script>
+	<script>
+	$( function() {
+		$( ".align" ).checkboxradio({
+			icon: false
+		});
+	} );
+	</script>
+	
+	<style>
+	html {
+		overflow-x: hidden;
+	}
+	body {
+		background: url("images/bg.png");
+	}
+	#genderSelect {
+		width:45%;
+		margin-left:2%;
+	}
+	</style>
 </head>
 
 <body>
 	<!-- content  -->
-	<div id="content" class='container'>
-		<h1>Hero Creation</h1>
-		<form method="post">
+	<section id="content" class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>Hero Creation</h1>
+            </div>
+        </div>
+     
+		<form method="post">		
+		<div class="row">
+			<div class="col-xs-12" id="char-bio" style="height: 50px"></div>
+		</div>
 		
-		<div class='row' id='personal1'>
-			<div class='col-sm-6'>
-				<label for='charName'>Character Name</label>
-				<input id='charName' type="text" placeholder='Character name' name="charName"><br>
-            </div>
-            
-			<div class='col-sm-3'>
-				<label for='age'>Age</label>
-				<input type='text' placeholder='Age' id='age' name='charAge'><br/>
-            </div>
-            
-			<div class='col-sm-3'>
-				<label for='genderSelect'>Gender</label><br/>
+		<div class="row">
+			<div class="col-sm-6" id="personal1">
+				<p class="category">Name<br/>
+				<input id='charName' type="text" placeholder='character name' name="charName"></p>
+				
+				<p class="category">Age<br/>
+				<input type='text' placeholder='age' name='charAge' class="textbox"></p>
+				
+				<p class="category">Gender</p>
 				<select name='gender' id='genderSelect'>
-					<option selected disabled>Gender</option>
+					<option selected disabled> </option>
 					<option value='female'>Female</option>
 					<option value='male'>Male</option>
 					<option value='other'>Other</option>
-				</select><br/>
-            </div>
-		</div><!--end row personal1-->
+				</select></p>
+				
+				<p class="category">Known Languages<br/>
+                <select id='languages'>
+					<option value='common'>Common</option>
+					<option value='elven'>Elven</option>
+					<option value='dwarven'>Dwarven</option>
+					<option value='orcish'>Orcish</option>
+					<option value='gnomish'>Gnomish</option>
+                </select></p>
+			</div><!--end row personal1-->
 
-        <div class='row' id='personal2'>  
-			<div class='col-sm-6'>
-				<label for='height'>Height</label><br/>
-				<input type='text' placeholder='height' name='height'>
-			</div>
-        
-			<div class='col-sm-6'>
-				<label for='weight'>Weight</label><br/>
-				<input type='text' placeholder='weight' name='weight'>
-			</div>
-    	</div> <!--end row personal2-->	
+			<div class="col-sm-6" id="personal2 raceNclass">
+				<p class="category">Height<br/>
+				<input type='text' placeholder='height' name='height'></p>
+					
+				<p class="category">Weight<br/>
+						<input type='text' placeholder='weight' name='weight'></p>
+				
+				<p class="category">Race<br/>
+					<select name="raceSelect" id="raceSelect">
+					<option selected disabled> </option>
+				<?php
+				$qry = 'SELECT race from tblRace';
+				if($result = $conn->query($qry)) {
+					for ($i = 0; $i < $result->num_rows; $i++) { 
+						$row = $result->fetch_assoc();
+						$races['optionId'] = str_replace(' ', '_', $row['race']);
+						$races['race'] = $row['race']; ?>
+						<option value="<?php echo $races['optionId']; ?>">
+							<?php echo $races['race']; }} ?>
+						</option>
+					</select>
+				</p>
+					
+				<p class="category">Class<br/>
+					<select id="slct1" name="classSelect" onchange="populate(this.id,'slct2'), spells(this.id,'slct3')">
+					<option selected disabled> </option>
+				<?php
+				$qry = 'SELECT class from tblclass';
+				if($result = $conn->query($qry)) {
+					for ($i = 0; $i < $result->num_rows; $i++) { 
+						$row = $result->fetch_assoc();
+						$classes['class'] = $row['class']; ?>
+						<option value="<?php echo $classes['class']; ?>">
+							<?php echo $classes['class']; }} ?>
+						</option>				
+					</select>
+				</p>
+			</div><!--end row personal2-->	
+		</div>
     	
-        <div class='row' id='raceNclass'>
-            <div class='col-sm-4'>   	
-				<label for='raceSelect'>Choose Race</label><br/>
-				<select id="raceSelect" name="raceSelect">
-					<option selected disabled>Choose your Race</option>
-					<?php $qry = 'SELECT race from tblRace';
-						if($result = $conn->query($qry)) {
-							for ($i = 0; $i < $result->num_rows; $i++) { 
-								$row = $result->fetch_assoc();
-								$races['optionId'] = str_replace(' ', '_', $row['race']);
-								$races['race'] = $row['race']; ?>
-								<option value="<?php echo $races['optionId']; ?>">
-							<?php echo $races['race']; }
-						} ?>
-					</option>
-		       </select><p></p>
-               
-				<label for='slct1'>Choose Class</label><br/>
-				<select id="slct1" name="classSelect" onchange="populate(this.id,'slct2'), spells(this.id,'slct3')">
-					<option selected disabled>Choose your Class</option>
-					<?php $qry = 'SELECT class from tblclass';
-						if($result = $conn->query($qry)) {
-							for ($i = 0; $i < $result->num_rows; $i++) { 
-								$row = $result->fetch_assoc();
-								$classes['class'] = $row['class']; ?>
-								<option value="<?php echo $classes['class']; ?>">
-							<?php echo $classes['class']; }
-						} ?>
-					</option>				
-				</select>
-			</div>
-
-            <div class='col-sm-4'> 
-				Skills
+		<div class="row">
+			<div class="col-xs-12" id="char-skills"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+		
+		<div class="row">
+			<div class='col-sm-6'>
+				<p class="category">Skills<br/>
 				<p id="pText">Choose a Class to begin</p>
 				<div id="slct2"></div>
 			</div>
 			
-			<div class='col-sm-4'>
-			     Spells
-			     <p id="spellText">Choose a Class to begin</p>
+			<div class='col-sm-6'>
+				<p class="category">Spells<br/>
+				<p id="spellText">Choose a Class to begin</p>
 				<div id="slct3"></div>
 			</div>
-		</div> <!--end row raceNclass-->
-
-		<div class='row'>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12" id="char-rolls"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+		
+		<div class="row">		
 			<div id="rolls" class="col-sm-6">
-				<p>Ability Scores</p>  
-				
+				<p class="category">Ability Scores</p>  
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
 				<label>Strength</label>
-				<input name='str' id="strInput" type="text">
-				<label for="rolledStr"></label><br/>
+				<input name='str' id="strInput" type="text"><br/>
 
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="dexBut"></input>
 				<label>Dexterity</label>
-				<input name='dex' id="dexInput" type="text">
-				<label for="rolledDex"></label><br/>
+				<input name='dex' id="dexInput" type="text"><br>
 
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="conBut"></input>
 				<label>Constitution</label>
-				<input name='con' id="conInput" type="text">
-				<label for="rolledCon"></label><br/>
+				<input name='con' id="conInput" type="text"><br>
         
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="wisBut"></input>
 				<label>Wisdom</label>
-				<input name='wis' id="wisInput" type="text">
-				<label for="rolledWis"></label><br/>
+				<input name='wis' id="wisInput" type="text"><br>
 
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="intBut"></input>
 				<label>Intelligence</label>
-				<input name='int' id="intInput" type="text">
-				<label for="rolledInt"></label><br/>
+				<input name='int' id="intInput" type="text"><br>
 
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut"></input>
 				<label>Charisma</label>
-				<input name='cha' id="chaInput" type="text">
-				<label for="rolledCha"></label><br/>
+				<input name='char' id="chaInput" type="text"><br>
 			</div>
 		
 			<div class='col-sm-6'>		
-				<p>Saving Throws</p>
+				<p class="category">Saving Throws</p>
 				<label for="saveStr">Strength</label><br/>
 				<label for="saveCon">Constitution</label><br/>
 				<label for="saveDex">Dexterity</label><br/>
 				<label for="saveInt">Intelligence</label><br/>
 				<label for="saveWis">Wisdom</label><br/>
 				<label for="saveCha">Charisma</label><br/>
-			</div>
-		</div> <!-- end -->
 
+				<p><input type="button" value="Roll" onclick="saveRoll(this.id)"><input type="text" name="save" id="save"></p>
+			</div>
+		</div><!-- end -->
+
+		<div class="row">
+			<div class="col-xs-12" id="char-rolls"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+		
 		<div class='row' id='story'>				
 			<div class='col-sm-7'>	
 				<legend>Alignment</legend>
@@ -284,47 +283,109 @@ $( function() {
 			</div>
 		</div> <!-- end story-->
 			
-		<div class='col-sm-5'>
-			<legend>Character Backstory</legend>
-			<textarea rows="6" cols="60" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure blah"></textarea>   
+		<div class='row'>				
+			<div class='col-xs-12'>	
+				<p class="category">Weapon Proficiencies</p>
+				<div id='weaponList' class='col-xs-12'>
+				</div>
+			</div>
 		</div>
-            
-		<div class='row' id='proficencies'>
-			<div class='col-sm-6'>
-				<label for='knownLanguages'>Known Languages</label><br/>
-				<select name='languages' id='languages'>
-				<option value='common'>Common</option>
-				<option value='elven'>Elven</option>
-				<option value='dwarven'>Dwarven</option>
-				<option value='orcish'>Orcish</option>
-				<option value='gnomish'>Gnomish</option>
-				</select>
-			</div>
-                        
-			<div id='weaponList' class='col-sm-6'>
-				<legend>Weapon Proficiencies</legend>
-			</div>
-		</div> <!-- end proficencies -->
 
+		<div class='row'>				
+			<div class='col-xs-12'>	
+				<p class="category">Armour Proficiencies</p>
+				<div id='armour-prof' class='col-xs-12'>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12" id="char-alignment"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+		
+		<div class='row'>				
+			<div class='col-xs-12'>	
+			<p class="category">Alignment</p>
+			
+			<div class='row'>
+				<div class='col-xs-3'>
+					<label for='lGood'>Lawful Good</label>
+					<input class='align' type="radio" id='lGood' name="alignment" value="Lawful Good">
+					<label for='nGood'>Neutral Good</label>
+					<input class='align' type="radio" id='nGood' name="alignment" value="Neutral Good">
+					<label for='cGood'>Chaotic Good</label>
+					<input class='align' type="radio" id='cGood' name="alignment" value="Chaotic Good"> 
+				</div>
+					
+				<div class='col-xs-3'>
+					<label for='lNeutral'>Lawful Neutral</label>
+					<input class='align' type="radio" id='lNeutral' name="alignment" value="Lawful Neutral">
+					<label for='tNeutral'>True Neutral</label>
+					<input class='align' type="radio" id='tNeutral' name="alignment" value="True Neutral">
+					<label for='cNeutral'>Chaotic Neutral</label>
+					<input class='align' type="radio" id='cNeutral' name="alignment" value="Chaotic Neutral"> 
+				</div>
+					
+				<div class='col-xs-3'>
+					<label for='nEvil'>Neutral Evil</label>
+					<input class='align' type="radio" id='nEvil' name="alignment" value="Neutral Evil"> 
+					<label for='lEvil'>Lawful Evil</label>
+					<input class='align' type="radio" id='lEvil' name="alignment" value="Lawful Evil"> 
+					<label for='cEvil'>Chaotic Evil</label>
+					<input class='align' type="radio" id='cEvil' name="alignment" value="Chaotic Evil"> 
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12" id="char-story"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+		
+		<div class='row'>				
+			<div class='col-xs-12'>	
+				<p class="category">Backstory</p>
+				<textarea rows="6" cols="60" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure blah"></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12" id="char-image"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+
+		<div class="row">				
+			<div class='col-xs-12'>	
+				<p class="category">Character Image</p>
+				<div class="col-sm-6" id="show-charimage"></div>
+
+				<div class="col-sm-6" id="upload-charimage">
+					<input type="file" name="charphoto" accept="image/*" class="choosefile"/>
+				</div>
+			</div>
+        </div>
+		
+		<div class="row">
+			<div class="col-xs-12"></div>
+			<hr style="border:1px solid red"/>
+		</div>
+		
 		<div class='row'>
 			<div class='col-sm-6' id='hpRoll'>
-				<legend>Hit Point Calculator</legend>
+				<p class="category">Hit Point Calculator</p>
 				<input type="button" id="setHitPoints" onclick="rollHitPoints()" value="Roll HP">
 				<input type="text" id="hitPointText">
 			</div>
-		
-			<div class='col-sm-6'>
-				<legend>Armour Proficiencies</legend>
-			</div>
-		</div> <!-- end -->
 
-			<input type="submit" value='Save Character'>
-        </form>
-		 
-		<p align="right">
-			<a href="#top"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></a>
-		</p>
-	</div>
+			<div class='col-sm-6' id='levels'>
+				<p class="category">Leveling</p>
+			</div>
+		</div>
+		</form>
+			
+        <input type="submit" class="button" style="width: 230px;" value="Save Character">
 
 </body>
 </html>
