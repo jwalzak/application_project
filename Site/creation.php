@@ -44,9 +44,9 @@
 
 		$conn->query($saveQry);
 		$_SESSION['charId'] = $conn->insert_id; 
-		echo '<pre>';
-		print_r($char);
-		echo '</pre>';
+		//echo '<pre>';
+		//print_r($char);
+		//echo '</pre>';
     }
 ?>
 
