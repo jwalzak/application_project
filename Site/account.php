@@ -1,7 +1,7 @@
 <?php
 	require_once("connect.php");
 	session_start();
-	echo $_SESSION['userId'];
+	//echo $_SESSION['userId'];
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		//if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
@@ -50,17 +50,27 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Hero Burger &#x2605; Made to Order!</title>
 
-	<link rel="stylesheet" href="css/subcontent.css"/>
+	<!-- Google Fonts CSS -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galindo|Fira+Sans+Condensed|Frijole|Press+Start+2P|Crete+Round|Droid+Serif">
-	
+	<!-- Font Awesome Icons JS -->
 	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>	
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
-			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-			crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-			integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-			crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<!-- Latest compiled Bootstrap JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/subcontent.css"/>
+	
+	<style>
+	body {
+		background: url("images/bg.png");
+	}
+	.textbox {
+		padding: 8px;
+	}
+	</style>
 </head>
 
 <body>
@@ -69,8 +79,11 @@
 		<h1>Create an Account</h1>
 	
 		<form method="POST">
-			<div id="userinfoleft" style="float:left;">
-				<p class="category">First Name<br/>
+		<div class="row">
+            <div class="col-sm-6">
+				<p>With an account, you're able to save your <strong>Hero Burger</strong> creations for later use!</p>
+				
+                <p class="category">First Name<br/>
 				<input type="text" name="fname" class="textbox" placeholder="first name" value="<?php if(isset($_SESSION['fname'])) { echo $_SESSION['fname']; } ?>"/></p>
 		
 				<p class="category">Last Name<br/>
@@ -89,23 +102,18 @@
 				<input type="password" name="pword" class="textbox" placeholder="password" value="<?php if(isset($_SESSION['pword'])) { echo $_SESSION['pword']; } ?>"/></p>
 				
 				<p><br/><input type="submit" class="button" value="Register"/></p>
-			</div>
-		
-			<div id="userinforight" style="float:left; margin-left:4%;">
-				<p>With an account, you're able to save your <strong>Hero Burger</strong> creations for later use! Register below.</p>
-				
+            </div>
+        
+			<div class="col-sm-6">
 				<?php if (isset($errors['invalid'])){ echo $errors['invalid'] . "<br/>"; } ?>
 				<?php if (isset($errors['match'])){ echo $errors['match']; } ?>
 				<?php if (isset($errors['success'])){ echo $errors['success']; } ?>
-			</div>
+				
+				<img src="images/burg.gif" id="burger" style="max-width: 80%">
+            </div>		
+		</div>
 		</form>
 	</div>
-	
-	<div>
-		<img src="images/burg.gif" style="max-width:30%; float:right; padding: 0 4% 4% 0">
-	</div>
-	
-	<script src="https://use.fontawesome.com/97f2d469d8.js"></script>
 	
 </body>
 </html>

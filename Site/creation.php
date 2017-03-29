@@ -109,7 +109,7 @@
      
 		<form method="post">		
 		<div class="row">
-			<div class="col-xs-12" id="char-bio" style="height: 50px"></div>
+			<div class="col-xs-12" id="char-basics" style="height: 50px"></div>
 		</div>
 		
 		<div class="row">
@@ -203,7 +203,7 @@
 		</div>
 		
 		<div class="row">		
-			<div id="rolls" class="col-sm-6">
+			<div id="rolls" class="col-sm-6" id="char-abilities">
 				<p class="category">Ability Scores</p>  
 				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
 				<label>Strength</label>
@@ -244,12 +244,12 @@
 		</div><!-- end -->
 
 		<div class="row">
-			<div class="col-xs-12" id="char-rolls"></div>
+			<div class="col-xs-12"></div>
 			<hr style="border:1px solid red"/>
 		</div>
 			
 		<div class='row'>				
-			<div class='col-xs-12'>	
+			<div class='col-xs-12' id="char-profs">	
 				<p class="category">Weapon Proficiencies</p>
 				<div id='weaponList' class='col-xs-12'>
 				</div>
@@ -265,12 +265,12 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-xs-12" id="char-alignment"></div>
+			<div class="col-xs-12"></div>
 			<hr style="border:1px solid red"/>
 		</div>
 		
 		<div class='row'>				
-			<div class='col-xs-12'>	
+			<div class='col-xs-12' id="char-align">	
 			<p class="category">Alignment</p>
 			
 			<div class='row'>

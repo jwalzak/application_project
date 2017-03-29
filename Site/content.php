@@ -16,33 +16,52 @@ session_start();
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			crossorigin="anonymous"></script>
+			
+	<script>
+	$(function () {
+		$("#link-creation").on("click", function () {
+			$("#frame").load("creation.php");
+		});
+		$("#link-summary").on("click", function () {
+			$("#frame").load("summary.php");
+		});
+		$("#link-vault").on("click", function () {
+			$("#frame").load("charvault.php");
+		});
+		$("#link-account").on("click", function () {
+			$("#frame").load("account.php");
+		});
+	});
+	</script>
+	<style>nav li {margin: 0 20px;}</style>
 </head>
 
 <body>
 	<!-- navigation -->
 	<nav>
 		<ul>
-			<!--<li><img src="images/logosm.png"></li>-->
 			<li><i class="fa fa-shield" aria-hidden="true"></i></li>
 		
 			<div class="dropdown">	
-			<li><a href="creation.php" class="targetlink">Creation</a></li>
+			<li><a href="creation.php" class="targetlink" id="link-creation">Creation</a>&nbsp;</li>
 				<div class="dropdown-content">
-					<a href="#">Hero Basics</a>
-					<a href="#">Background Story</a>
-					<a href="#">Spells & Skills</a>
-					<a href="#">Weapons & Armour</a>
-					<a href="#">Character Image</a>
+					<a href="#char-basics">Basics</a>
+					<a href="#char-skills">Spells & Skills</a>
+					<a href="#char-abilities">Ability Scores</a>
+					<a href="#char-profs">Weapons & Armour</a>
+					<a href="#char-align">Alignment</a>
+					<a href="#char-story">Backstory</a>			
+					<a href="#char-image">Character Image</a>
 					<a href="summary.php">Hero Summary</a>
 				</div>
 			</div>
 		
-			<li><a href="summary.php" class="targetlink" style="margin-left:4%;">Summary</a>&nbsp;&nbsp;</li>
+			<li><a href="summary.php" class="targetlink" id="link-summary">Summary</a></li>
 		
-			<li><a href="charvault.php" class="targetlink">Character Vault</a>&nbsp;&nbsp;&nbsp;</li>
+			<li><a href="charvault.php" class="targetlink" id="link-vault">Character Vault</a></li>
 		
 			<div class="dropdown">
-				<li><a href="account.php" class="targetlink">Account</a>&nbsp;&nbsp;</li>
+				<li><a href="account.php" class="targetlink" id="link-account">Account</a>&nbsp;</li>
 				<div class="dropdown-content">
 					<a href="account.php">Create</a>
 					<a href="#">Manage</a>
@@ -55,9 +74,10 @@ session_start();
 	</nav>
 	
 	<!-- content -->
-	<iframe id="frame" src="creation.php"></iframe>
+	<!-- links from the above navbar will load into the frame via jquery -->
+	<iframe id="frame" src="account.php"></iframe>
 
-	<!-- footer -->
+	<!-- footer has copyright info and social media links -->
 	<div id="footer">
 		<p id="copyright">
 			&copy; Copyright 2017 <a href="mailto:theateam@fanshaweonline.ca">The A-Team</a>. All Rights Reserved.<br class="newline"/>
