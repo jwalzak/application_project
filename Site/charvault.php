@@ -26,7 +26,7 @@
 		<h1>Character Vault</h1>
 		<p>Select a character to view their summary sheet.</p>  
 	
-		<div id="image-container">
+		<!-- <div id="image-container">
 			<img src="images/logosm.png"/><br/>
 			Character Name
 		</div>
@@ -39,11 +39,7 @@
 		<div id="image-container">
 			<img src="images/logosm.png"/><br/>
 			Character Name
-		</div>
-	
-		<form id="editChar" method="POST">
-			<input type="submit" class="button" value="Edit Character">
-		</form>
+		</div> -->
 	</div>
 
 </body>

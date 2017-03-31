@@ -7,7 +7,8 @@ $(document).ready(function(){
 
 function getChar(){
     $.get("GetChar.php?action=char", function(res){
-        loadChar(res);
+        let pJSON = $.parseJSON(res);
+        loadChar(pJSON);
     });
 }
 
@@ -17,9 +18,15 @@ function loadChar(character){
     console.log(character);
     //Declare variables from the json returned from the db
 
-    var $heroClass = $("<div>").attr('class', "heroClass").attr('id', character[i].charid);
-
+    
     //Loops thorugh the array and template each result
     for(var i = 0; i<character.length; i++){
+    let $container = $("<div>").attr('id', character[i].charId);
+    let $charName = $("<a>").attr('href', 'creation.php').text(character[i].name);
+    let $charImg = $("<img>").attr('src', "images/logosm.png");
+    $container.append($charImg);
+    $container.append($charName);
+
+        $("#content").append($container);
     }//End for
 }//End loadChar
