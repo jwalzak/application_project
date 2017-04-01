@@ -30,3 +30,10 @@ function loadChar(character){
         $("#content").append($container);
     }//End for
 }//End loadChar
+
+
+function getOneChar(characterID){
+    $.post("GetChar.php?action=oneChar&id=" + characterID, $(this).serialize(), function(res){
+        console.log(res);
+    });
+}//End getOneChar();

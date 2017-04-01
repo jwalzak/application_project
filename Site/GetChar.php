@@ -5,7 +5,11 @@ $conn->select_db("heroschema");
 if(isset($_GET['action'])){
     if($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == 'char'){
         char($conn);
-    }
+    }//End if
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['action'] == 'oneChar'){
+        oneChar($conn);
+    }//End if
 }
 
     function char($connection){
@@ -23,5 +27,13 @@ if(isset($_GET['action'])){
     echo json_encode($listArray);
     }//End char();
 
+    function oneChar($connection){
+        $listArray = array();
+        $num = $_GET['id'];
+
+        echo json_encode($_GET);
+
+        $query = "SElECT * FROM tblchar WHERE charid = " . $num;
+    }
 
 ?>
