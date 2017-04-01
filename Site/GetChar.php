@@ -10,7 +10,8 @@ if(isset($_GET['action'])){
     if($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['action'] == 'oneChar'){
         oneChar($conn);
     }//End if
-}
+}//End outer if
+
 
     function char($connection){
         $listArray = array();
@@ -31,9 +32,17 @@ if(isset($_GET['action'])){
         $listArray = array();
         $num = $_GET['id'];
 
-        echo json_encode($_GET);
-
         $query = "SElECT * FROM tblchar WHERE charid = " . $num;
-    }
+
+        $rs = $connection->query($query);
+
+        while($info = $rs->fetch_assoc()){
+            array_push($listArray, $info);
+        }//End while
+
+        echo json_encode($listArray);
+
+    }//End oneChar()
+
 
 ?>
