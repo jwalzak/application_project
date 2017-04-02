@@ -59,3 +59,33 @@ h1 {
 	font-size: 44px;
 	color: #79553b;
 }
+
+checkbox {
+	width: 20px;
+	position: relative;
+	margin: 20px auto;
+	&:after {
+		content: "";
+		width: 9px;
+		height: 5px;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		border: #83ae1e solid 3px;
+		border-top: none;
+		border-right: none;
+		background: transparent;
+		opacity: 0;
+		transform: rotate(-45deg);
+	}
+	&:hover::after {
+		opacity: 0.3;
+	}
+}
+input[type=checkbox] {
+	visibility: hidden;
+		&:checked + label:after {
+			opacity: 1;
+		}    
+	}
+}

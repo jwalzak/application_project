@@ -91,9 +91,26 @@
 	body {
 		background: url("images/bg.png");
 	}
-	#genderSelect {
-		width:45%;
-		margin-left:2%;
+	.dropdown {
+		border: #83ae1e solid 3px;
+		border-radius: 7px;
+		background: #f1ffb7;
+		padding: 8px 15px;
+		width: 90%;
+	}
+	hr {
+		border: 3px solid #83ae1e;
+		width: 75%;
+	}
+	::-webkit-input-placeholder {
+		color: #83ae1e;
+	}
+	.choosefile {
+		border: #83ae1e solid 3px;
+		border-radius: 7px;
+		background: #f1ffb7;
+		padding: 8px 15px;
+		width: 90%;
 	}
 	</style>
 </head>
@@ -115,13 +132,13 @@
 		<div class="row">
 			<div class="col-sm-6" id="personal1">
 				<p class="category">Name<br/>
-				<input id='charName' type="text" placeholder='character name' name="charName"></p>
+				<input type="text" placeholder="character name" id="charName" name="charName" class="textbox"></p>
 				
 				<p class="category">Age<br/>
-				<input type='text' placeholder='age' name='charAge' class="textbox"></p>
+				<input type="text" placeholder="age" name="charAge" class="textbox"></p>
 				
-				<p class="category">Gender</p>
-				<select name='gender' id='genderSelect'>
+				<p class="category">Gender<br/>
+				<select id="genderSelect" name="gender" class="dropdown">
 					<option selected disabled> </option>
 					<option value='female'>Female</option>
 					<option value='male'>Male</option>
@@ -129,7 +146,7 @@
 				</select></p>
 				
 				<p class="category">Known Languages<br/>
-                <select id='languages'>
+                <select id="languages" class="dropdown">
 					<option value='common'>Common</option>
 					<option value='elven'>Elven</option>
 					<option value='dwarven'>Dwarven</option>
@@ -140,13 +157,13 @@
 
 			<div class="col-sm-6" id="personal2 raceNclass">
 				<p class="category">Height<br/>
-				<input type='text' placeholder='height' name='height'></p>
+				<input type='text' placeholder='height' name='height' class="textbox"></p>
 					
 				<p class="category">Weight<br/>
-						<input type='text' placeholder='weight' name='weight'></p>
+				<input type='text' placeholder='weight' name='weight' class="textbox"></p>
 				
 				<p class="category">Race<br/>
-					<select name="raceSelect" id="raceSelect">
+					<select name="raceSelect" id="raceSelect" class="dropdown">
 					<option selected disabled> </option>
 				<?php
 				$qry = 'SELECT race from tblRace';
@@ -162,7 +179,7 @@
 				</p>
 					
 				<p class="category">Class<br/>
-					<select id="slct1" name="classSelect" onchange="populate(this.id,'slct2'), spells(this.id,'slct3')">
+					<select id="slct1" name="classSelect" class="dropdown" onchange="populate(this.id,'slct2'), spells(this.id,'slct3')">
 					<option selected disabled> </option>
 				<?php
 				$qry = 'SELECT class from tblclass';
@@ -180,7 +197,7 @@
     	
 		<div class="row">
 			<div class="col-xs-12" id="char-skills"></div>
-			<hr style="border:1px solid red"/>
+			<hr/>
 		</div>
 		
 		<div class="row">
@@ -198,36 +215,36 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-xs-12" id="char-rolls"></div>
-			<hr style="border:1px solid red"/>
+			<div class="col-xs-12" id="char-abilities"></div>
+			<hr/>
 		</div>
 		
 		<div class="row">		
-			<div id="rolls" class="col-sm-6" id="char-abilities">
+			<div id="rolls" class="col-sm-6">
 				<p class="category">Ability Scores</p>  
-				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="strBut"></input>
+				<input value="Roll" type="button" class="button" onclick="diceRoll(this.id)" id="strBut"></input>
 				<label>Strength</label>
-				<input name='str' id="strInput" type="text"><br/>
+				<input name='str' id="strInput" type="text" class="textbox" style="width: 50%; margin-right: 20px; float:right"><br/>
 
-				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="dexBut"></input>
+				<input value="Roll" type="button" class="button" class="button" onclick="diceRoll(this.id)" id="dexBut"></input>
 				<label>Dexterity</label>
-				<input name='dex' id="dexInput" type="text"><br>
+				<input name='dex' id="dexInput" type="text" class="textbox" style="width: 50%; margin-right: 20px; float:right"><br/>
 
-				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="conBut"></input>
+				<input value="Roll" type="button" class="button" onclick="diceRoll(this.id)" id="conBut"></input>
 				<label>Constitution</label>
-				<input name='con' id="conInput" type="text"><br>
+				<input name='con' id="conInput" type="text" class="textbox" style="width: 50%; margin-right: 20px; float:right"><br/>
         
-				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="wisBut"></input>
+				<input value="Roll" type="button" class="button" onclick="diceRoll(this.id)" id="wisBut"></input>
 				<label>Wisdom</label>
-				<input name='wis' id="wisInput" type="text"><br>
+				<input name='wis' id="wisInput" type="text" class="textbox" style="width: 50%; margin-right: 20px; float:right"><br/>
 
-				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="intBut"></input>
+				<input value="Roll" type="button" class="button" onclick="diceRoll(this.id)" id="intBut"></input>
 				<label>Intelligence</label>
-				<input name='int' id="intInput" type="text"><br>
+				<input name='int' id="intInput" type="text" class="textbox" style="width: 50%; margin-right: 20px; float:right"><br/>
 
-				<input value="Roll" type="button" onclick="diceRoll(this.id)" id="chaBut"></input>
+				<input value="Roll" type="button" class="button" onclick="diceRoll(this.id)" id="chaBut"></input>
 				<label>Charisma</label>
-				<input name='char' id="chaInput" type="text"><br>
+				<input name='char' id="chaInput" type="text" class="textbox" style="width: 50%; margin-right: 20px; float:right"><br/>
 			</div>
 		
 			<div class='col-sm-6'>		
@@ -239,25 +256,24 @@
 				<label for="saveWis">Wisdom</label><br/>
 				<label for="saveCha">Charisma</label><br/>
 
-				<p><input type="button" value="Roll" onclick="saveRoll(this.id)"><input type="text" name="save" id="save"></p>
+				<p><input type="button" class="button" value="Roll" onclick="saveRoll(this.id)">
+				<input type="text" name="save" id="save" class="textbox" style="width: 50%; margin-left:10px"></p>
 			</div>
 		</div><!-- end -->
 
 		<div class="row">
-			<div class="col-xs-12"></div>
-			<hr style="border:1px solid red"/>
+			<div class="col-xs-12" id="char-profs"></div>
+			<hr/>
 		</div>
 			
 		<div class='row'>				
-			<div class='col-xs-12' id="char-profs">	
+			<div class='col-xs-6'>	
 				<p class="category">Weapon Proficiencies</p>
 				<div id='weaponList' class='col-xs-12'>
 				</div>
 			</div>
-		</div>
-
-		<div class='row'>				
-			<div class='col-xs-12'>	
+						
+			<div class='col-xs-6'>	
 				<p class="category">Armour Proficiencies</p>
 				<div id='armour-prof' class='col-xs-12'>
 				</div>
@@ -265,12 +281,12 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-xs-12"></div>
-			<hr style="border:1px solid red"/>
+			<div class="col-xs-12" id="char-align"></div>
+			<hr/>
 		</div>
 		
 		<div class='row'>				
-			<div class='col-xs-12' id="char-align">	
+			<div class='col-xs-12'>	
 			<p class="category">Alignment</p>
 			
 			<div class='row'>
@@ -306,19 +322,19 @@
 		
 		<div class="row">
 			<div class="col-xs-12" id="char-story"></div>
-			<hr style="border:1px solid red"/>
+			<hr/>
 		</div>
 		
 		<div class='row'>				
 			<div class='col-xs-12'>	
 				<p class="category">Backstory</p>
-				<textarea rows="6" cols="60" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure blah"></textarea>
+				<textarea rows="6" cols="60" class="textbox" name="backstory" placeholder="Here you can outline your character's unique backstory. Blah blah blah adventures, blah blah treasure, blah!"></textarea>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12" id="char-image"></div>
-			<hr style="border:1px solid red"/>
+			<hr/>
 		</div>
 
 		<div class="row">				
@@ -334,24 +350,24 @@
 		
 		<div class="row">
 			<div class="col-xs-12"></div>
-			<hr style="border:1px solid red"/>
+			<hr/>
 		</div>
 		
 		<div class='row'>
 			<div class='col-sm-6' id='hpRoll'>
 				<p class="category">Hit Point Calculator</p>
-				<input type="button" id="setHitPoints" onclick="rollHitPoints()" value="Roll HP">
-				<input type="text" id="hitPointText">
+				<input type="button" id="setHitPoints" onclick="rollHitPoints()" value="Roll HP" class="button">
+				<input type="text" id="hitPointText" class="textbox" style="width: 50%; margin-left:10px">
 			</div>
 
 			<div class='col-sm-6' id='levels'>
 				<p class="category">Leveling</p>
-				<input id='leveling' type="text" placeholder='a textbox for isaiah' name="leveling"></p>
+				<input id='leveling' type="text" placeholder='a textbox for isaiah' name="leveling" class="textbox"></p>
 			</div>
 		</div>
 		</form>
 			
-        <input type="submit" class="button" style="width: 230px;" value="Save Character">
+        <p><br/><input type="submit" class="button" style="width: 230px;" value="Save Character"></p>
 
 </body>
 </html>

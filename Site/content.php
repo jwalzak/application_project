@@ -18,20 +18,6 @@ session_start();
 			crossorigin="anonymous"></script>
 			
 	<script>
-	$(function () {
-		$("#link-creation").on("click", function () {
-			$("#frame").load("creation.php");
-		});
-		$("#link-summary").on("click", function () {
-			$("#frame").load("summary.php");
-		});
-		$("#link-vault").on("click", function () {
-			$("#frame").load("charvault.php");
-		});
-		$("#link-account").on("click", function () {
-			$("#frame").load("account.php");
-		});
-	});
 	</script>
 	<style>nav li {margin: 0 20px;}</style>
 </head>
@@ -43,29 +29,29 @@ session_start();
 			<li><i class="fa fa-shield" aria-hidden="true"></i></li>
 		
 			<div class="dropdown">	
-			<li><a href="creation.php" class="targetlink" id="link-creation">Creation</a>&nbsp;</li>
+			<li><a href="creation.php" target="frame" id="link-creation">Creation</a>&nbsp;</li>
 				<div class="dropdown-content">
-					<a href="#char-basics">Basics</a>
-					<a href="#char-skills">Spells & Skills</a>
-					<a href="#char-abilities">Ability Scores</a>
-					<a href="#char-profs">Weapons & Armour</a>
-					<a href="#char-align">Alignment</a>
-					<a href="#char-story">Backstory</a>			
-					<a href="#char-image">Character Image</a>
-					<a href="summary.php">Hero Summary</a>
+					<a href="creation.php#char-basics" target="frame">Basics</a>
+					<a href="creation.php#char-skills" target="frame">Spells & Skills</a>
+					<a href="creation.php#char-abilities" target="frame">Ability Scores</a>
+					<a href="creation.php#char-profs" target="frame">Weapons & Armour</a>
+					<a href="creation.php#char-align" target="frame">Alignment</a>
+					<a href="creation.php#char-story" target="frame">Backstory</a>			
+					<a href="creation.php#char-image" target="frame">Character Image</a>
+					<a href="summary.php" target="frame">Hero Summary</a>
 				</div>
 			</div>
 		
-			<li><a href="summary.php" class="targetlink" id="link-summary">Summary</a></li>
+			<li><a href="summary.php" target="frame" id="link-summary">Summary</a></li>
 		
-			<li><a href="charvault.php" class="targetlink" id="link-vault">Character Vault</a></li>
+			<li><a href="charvault.php" target="frame" id="link-vault">Character Vault</a></li>
 		
 			<div class="dropdown">
-				<li><a href="account.php" class="targetlink" id="link-account">Account</a>&nbsp;</li>
+				<li><a href="account.php" target="frame" id="link-account">Account</a>&nbsp;</li>
 				<div class="dropdown-content">
-					<a href="account.php">Create</a>
-					<a href="#">Manage</a>
-					<a href="#">Logout</a>
+					<a href="account.php" target="frame">Create</a>
+					<a href="#" target="frame">Manage</a>
+					<a href="#" target="frame">Logout</a>
 				</div>
 			</div>
 		
@@ -75,7 +61,7 @@ session_start();
 	
 	<!-- content -->
 	<!-- links from the above navbar will load into the frame via jquery -->
-	<iframe id="frame" src="account.php"></iframe>
+	<iframe id="frame" name="frame" src="creation.php"></iframe>
 
 	<!-- footer has copyright info and social media links -->
 	<div id="footer">

@@ -50,6 +50,12 @@
 		}
 	}
 	</style>
+	
+	<script>
+	function change(loc) {
+		document.getElementById('calendar').src = loc;
+	}
+	</script>
 </head>
 
 <body>
@@ -71,7 +77,7 @@
 				<input type="submit" name="start" class="button" value="GO"/>
 			</form>
 			
-			<p><br/><a href="account.php">Create an Account</a> or <a href="content.php">Continue without signing in</a></p>
+			<p><br/><a href="#" target="frame">Create an Account</a> or <a href="content.php">Continue without signing in</a></p>
 		</div>
 	</div>
 </body>
