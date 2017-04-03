@@ -1,5 +1,6 @@
 <?php
 require("connect.php");
+session_start();
 $conn->select_db("heroschema");
 
 if(isset($_GET['action'])){
@@ -37,10 +38,11 @@ if(isset($_GET['action'])){
         $rs = $connection->query($query);
 
         while($info = $rs->fetch_assoc()){
-            array_push($listArray, $info);
+            array_push($_SESSION, $info);
         }//End while
-
-        echo json_encode($listArray);
+          
+        
+        echo json_encode($_SESSION);
 
     }//End oneChar()
 
