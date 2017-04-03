@@ -22,7 +22,7 @@ function loadChar(character){
     //Loops thorugh the array and template each result
     for(var i = 0; i<character.length; i++){
     let $container = $("<div>").attr('id', character[i].charId);
-    let $charName = $("<a>").attr('href', '#').text(character[i].name);
+    let $charName = $("<a>").attr('href', '#').text(character[i].name).click(fillForm(character[i].charid));
     let $charImg = $("<img>").attr('src', "images/logosm.png");
     $container.append($charImg);
     $container.append($charName);
@@ -35,10 +35,10 @@ function loadChar(character){
 function getOneChar(characterID){
     $.post("GetChar.php?action=oneChar&id=" + characterID, $(this).serialize(), function(res){
         console.log(res);
-        fillForm(res);
     });
 }//End getOneChar();
 
-function fillForm(charArray){
+function fillForm(char, e){
+    getOneChar(char);
     console.log("I am in fillForm");
 }//End fillForm()
