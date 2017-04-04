@@ -43,9 +43,7 @@
 
 		$conn->query($saveQry);
 		$_SESSION['charId'] = $conn->insert_id; 
-		//echo '<pre>';
-		//print_r($char);
-		//echo '</pre>';
+		
     }
 ?>
 
@@ -140,8 +138,8 @@
 				<p class="category">Gender<br/>
 				<select id="genderSelect" name="gender" class="dropdown">
 					<option selected disabled> </option>
-					<option value='female' <?php if(isset($_SESSION['loadChar']['gender']) && $_SESSION['loadChar']['gender'] == "female") echo 'selected'?>>Female</option>
-					<option value='male' <?php if(isset($_SESSION['loadChar']['gender']) && $_SESSION['loadChar']['gender'] == "male") echo 'selected'?>>Male</option>
+					<option value='female' <?php if($_SESSION['loadChar']['gender'] == "female") {echo 'selected';}?>>Female</option>
+					<option value='male' <?php if($_SESSION['loadChar']['gender'] == "male") {echo 'selected';}?>>Male</option>
 					<option value='other'>Other</option>
 				</select></p>
 				

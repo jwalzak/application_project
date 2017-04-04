@@ -25,21 +25,6 @@
 	<div id="content">
 		<h1>Character Vault</h1>
 		<p>Select a character to view their summary sheet.</p>  
-	
-		<!-- <div id="image-container">
-			<img src="images/logosm.png"/><br/>
-			Character Name
-		</div>
-	
-		<div id="image-container">
-			<img src="images/logosm.png"/><br/>
-			Character Name
-		</div>
-	
-		<div id="image-container">
-			<img src="images/logosm.png"/><br/>
-			Character Name
-		</div> -->
 	</div>
 
 </body>

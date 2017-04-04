@@ -20,8 +20,8 @@ function loadChar(character){
     for(var i = 0; i<character.length; i++){
         let charId = character[i].charId;
         console.log(charId);
-        let $container = $("<div>").attr('id', charId);
-        let $charName = $("<a>").attr('href', '#').text(character[i].name).click(function(){
+        let $container = $("<div>").attr('id', "image-container");
+        let $charName = $("<a>").attr('href', 'creation.php').attr('class', "charLink").text(character[i].name).click(function(){
             $.post("GetChar.php?action=oneChar&id=" + charId, console.log("Loading Character") );
         });
         let $charImg = $("<img>").attr('src', "images/logosm.png");
