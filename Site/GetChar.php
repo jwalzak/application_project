@@ -31,16 +31,19 @@ if(isset($_GET['action'])){
 
     function oneChar($connection){
         $listArray = array();
+        $_SESSION["loadChar"] = array();
         $num = $_GET['id'];
 
         $query = "SELECT * FROM tblchar WHERE charid = " . "'$num'";
 
         $rs = $connection->query($query);
         while($info = $rs->fetch_assoc()){
-            array_push($_SESSION, $info);
+            array_push($_SESSION["loadChar"], $info);
         }//End while
         
-        echo json_encode($_SESSION);
+        if(isset($_SESSION['loadChar'])){
+            header('Location:creation.php');
+        }
 
     }//End oneChar()
 

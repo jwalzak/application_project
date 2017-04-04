@@ -140,8 +140,8 @@
 				<p class="category">Gender<br/>
 				<select id="genderSelect" name="gender" class="dropdown">
 					<option selected disabled> </option>
-					<option value='female'>Female</option>
-					<option value='male'>Male</option>
+					<option value='female' <?php if(isset($_SESSION['loadChar']['gender']) && $_SESSION['loadChar']['gender'] == "female") echo 'selected'?>>Female</option>
+					<option value='male' <?php if(isset($_SESSION['loadChar']['gender']) && $_SESSION['loadChar']['gender'] == "male") echo 'selected'?>>Male</option>
 					<option value='other'>Other</option>
 				</select></p>
 				
