@@ -7,9 +7,9 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Fira Sans Condensed", sans-serif;
+	font-size: 14pt;			 
 	color: #494c49;
 	line-height: 1.5;
-	/*overflow: hidden;*/
 }
 
 #content {
@@ -68,7 +68,7 @@ h1 {
 	background: #83ae1e;
 	text-align: center;
 	padding: 1px 0 1px 0;
-	max-width: 360px;
+	width: 100%;
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
 }
@@ -78,35 +78,37 @@ h1 {
 }
 #charpic {
 	float: left;
+	background: #ffffff;
+	text-align: center;
+	width: 100%;
+	border: 5px solid #83ae1e;
 }
 #charpic img {
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
-	border: 5px solid #83ae1e;
-	max-width: 350px;
+	margin: 0 auto;		   
+	max-width: 100%;
+	height: auto;
 }
 #charsummary {
-	background: red;
-	float: left;
-	margin: 0 2% 0 2%;
-	padding: 30px;
-	border-radius: 30px;
-	width: 60%;
-	height: 470px;
-	background: linear-gradient(#83ae1e,transparent);
-	margin-top: -120px;
-	color: #ffffff;
+	float: right;
+	width: 50%;
 }
-#charsummary h2 {
+#charsummary h3 {
 	margin-bottom: -5px;
+	font-weight: 700;			  
 }
-
-
+#print {
+	background: #83ae1e;
+	text-align: center;
+	padding: 1px 0 3px 0;
+	width: 100%;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
 /* Character Vault */
 #image-container {
     float: left;
 	margin-right: 3%;
-	padding-bottom: 25px;
+	padding-bottom: 25px; /**/
 	height: 140px;
 	width: 140px;
 	display: block;

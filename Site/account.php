@@ -70,6 +70,9 @@
 	.textbox {
 		padding: 8px;
 	}
+	::-webkit-input-placeholder {
+		color: #83ae1e;
+	}
 	</style>
 </head>
 

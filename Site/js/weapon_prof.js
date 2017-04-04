@@ -64,7 +64,7 @@ let wizardProf = ["daggers", "darts", "slings", "quarterstaffs", "light crossbow
 
 function weaponProf(classProf){
     let weapon = "";
-    document.getElementById("weaponList").innerHTML = "<h4>Weapon Proficiencies</h4>";
+    //document.getElementById("weaponList").innerHTML = "<h4>Weapon Proficiencies</h4>";
     for(var i = 0; i<classProf.length; i++){
         if(classProf[i] == "simple_mel"){
             //Go through the array of each items in a for loop

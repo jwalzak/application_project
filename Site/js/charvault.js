@@ -16,6 +16,7 @@ function getChar(){
 //display on charvault.php
 function loadChar(character){
     console.log(character);
+
     //Loops thorugh the array and template each result
     for(var i = 0; i<character.length; i++){
         let charId = character[i].charId;
@@ -33,4 +34,3 @@ function loadChar(character){
         $("#content").append($container);
     }//End for
 }//End loadChar
-

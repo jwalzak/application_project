@@ -35,7 +35,7 @@ function spells(slct1,slct3) {
             var spellArray = ["Blade Ward", "Dancing Lights", "Friends", "Light", "Mage Hand", "Mending", "Message", "Minor Illusion", "Prestidigitation", "True Strike", "Vicious Mockery"];
 
         } else if (s1.value == "Cleric") {
-            document.getElementById("spellText").innerHTML = "Choose 2 centrips";
+            document.getElementById("spellText").innerHTML = "Choose 2 cantrips";
             var spellArray = ["Guidance", "Light", "Mending", "Resistance", "Sacred Flame", "Spare the Dying", "Thaumaturgy"];
 
         } else if (s1.value == "Druid") {
