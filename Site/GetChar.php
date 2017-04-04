@@ -1,6 +1,6 @@
 <?php
-require("connect.php");
 session_start();
+require("connect.php");
 $conn->select_db("heroschema");
 
 if(isset($_GET['action'])){
@@ -33,14 +33,12 @@ if(isset($_GET['action'])){
         $listArray = array();
         $num = $_GET['id'];
 
-        $query = "SElECT * FROM tblchar WHERE charid = " . $num;
+        $query = "SELECT * FROM tblchar WHERE charid = " . "'$num'";
 
         $rs = $connection->query($query);
-
         while($info = $rs->fetch_assoc()){
             array_push($_SESSION, $info);
         }//End while
-          
         
         echo json_encode($_SESSION);
 
