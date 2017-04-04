@@ -383,29 +383,29 @@
 			
 			<div class='row'>
 				<div class='col-xs-4'>
-					<label for='lGood' class="align-rad">Lawful Good</label>
+					<label for='lGood' class="align-rad" style="background: #c7e791;">Lawful Good</label>
 					<input class='align' type="radio" id='lGood' name="alignment" value="Lawful Good">
-					<label for='nGood' class="align-rad">Neutral Good</label>
+					<label for='nGood' class="align-rad" style="background: #d8b17c;">Neutral Good</label>
 					<input class='align' type="radio" id='nGood' name="alignment" value="Neutral Good">
-					<label for='cGood' class="align-rad">Chaotic Good</label>
+					<label for='cGood' class="align-rad" style="background: #ca4a67;">Chaotic Good</label>
 					<input class='align' type="radio" id='cGood' name="alignment" value="Chaotic Good"> 
 				</div>
 					
 				<div class='col-xs-4'>
-					<label for='lNeutral' class="align-rad">Lawful Neutral</label>
+					<label for='lNeutral' class="align-rad" style="background: #f1e660;">Lawful Neutral</label>
 					<input class='align' type="radio" id='lNeutral' name="alignment" value="Lawful Neutral">
-					<label for='tNeutral' class="align-rad">True Neutral</label>
+					<label for='tNeutral' class="align-rad" style="background: #ffbd43;">True Neutral</label>
 					<input class='align' type="radio" id='tNeutral' name="alignment" value="True Neutral">
-					<label for='cNeutral' class="align-rad">Chaotic Neutral</label>
+					<label for='cNeutral' class="align-rad" style="background: #ff723f;">Chaotic Neutral</label>
 					<input class='align' type="radio" id='cNeutral' name="alignment" value="Chaotic Neutral"> 
 				</div>
 					
 				<div class='col-xs-4'>
-					<label for='lEvil' class="align-rad">Lawful Evil</label>
+					<label for='lEvil' class="align-rad" style="background: #ffbd43;">Lawful Evil</label>
 					<input class='align' type="radio" id='lEvil' name="alignment" value="Lawful Evil"> 
-					<label for='nEvil' class="align-rad">Neutral Evil</label>
+					<label for='nEvil' class="align-rad" style="background: #ff723f;">Neutral Evil</label>
 					<input class='align' type="radio" id='nEvil' name="alignment" value="Neutral Evil"> 
-					<label for='cEvil' class="align-rad">Chaotic Evil</label>
+					<label for='cEvil' class="align-rad" style="background: #e73246;">Chaotic Evil</label>
 					<input class='align' type="radio" id='cEvil' name="alignment" value="Chaotic Evil"> 
 				</div>
 			</div>
