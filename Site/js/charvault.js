@@ -22,7 +22,9 @@ function loadChar(character){
         console.log(charId);
         let $container = $("<div>").attr('id', "image-container");
         let $charName = $("<a>").attr('href', 'creation.php').attr('class', "charLink").text(character[i].name).click(function(){
-            $.post("GetChar.php?action=oneChar&id=" + charId, console.log("Loading Character") );
+            $.post("GetChar.php?action=oneChar&id=" + charId, function(res){
+                console.log(res);
+            } );
         });
         let $charImg = $("<img>").attr('src', "images/logosm.png");
         $container.append($charImg);

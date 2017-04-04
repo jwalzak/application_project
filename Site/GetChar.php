@@ -41,9 +41,7 @@ if(isset($_GET['action'])){
             array_push($_SESSION["loadChar"], $info);
         }//End while
         
-        if(isset($_SESSION['loadChar'])){
-            header('Location:creation.php');
-        }
+        echo json_encode($_SESSION);
 
     }//End oneChar()
 

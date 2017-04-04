@@ -130,17 +130,17 @@
 		<div class="row">
 			<div class="col-sm-6" id="personal1">
 				<p class="category">Name<br/>
-				<input type="text" placeholder="character name" id="charName" name="charName" class="textbox"></p>
+				<input type="text" placeholder="character name" id="charName" name="charName" class="textbox" value="<?php if(isset($_SESSION['loadChar'][0]['name'])) {echo $_SESSION['loadChar'][0]['name'];}?>"></p>
 				
 				<p class="category">Age<br/>
-				<input type="text" placeholder="age" name="charAge" class="textbox"></p>
+				<input type="text" placeholder="age" name="charAge" class="textbox" value="<?php if(isset($_SESSION['loadChar'][0]['age'])) {echo $_SESSION['loadChar'][0]['age'];}?>"></p>
 				
 				<p class="category">Gender<br/>
 				<select id="genderSelect" name="gender" class="dropdown">
 					<option selected disabled> </option>
-					<option value='female' <?php if($_SESSION['loadChar']['gender'] == "female") {echo 'selected';}?>>Female</option>
-					<option value='male' <?php if($_SESSION['loadChar']['gender'] == "male") {echo 'selected';}?>>Male</option>
-					<option value='other'>Other</option>
+					<option value='female'<?php if(isset($_SESSION['loadChar'][0]['gender']) && $_SESSION['loadChar'][0]['gender'] == "female") echo ' selected'?>>Female</option>
+					<option value='male' <?php if(isset($_SESSION['loadChar'][0]['gender']) && $_SESSION['loadChar'][0]['gender'] == "male") echo ' selected'?>>Male</option>
+					<option value='other' <?php if(isset($_SESSION['loadChar'][0]['gender']) && $_SESSION['loadChar'][0]['gender'] == "other") echo ' selected'?>>Other</option>
 				</select></p>
 				
 				<p class="category">Known Languages<br/>
@@ -155,10 +155,10 @@
 
 			<div class="col-sm-6" id="personal2 raceNclass">
 				<p class="category">Height<br/>
-				<input type='text' placeholder='height' name='height' class="textbox"></p>
+				<input type='text' placeholder='height' name='height' class="textbox" value="<?php if(isset($_SESSION['loadChar'][0]['height'])) {echo $_SESSION['loadChar'][0]['height'];}?>"></p>
 					
 				<p class="category">Weight<br/>
-				<input type='text' placeholder='weight' name='weight' class="textbox"></p>
+				<input type='text' placeholder='weight' name='weight' class="textbox" value="<?php if(isset($_SESSION['loadChar'][0]['weight'])) {echo $_SESSION['loadChar'][0]['weight'];}?>"></p>
 				
 				<p class="category">Race<br/>
 					<select name="raceSelect" id="raceSelect" class="dropdown">
@@ -170,7 +170,12 @@
 						$row = $result->fetch_assoc();
 						$races['optionId'] = str_replace(' ', '_', $row['race']);
 						$races['race'] = $row['race']; ?>
-						<option value="<?php echo $races['optionId']; ?>">
+						<option value="<?php echo $races['optionId']; ?>"
+						<?php 
+								if($_SESSION['loadChar'][0]['race'] == $races['race']){
+								echo ' selected';
+								}
+						?>>
 							<?php echo $races['race']; }} ?>
 						</option>
 					</select>
@@ -185,8 +190,13 @@
 					for ($i = 0; $i < $result->num_rows; $i++) { 
 						$row = $result->fetch_assoc();
 						$classes['class'] = $row['class']; ?>
-						<option value="<?php echo $classes['class']; ?>">
-							<?php echo $classes['class']; }} ?>
+						<option value="<?php echo $classes['class'];?>" 
+							<?php 
+								if($_SESSION['loadChar'][0]['class'] == $classes['class']){
+								echo ' selected';
+								}
+						?>>
+							<?php echo $classes['class'];}} ?>
 						</option>				
 					</select>
 				</p>
