@@ -11,6 +11,10 @@ if(isset($_GET['action'])){
     if($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['action'] == 'oneChar'){
         oneChar($conn);
     }//End if
+
+    if($_SERVER['REQUEST_METHOD'] && $_GET['action'] == 'delete'){
+        deleteChar($conn);
+    }//End if
 }//End outer if
 
 
@@ -44,6 +48,12 @@ if(isset($_GET['action'])){
         echo json_encode($_SESSION);
 
     }//End oneChar()
+
+    function deleteChar($connection){
+        $charId = $_SESSION['loadChar'][0]['charId'];
+        $query = "DELETE FROM tblchar WHERE charId =" . "'$charId'";
+        $rs = $connection->query($query);
+    }//End deleteChar();.
 
 
 ?>

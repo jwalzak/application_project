@@ -123,3 +123,14 @@ function diceRoll(clicked_id){
 
     diceTotal = 0;
 }
+
+function deleteChar(){
+    var r = confirm("Say goodbye to your character?");
+    if(r == true){
+        $.get("GetChar.php?action=delete");
+    }
+    else{
+        console.log("cancelled");
+    }
+
+}
