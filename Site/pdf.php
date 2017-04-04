@@ -1,6 +1,28 @@
 <?php
 require_once('fpdf/fpdf.php');
-require_once('Character.php');
+require_once('connect.php');
+
+//SQL filth
+$sqlPull = "SELECT charId, name, age, gender, height, weight, race, class FROM tblchar";
+$result = $conn->query($sqlPull);
+
+if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+         $pdfCharId = $row["charId"];
+         $pdfName = $row["name"];
+         $pdfAge = $row["age"];
+         $pdfGender = $row["gender"];
+         $pdfHeight = $row["height"];
+         $pdfWeight = $row["weight"];
+         $pdfRace = $row["race"];
+         $pdfClass = $row["class"];
+         //echo "sucsecs";
+     }
+} else {
+     echo "newp";
+}
+//end of filth
 
 class PDF extends FPDF
 {
@@ -34,7 +56,7 @@ function Footer()
     $this->SetFont('Arial','I',8);
 
     // Page number
-    $this->Cell(0,10,'Character Name | Page '.$this->PageNo().'/{nb}',0,0,'C');
+    $this->Cell(0,10,'Page ' . $this->PageNo().'/{nb}',0,0,'C');
 }
 }
 
@@ -44,15 +66,15 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 
-$pdf->Cell(0,10,'Name: ', 0, 1);
-$pdf->Cell(0,10,'Gender: ', 0, 1);
-$pdf->Cell(0,10,'Age: ', 0, 1);
-$pdf->Cell(0,10,'Height/Weight: ', 0, 1);
+$pdf->Cell(0,10,'Name: ' . $pdfName, 0, 1);
+$pdf->Cell(0,10,'Gender: ' . $pdfGender, 0, 1);
+$pdf->Cell(0,10,'Age: ' . $pdfAge, 0, 1);
+$pdf->Cell(0,10,'Height/Weight: ' . $pdfHeight . "/" . $pdfWeight, 0, 1);
 
 $pdf->Cell(0,10,'________________', 0, 1);
 
-$pdf->Cell(0,10,'Race: ', 0, 1);
-$pdf->Cell(0,10,'Class: ', 0, 1);
+$pdf->Cell(0,10,'Race: ' . $pdfRace, 0, 1);
+$pdf->Cell(0,10,'Class: ' . $pdfClass, 0, 1);
 $pdf->Cell(0,10,'Skills: ', 0, 1);
 $pdf->Cell(0,10,'Spells: ', 0, 1);
 

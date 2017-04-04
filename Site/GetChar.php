@@ -1,18 +1,24 @@
 <?php
-require_once("connect.php");
-// $conn->slect_db("heroschema");
+session_start();
+require("connect.php");
+$conn->select_db("heroschema");
 
 if(isset($_GET['action'])){
     if($_SERVER['REQUEST_METHOD'] == 'GET' && $_GET['action'] == 'char'){
         char($conn);
-    }
-}
+    }//End if
 
-    function char($conn){
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['action'] == 'oneChar'){
+        oneChar($conn);
+    }//End if
+}//End outer if
+
+
+    function char($connection){
         $listArray = array();
         
-        $query = "SELECT * FROM character_sheet";
-        $rs = $conn->query($query);
+        $query = "SELECT * FROM tblchar";
+        $rs = $connection->query($query);
 
         while($info = $rs->fetch_assoc()){
             //Get each character from the db
@@ -21,9 +27,22 @@ if(isset($_GET['action'])){
     $rs->close();
 
     echo json_encode($listArray);
-
-
     }//End char();
+
+    function oneChar($connection){
+        $listArray = array();
+        $num = $_GET['id'];
+
+        $query = "SELECT * FROM tblchar WHERE charid = " . "'$num'";
+
+        $rs = $connection->query($query);
+        while($info = $rs->fetch_assoc()){
+            array_push($_SESSION, $info);
+        }//End while
+        
+        echo json_encode($_SESSION);
+
+    }//End oneChar()
 
 
 ?>

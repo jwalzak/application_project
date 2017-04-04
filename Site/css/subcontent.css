@@ -1,126 +1,106 @@
-html {
+html, body {
 	height: 100%;
 	width: 100%;
-	background: url(../images/bg.png);
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
-	width: 100%;
-	font-family: 'Fira Sans Condensed', sans-serif;
+	font-family: "Fira Sans Condensed", sans-serif;
 	color: #494c49;
-	text-align: justify;
 	line-height: 1.5;
-}
-
-.button {
-	border: #79553b solid 3px;
-	padding: 5px 14px 5px 14px;
-	color: #ffffff;
-	font-size: 18px;
-	font-family: 'Crete Round', serif;
-	background: #83ae1e;
-	cursor: pointer;
-}
-
-.textbox {
-	border: #79553b solid 3px;
-	height: 24px;
-}
-
-h1 {
-	font-family: 'Permanent Marker', cursive;
-	font-size: 50px;
-	color: #79553b; /* saturated brown */
-}
-
-i {
-	color: #ffffff;
-	-webkit-text-stroke: 3px #79553b;
+	overflow: hidden;
 }
 
 #content {
-	padding: 0 4% 0 4%;
-	margin-top: 10%;
+	padding: 18px 30px;
+	margin-top: 100px;
 }
 
-/* Navigation Bar */
-nav {
-	background: rgba(131,174,30,0.8);
-	width: 100%;
-	padding: 1% 0 1% 0;
-	top: 0;
-	position: absolute;
-	display: block;
+.category {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px;
 }
 
-nav ul {
-	list-style-type: none;
+.button {
+	border: #83ae1e solid 3px;
+	border-radius: 7px;
+	padding: 5px 15px;
+	width: 150px;
+	font-family: "Fira Sans Condensed", sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 20px;
+	color: #494c49;
+	cursor: pointer;
+	display: inline-block;
+	background: #86ad08;
+	background-image: linear-gradient(to bottom, #f1ffb7, #9abb14);
+	transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+	opacity: 0.75;
+}
+
+.textbox {
+	border: #83ae1e solid 3px;
+	border-radius: 7px;
+	background: #f1ffb7;
+	width: 80%;
+}
+
+h1 {
 	text-align: center;
-	font-weight: medium;
+	font-family: 'Galindo', cursive;
+	text-transform: uppercase;
+	font-size: 44px;
+	color: #79553b;
 }
 
-nav li {
-	display: inline;
-}
+#burger {
+		max-width: 100%;
+	}
 
-nav a {
-	margin-right: 4%;
-	font-size: 130%;
+/* Summary Page */
+#charname {
+	background: #83ae1e;
+	text-align: center;
+	padding: 1px 0 1px 0;
+	max-width: 360px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+#charname h1 {
+	font-size: 27px;
 	color: #ffffff;
-	text-decoration: none;
-	font-family: 'Crete Round', serif;
+}
+#charpic {
+	float: left;
+}
+#charpic img {
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	border: 5px solid #83ae1e;
+	max-width: 350px;
+}
+#charsummary {
+	background: red;
+	float: left;
+	margin: 0 2% 0 2%;
+	padding: 30px;
+	border-radius: 30px;
+	width: 60%;
+	height: 470px;
+	background: linear-gradient(#83ae1e,transparent);
+	margin-top: -120px;
+	color: #ffffff;
+}
+#charsummary h2 {
+	margin-bottom: -5px;
 }
 
-nav a:hover {
-	color: #355c57;
-	transition: all .5s;
-}
-
-/*  Navigation Dropdown */
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    visibility: hidden;
-	transition: 0.2s .1s; /* delay of .1 seconds on hover off to prevent dissapear*/
-    position: absolute;
-    background-color: #99b93f;
-	top: 160%; /* Sets drop down nav to be inline with Green Bar */
-	right: -38%; /* Centers drop down nav */
-    min-width: 140px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: #ffffff;
-	font-size: 18px;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover
-	Using off white instead of white */
-.dropdown-content a:hover {
-	background-color: #83ae1e;
-	transition: all 1s;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-	visibility: visible;
-    transition-delay: 0s; /* react immediately on hover */
-}
 
 /* Character Vault */
 #image-container {
@@ -145,34 +125,21 @@ nav a:hover {
 	transition: all 1s;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-	width: 5px;
-	height: 5px;
+/******** MEDIA SCREEN QUERIES ******************************************************/
+@media screen and (max-width: 960px) {
+	body {
+		overflow: visible;
+	}
 }
-::-webkit-scrollbar-button {
-	width: 0px;
-	height: 0px;
-}
-::-webkit-scrollbar-thumb {
-	background: #83ae1e;
-	border: 3px solid #83ae1e;
-	border-radius: 50px;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: #83ae1e;
-}
-::-webkit-scrollbar-thumb:active {
-	background: #83ae1e;
-}
-::-webkit-scrollbar-track {
-	background: #355c57;
-	border: 0px none #355c57;
-	border-radius: 75px;
-}
-::-webkit-scrollbar-track:active {
-	background: #355c57;
-}
-::-webkit-scrollbar-corner {
-	background: transparent;
+
+@media screen and (max-width: 776px) {
+	body {
+		overflow: visible;
+	}
+	#burger {
+		display: none;
+	}
+	.textbox {
+		width: 100%;
+	}
 }

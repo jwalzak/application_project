@@ -167,6 +167,11 @@ $('input[type=checkbox]').on('change', function (e) {
 //after this sprint we can add level 1 and then twique this to do the math automatically, its all prepped
 function rollHitPoints() {
 
+
+// IT DOESNT WORK RIHT NOW CAUSE LEVELS ISNT THE NAME OF THE BOX
+//This sets the roll button to work. Work it, roll button XDDDDDD
+    if(levels.value >= 1){
+
         if (window.whatsTheClass == "Barbarian") {
             let roll = dice(12);
             let parsedRoll = parseFloat(roll);
@@ -196,4 +201,29 @@ function rollHitPoints() {
             console.log('Class: ' + whatsTheClass + ' Hit Dice: 6   Roll: ' + parsedRoll + ' Constitution modifier: ' + mod + "  HP: " + (parsedRoll + mod));
         
         }
-}//end function
+
+    }//end level-evaluator
+
+    //below else evaluates if level is less than zero, pull class and use level1 req's to generate
+    //the hp stat. Extra statements but succinct.
+    else {
+
+        if (window.whatsTheClass == "Barbarian"){
+            document.getElementById('hitPointText').value = mod + 12;
+        }
+
+        else if (window.whatsTheClass == "Fighter" || window.whatsTheClass == "Paladin" || window.whatsTheClass == "Ranger"){
+            document.getElementById('hitPointText').value = mod + 10;
+        }
+
+        else if (window.whatsTheClass == "Bard" || window.whatsTheClass == "Cleric" || window.whatsTheClass == "Druid" || window.whatsTheClass == "Monk" || window.whatsTheClass == "Rogue" || window.whatsTheClass == "Warlock") {
+            document.getElementById('hitPointText').value = mod + 8;
+        }
+
+        else if (window.whatsTheClass == "Sorcerer" || window.whatsTheClass == "Wizard") {
+            document.getElementById('hitPointText').value = mod + 6;
+        }
+        
+    }
+    
+}//end main function
