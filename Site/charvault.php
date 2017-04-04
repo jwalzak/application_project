@@ -22,6 +22,7 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/subcontent.css"/>
 	
+	<script type="text/JavaScript" src="js/charvault.js"></script>
 	<style>
 	body {
 		background: url("images/bg.png");

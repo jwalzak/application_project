@@ -251,7 +251,7 @@
 						$races['race'] = $row['race']; ?>
 						<option value="<?php echo $races['optionId']; ?>"
 						<?php 
-								if($_SESSION['loadChar'][0]['race'] == $races['race']){
+								if(isset($_SESSION['loadChar']) && $_SESSION['loadChar'][0]['race'] == $races['race']){
 								echo ' selected';
 								}
 						?>>
@@ -271,7 +271,7 @@
 						$classes['class'] = $row['class']; ?>
 						<option value="<?php echo $classes['class'];?>" 
 							<?php 
-								if($_SESSION['loadChar'][0]['class'] == $classes['class']){
+								if(isset($_SESSION['loadChar']) && $_SESSION['loadChar'][0]['class'] == $classes['class']){
 								echo ' selected';
 								}
 						?>>
