@@ -457,6 +457,7 @@
 		</form>
 			
         <p><br/><input type="submit" class="button" style="width: 230px;" value="Save Character"></p>
+        <button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button>
 
 </body>
 </html>
