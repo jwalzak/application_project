@@ -35,23 +35,26 @@ if ($_GET['action'] == 'skills'
             $row = $result->fetch_array();
             $data = array();
                   $data['skills'] = $row[$i]; 
-
-
-            } 
-}
+            }}
             echo $data['skills']; 
-        }
+        }}
 
+if ($_GET['action'] == 'spells' 
+            && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
+ if(isset($_POST['class'])) {
 
-        if(!isset($_POST['class'])) {
-            echo 'Empty'; 
-        }
-       
-    
-    }
-    
+            $qry = 'SELECT spells from tblClass where class = "' . $_POST['class'] . '";';
+            
+         if($result = $conn->query($qry)) {
+        for ($i = 0; $i < $result->num_rows; $i++) {
+            $row = $result->fetch_array();
+            $data = array();
+                  $data['spells'] = $row[$i]; 
+            }}
+            echo $data['spells']; 
+        }}
+
 
 $conn->close(); 
-
 } //end if GET

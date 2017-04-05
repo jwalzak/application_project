@@ -1,7 +1,8 @@
 <?php
     session_start();
     require("connect.php");
-	require("ajax.php");					
+	require("ajax.php");	
+				
 
 	$races = array();
 	$classes = array();
@@ -296,7 +297,7 @@
 				</p>
 					
 				<p class="category">Class<br/>
-					<select id="classSelect" name="classSelect" class="dropdown" onchange="skillSet(this.value),spells(this.id,'slct3')">
+					<select id="classSelect" name="classSelect" class="dropdown" onchange="skillSet(this.value),spellSet(this.value)" >
 					<option selected disabled> </option>
 				<?php
 				$qry = 'SELECT class from tblclass';
@@ -333,8 +334,7 @@
 			<!-- Dynamically changes based on the class chosen -->
 			<div class='col-xs-6'>
 				<p class="category">Spells<br/>
-				<p id="spellText">Choose a Class to begin</p>
-				<div id="slct3"></div>
+				<div id="spells"></div>
 			</div>
 		</div>
 		
