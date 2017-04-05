@@ -127,7 +127,10 @@ function diceRoll(clicked_id){
 function deleteChar(){
     var r = confirm("Say goodbye to your character?");
     if(r == true){
-        $.get("GetChar.php?action=delete");
+        $.get("GetChar.php?action=delete", function(res){
+            $("#charName").val("");
+            $("#charAge").val("");
+        });
     }
     else{
         console.log("cancelled");
