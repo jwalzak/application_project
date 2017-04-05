@@ -26,107 +26,47 @@
  */
 
 //In honor of my brand new game show: "whats the class"
+
 var whatsTheClass; 
 
-//populate the select boxes
-    function populate(slct1, slct2) {
-        var s1 = document.getElementById(slct1);
-        var s2 = document.getElementById(slct2);
-        s2.innerHTML = "";
+function skillSet(slctClass) {
 
-        //change dhtml checkboxes on change of each class
-        //change p tag on each class select
-        if (s1.value == "Barbarian") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"];
-            window.whatsTheClass = "Barbarian";
+console.log(slctClass);
 
-        } else if (s1.value == "Bard") {
-            document.getElementById("pText").innerHTML = "Choose 3 of the following...";
-            var optionArray = ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"];
-            window.whatsTheClass = "Bard";
+$.ajax({
+                    type: "POST",
+                    url: 'ajax.php?action=skills',
+                    data: {class : slctClass},
+                    success: function(r)
+                    {
+                        //console.log(r);
+                    var skills = r.split(",");
+                    var canUse; 
 
-        } else if (s1.value == "Cleric") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["History", "Insight", "Medicine", "Persuasion", "Religion"];
-            window.whatsTheClass = "Cleric";
+                    console.log(skills);    
+                    $('#skills').empty(); 
+                    for (var i = 0; i < skills.length; i++) {
 
-        } else if (s1.value == "Druid") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"];
-            window.whatsTheClass = "Druid";
+                  $('#skills').append('<input type="checkbox" name="skills" class="chkSkills" id="' + skills[i] + '" />' + skills[i]).append('<br />');
 
-        } else if (s1.value == "Fighter") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Acrobatics", " Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"];
-            window.whatsTheClass = "Fighter";
+                    }
+                         
+                                        
+                    }});
 
-        } else if (s1.value == "Monk") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"];
-            window.whatsTheClass = "Monk";
+var chk = $('#skills input[type="checkbox"]'); 
+chk.click(function(){
+    if (chk.filter(":checked").length > 3);
+    $(this).removeAttr("checked"); 
 
-        } else if (s1.value == "Paladin") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"];
-            window.whatsTheClass = "Paladin";
-
-        } else if (s1.value == "Ranger") {
-            document.getElementById("pText").innerHTML = "Choose 3 of the following...";
-            var optionArray = ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"];
-            window.whatsTheClass = "Ranger";
-
-        } else if (s1.value == "Rogue") {
-            document.getElementById("pText").innerHTML = "Choose 4 of the following...";
-            var optionArray = ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"];
-            window.whatsTheClass = "Rogue";
-
-        } else if (s1.value == "Sorcerer") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"];
-            window.whatsTheClass = "Sorcerer";
-
-        } else if (s1.value == "Warlock") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"];
-            window.whatsTheClass = "Warlock";
-
-        } else if (s1.value == "Wizard") {
-            document.getElementById("pText").innerHTML = "Choose 2 of the following...";
-            var optionArray = ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"];
-            window.whatsTheClass = "Wizard";
-        }
-
-    //places arrays on screen
-    for (var option in optionArray) {
-        if (optionArray.hasOwnProperty(option)) {
-            var skills = optionArray[option];
-            var checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.name = skills;
-            checkbox.value = skills;
-            checkbox.class = "skill";
-            s2.appendChild(checkbox);
-    
-            var label = document.createElement('label')
-            label.htmlFor = skills;
-            label.appendChild(document.createTextNode(skills));
-
-            s2.appendChild(label);
-            s2.appendChild(document.createElement("br"));    
-        }
-
-//Limits checkboxing dynamically
-/* Needs work!!!!!!!!!!!
-$('input[type=checkbox]').on('change', function (e) {
-    if ($('input[type=checkbox]:checked').length > 2) {
-        $(this).prop('checked', false);
-        alert("allowed only 2");
-    }
 });
-*/
-    }//end FOR
-}//end POPULATE
+    }
+    
+
+
+
+
+
 
 
 

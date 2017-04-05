@@ -36,7 +36,7 @@ let saveRoll = function(){
 
 //This function will trigger when the dropdown menu for classes is changed.
 document.addEventListener("change", function() {
-  let e = document.getElementById("slct1");
+  let e = document.getElementById("classSelect");
   saveClass = e.options[e.selectedIndex].value;
   classSaveThrow();
 });
