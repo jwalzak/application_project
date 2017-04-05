@@ -65,3 +65,7 @@ Site/pdf.php
 Site/js/hp_and_skills.js
 
 Site/js/hp_and_skills.js
+
+# Ignoring connect.php
+
+Site/connect.php

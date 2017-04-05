@@ -32,6 +32,7 @@ var whatsTheClass;
 function skillSet(slctClass) {
 
 console.log(slctClass);
+window.whatsTheClass = slctClass; 
 
 $.ajax({
                     type: "POST",
@@ -41,7 +42,7 @@ $.ajax({
                     {
                         //console.log(r);
                     var skills = r.split(",");
-                    var canUse; 
+                  
 
                     console.log(skills);    
                     $('#skills').empty(); 
@@ -110,7 +111,8 @@ function rollHitPoints() {
 
 // IT DOESNT WORK RIHT NOW CAUSE LEVELS ISNT THE NAME OF THE BOX
 //This sets the roll button to work. Work it, roll button XDDDDDD
-    if(levels.value >= 1){
+    var levels = document.getElementById('leveling'); 
+    if(levels.value >= 2){
 
         if (window.whatsTheClass == "Barbarian") {
             let roll = dice(12);

@@ -33,40 +33,24 @@
 			'wis' => $_POST['wis'],
 			'con' => $_POST['con'],
 			'cha' => $_POST['cha'],
-			'alignment' => $_POST['alignment'],
-			'backstory' => $_POST['backstory'],
-			'languages' => $_POST['languages']  
+			//'alignment' => $_POST['alignment'],
+			'backstory' => $_POST['backstory']
+			//'languages' => $_POST['languages']  
 		];
 
-		if(isset($_POST['Acrobatics'])) {
-			$x = 'Acrobatics';
-			$char->skills = array_push($char->skills, $x); 
-		}
-	
-		$_SESSION['newChar'] = $char; 
-
-		$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race, class) VALUES ("' . $userId . '", "' . $char->name . '", "' . $char->age . '", "'. $char->gender .'","'. $char->height .'","'.$char->weight .'","'.$char->race .'","'.$char->class .'");';
-
-		$conn->query($saveQry);
-		$_SESSION['charId'] = $conn->insert_id; 
-		echo '<pre>';
-		print_r($char);
-		echo '</pre>';
-		
 		//IMAGE UPLOADER STUFF
 		if ($_FILES['charphoto']['error'] == 0 && $_FILES['charphoto']['size'] > 0) {
 			$ext = strtolower(pathinfo($_FILES['charphoto']['name'], PATHINFO_EXTENSION));
 		
 			//validate that the file exists and is an accepted photo type
 			if (!file_exists($_FILES['charphoto']['tmp_name'])) {
-				echo "The file doesn't exist";
+				//the file doesn't exist
 				$isValid = false;
 			} else if (!in_array($ext, $acceptedExt)) {
-				echo "That file type is not accepted";
+				//the file type is not accepted
 				$isValid = false;
 			}
 		} else {
-			print "Your image failed to upload";
 			$isValid = false;
 		}
 	
@@ -77,13 +61,21 @@
 			//make variable for randomly-generated file name
 			$newName = $target_dir."characterImage".rand(1000,9999).".".$ext;
 			$success = move_uploaded_file($_FILES['charphoto']['tmp_name'], $newName);
+		} //image uploader validation stuff
 		
-			if ($success) {
-				$conn->query("INSERT INTO tblchar (charpic) VALUES ('$newName'");
-			} else {
-				echo "Your image failed to upload";
-			}
-		} //image uploader stuff
+		
+		$_SESSION['newChar'] = $char; 
+
+		$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race, class, charpic) VALUES ("'.$userId.'", "'.$char->name.'", "'.$char->age.'", "'.$char->gender.'", "'.$char->height.'", "'.$char->weight.'", "'.$char->race.'", "'.$char->class.'", "'.$newName.'");';
+
+		if ($success) {
+			$conn->query($saveQry);
+		}
+		
+		$_SESSION['charId'] = $conn->insert_id; 
+		//echo '<pre>';
+		//print_r($char);
+		//echo '</pre>';
 	}
 ?>
 
@@ -368,7 +360,7 @@
 
 				<input value="Roll" type="button" class="rollbutton" onclick="diceRoll(this.id)" id="chaBut"></input>
 				<label>Charisma</label>
-				<input name='char' id="chaInput" type="text" class="textbox2"><br/>
+				<input name='cha' id="chaInput" type="text" class="textbox2"><br/>
 			</div>
 		
 			<!-- SAVING THROWS -->			 
@@ -485,12 +477,13 @@
 			<!-- LEVELING -->
 			<div class='col-sm-6' id='levels'>
 				<p class="category">Leveling</p>
-				<input id='leveling' type="text" placeholder='a textbox for isaiah' name="leveling" class="textbox2" style="width: 90%; float: none;"></p>
+				<input id='leveling' type="text" placeholder='Current Level' name="leveling" class="textbox2" style="width: 90%; float: none;"></p>
 			</div>
 		</div>
-		</form>
+		
 			
-        <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character"><br class="break"/><button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button></p>
-
+        <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character"><br class="break"/>
+</form>
+<button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button></p>
 </body>
 </html>

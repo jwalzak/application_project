@@ -1,6 +1,7 @@
 <?php
-	require_once("connect.php");
 	session_start();
+	require_once("connect.php");
+
 	//echo $_SESSION['userId'];
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
