@@ -1,7 +1,7 @@
 <?php
     session_start();
     require("connect.php");
-    require("ajax.php");
+	require("ajax.php");					
 
 	$races = array();
 	$classes = array();
@@ -126,6 +126,20 @@
 			icon: false
 		});
 	} );
+	
+	//For displaying the image chosen for uploading
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+			reader.onload = function (e) {
+                $('#charpic-upload')
+					.attr('src', e.target.result)
+                    .width(200)
+                    .height(240);
+            };
+			reader.readAsDataURL(input.files[0]);
+        }
+	}
 	</script>
 	
 	<style>
@@ -188,7 +202,27 @@
 		font-size: 20px;
 		color: #494c49;
 		width: 100%;
-	}		  
+	}
+	.align-rad:hover {
+		opacity: 0.75;
+	}
+	.break {
+		display: none;
+	}
+	<!-- MEDIA SCREEN QUERIES -->
+	@media screen and (max-width: 960px) {
+		.textbox2 {
+			width: 30%;
+		}
+	}
+	@media screen and (min-width: 300px) and (max-width: 776px) {
+		.textbox2 {
+			width: 50%;
+		}
+		.break {
+			display: visible;
+		}
+	}
 	</style>
 </head>
 
@@ -290,14 +324,14 @@
 		<div class="row">
 			<!-- SKILLS -->
 			<!-- Dynamically changes based on the class chosen -->
-			<div class='col-sm-6'>
+			<div class='col-xs-6'>
 				<p class="category">Skills<br/>
 				<div id="skills"></div>
 			</div>
 			
 			<!-- SPELLS -->
 			<!-- Dynamically changes based on the class chosen -->
-			<div class='col-sm-6'>
+			<div class='col-xs-6'>
 				<p class="category">Spells<br/>
 				<p id="spellText">Choose a Class to begin</p>
 				<div id="slct3"></div>
@@ -310,7 +344,7 @@
 		
 		<div class="row">		
 			<!-- ABILITIES: ROLLS -->				
-			<div id="rolls" class="col-sm-6">
+			<div id="rolls" class="col-xs-12 col-sm-6">
 				<p class="category">Ability Scores</p>  
 				<input value="Roll" type="button" class="rollbutton" onclick="diceRoll(this.id)" id="strBut"></input>
 				<label>Strength</label>
@@ -338,7 +372,7 @@
 			</div>
 		
 			<!-- SAVING THROWS -->			 
-			<div class='col-sm-6'>		
+			<div class='col-xs-12 col-sm-6'>		
 				<p class="category">Saving Throws</p>
 				<label for="saveStr">Strength</label><br/>
 				<label for="saveCon">Constitution</label><br/>
@@ -426,12 +460,12 @@
 			<!-- CHARACTER IMAGE UPLOADER -->
 			<div class='col-xs-12 col-sm-6'>	
 				<p class="category">Character Image</p>
-				<div id="show-charimage">
-					<img src="<?php if($_SERVER['REQUEST_METHOD'] == 'POST'){echo $newName;}?>" width="200" height="240"/>
+				<div id="show-charimage" style="border: #83ae1e solid 3px; border-radius:7px; width:206px;">
+					<img src="images/logo2.png" style="width: 200px; height: 240px;" id="charpic-upload" alt="Your character image"/>
 				</div>
 
 				<div id="upload-charimage">
-					<p><br/><input type="file" name="charphoto" id="charphoto" class="choosefile"/></p>
+					<p><br/><input type="file" onchange="readURL(this);" name="charphoto" id="charphoto" class="choosefile"/></p>
 				</div>
 			</div>
         </div>
@@ -456,8 +490,7 @@
 		</div>
 		</form>
 			
-        <p><br/><input type="submit" class="button" style="width: 230px;" value="Save Character"></p>
-        <button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button>
+        <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character"><br class="break"/><button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button></p>
 
 </body>
 </html>

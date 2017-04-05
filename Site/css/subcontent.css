@@ -51,6 +51,13 @@ body {
 	width: 80%;
 }
 
+.sum-div {
+	background: #f1ffb7;
+	margin: 1% 0;
+	border-radius: 7px;
+	padding: 0 20px;
+}
+
 h1 {
 	text-align: center;
 	font-family: 'Galindo', cursive;
@@ -89,11 +96,9 @@ h1 {
 	height: auto;
 }
 #charsummary {
-	float: right;
-	width: 50%;
+	width: 100%;
 }
 #charsummary h3 {
-	margin-bottom: -5px;
 	font-weight: 700;			  
 }
 #print {
@@ -104,6 +109,12 @@ h1 {
 	border-bottom-left-radius: 7px;
 	border-bottom-right-radius: 7px;
 }
+.sum-logo {
+	padding: 20px 0 70px 0;
+	width: 50%;
+	height: auto;
+}
+
 /* Character Vault */
 #image-container {
     float: left;

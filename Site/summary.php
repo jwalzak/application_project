@@ -51,8 +51,7 @@
 				?>
 				</div>
 				
-				<div id="charpic">
-												  
+				<div id="charpic">						  
 					<?php echo "<img src='charpics/char-id3.png'>"; ?>
 				</div>
 				
@@ -60,33 +59,32 @@
 					<button type="button" class="button">Print PDF</button>
 				</div>
 			</div>
-		
-			<div class="col-xs-12 col-sm-8" id="charsummary">
+			
 			<?php 
 				$characters = $conn->query("SELECT * FROM tblchar WHERE charid = 3;");
 		
 				//loop through the results of query to fill in character info 
 				while($row = $characters->fetch_assoc()) {
-					echo "<div class='row'>";
-						echo "<div class='col-xs-12'>";
-							echo "<p><h3>Age</h3>$row[age]</p>";
-							echo "<p><h3>Gender</h3>$row[gender]</p>";
-							echo "<p><h3>Height</h3>$row[height]</p>";
-							echo "<p><h3>Weight</h3>$row[weight]</p>";
-							echo "<p><h3>Race</h3>$row[race]</p>";
-							echo "<p><h3>Language</h3></p>";
-							echo "<p><h3>Class</h3>$row[class]</p>";
-							echo "<p><h3>Alignment</h3></p>";
-						echo "</div>";
-						echo "<div class='col-xs-12'>";
-							echo "<p><h3>Skills</h3></p>";
-							echo "<p><h3>Spells</h3></p>";
-							echo "<p><h3>Weapon Proficiencies</h3></p>";
-							echo "<p><h3>Armour Proficiencies</h3></p>";
-						echo "</div>";
+					echo "<div class='col-sm-8' style='float:right'>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Age</h3>$row[age]</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Gender</h3>$row[gender]</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Height</h3>$row[height]</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Weight</h3>$row[weight]</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Race</h3>$row[race]</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Languages</h3></p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Class</h3>$row[class]</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Alignment</h3></p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Background</h3>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Skills</h3></p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Spells</h3></p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Weapon Proficiencies</h3></p></div>";
+						echo "<div class='col-xs-12 sum-div'><p><h3>Armour Proficiencies</h3></p></div>";
 					echo "</div>";
 				}
 			?>
+			
+			<div class="col-xs-12" style="text-align:center;">
+				<img src="images/logo2.png" class="sum-logo"/>
 			</div>
 		</div>
 	</div>
