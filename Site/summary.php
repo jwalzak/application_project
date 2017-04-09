@@ -1,10 +1,6 @@
 <?php
 	session_start();
 	require("connect.php");
-	
-	if (!isset($_SESSION)) {
-		print "No characters available at this time.";
-	}
 ?>
 
 <!DOCTYPE html>
@@ -44,15 +40,19 @@
             <div class="col-xs-12 col-sm-4">
 				<div id="charname">
 				<?php 
-					$characters = $conn->query("SELECT * FROM tblchar WHERE charid = 3;");
-					while($row = $characters->fetch_assoc()) {
-						echo "<h1>$row[name]</h1>";
+					if (!isset($_SESSION)) {
+						echo "";
+					} else {
+						$characters = $conn->query("SELECT * FROM tblchar WHERE charid = '".$_SESSION['userId']."';");
+						while($row = $characters->fetch_assoc()) {
+							echo "<h1>$row[name]</h1>";
+						}
 					}
 				?>
 				</div>
 				
 				<div id="charpic">						  
-					<?php echo "<img src='charpics/char-id3.png'>"; ?>
+					<?php echo "<img src='".$row[charpic]."'>"; ?>
 				</div>
 				
 				<div id="print">
@@ -61,30 +61,34 @@
 			</div>
 			
 			<?php 
-				$characters = $conn->query("SELECT * FROM tblchar WHERE charid = 3;");
+				if (!isset($_SESSION)) {
+						print "No characters available at this time.";
+				} else {
+					$characters = $conn->query("SELECT * FROM tblchar WHERE charid = '".$_SESSION['userId']."';");
 		
-				//loop through the results of query to fill in character info 
-				while($row = $characters->fetch_assoc()) {
-					echo "<div class='col-sm-8' style='float:right'>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Age</h3>$row[age]</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Gender</h3>$row[gender]</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Height</h3>$row[height]</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Weight</h3>$row[weight]</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Race</h3>$row[race]</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Languages</h3></p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Class</h3>$row[class]</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Alignment</h3></p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Background</h3>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Skills</h3></p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Spells</h3></p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Weapon Proficiencies</h3></p></div>";
-						echo "<div class='col-xs-12 sum-div'><p><h3>Armour Proficiencies</h3></p></div>";
-					echo "</div>";
+					//loop through the results of query to fill in character info 
+					while($row = $characters->fetch_assoc()) {
+						echo "<div class='col-sm-8' style='float:right'>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Age</h3>$row[age]</p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Gender</h3>$row[gender]</p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Height</h3>$row[height]</p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Weight</h3>$row[weight]</p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Race</h3>$row[race]</p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Languages</h3></p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Class</h3>$row[class]</p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Alignment</h3></p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Background</h3>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Skills</h3></p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Spells</h3></p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Weapon Proficiencies</h3></p></div>";
+							echo "<div class='col-xs-12 sum-div'><p><h3>Armour Proficiencies</h3></p></div>";
+						echo "</div>";
+					}
 				}
 			?>
 			
 			<div class="col-xs-12" style="text-align:center;">
-				<img src="images/logo2.png" class="sum-logo"/>
+				<img src="images/logo2.png" style="width:20%; height:auto;" class="sum-logo"/>
 			</div>
 		</div>
 	</div>

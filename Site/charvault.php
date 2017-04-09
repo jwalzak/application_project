@@ -27,14 +27,23 @@
 	body {
 		background: url("images/bg.png");
 	}
+	a {
+		font-family: "Fira Sans Condensed", sans-serif;
+		font-size: 14pt;			 
+		font-weight: 700;
+		color: #494c49;
+	}
+	a:hover {
+		text-decoration: none;
+	}
 	</style> 
 </head>
 
 <body>
 	<!-- CONTENT  -->
-	<div id="content">
+	<div id="content" style="text-align: center">
 		<h1>Character Vault</h1>
-		<p>Select a character to view their summary sheet.</p>
+		<p align="left">Select a character to view their summary sheet.</p>
 	</div>
 
 </body>
