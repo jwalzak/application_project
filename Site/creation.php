@@ -477,7 +477,7 @@
 			<!-- LEVELING -->
 			<div class='col-sm-6' id='levels'>
 				<p class="category">Leveling</p>
-				<input id='leveling' type="text" placeholder='Current Level' name="leveling" class="textbox2" style="width: 90%; float: none;"></p>
+				<input id='leveling' type="text" placeholder='current level' name="leveling" class="textbox2" style="width: 90%; float: none;"></p>
 			</div>
 		</div>
 		

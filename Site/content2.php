@@ -51,8 +51,8 @@ session_start();
 				<li><a href="account.php" target="frame" id="link-account">Account</a>&nbsp;</li>
 				<div class="dropdown-content">
 					<a href="account.php" target="frame">Create</a>
-					<a href="#" target="frame">Manage</a>
-					<a href="#" target="frame">Logout</a>
+					<a href="manageaccount.php" target="frame">Manage</a>
+					<a href="logout.php" target="frame">Logout</a>
 				</div>
 			</div>
 		
