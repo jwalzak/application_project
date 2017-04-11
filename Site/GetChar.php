@@ -17,11 +17,12 @@ if(isset($_GET['action'])){
     }//End if
 }//End outer if
 
-
+    //Gets all of a single user's characters
     function char($connection){
         $listArray = array();
+        $userId = $_SESSION['userId'];
         
-        $query = "SELECT * FROM tblchar";
+        $query = "SELECT * FROM tblchar WHERE userid= ". "'.$userId.'";
         $rs = $connection->query($query);
 
         while($info = $rs->fetch_assoc()){
@@ -33,6 +34,7 @@ if(isset($_GET['action'])){
     echo json_encode($listArray);
     }//End char();
 
+    //Loads one character into the character creation page.
     function oneChar($connection){
         $listArray = array();
         $_SESSION["loadChar"] = array();
@@ -46,14 +48,16 @@ if(isset($_GET['action'])){
         }//End while
         
         echo json_encode($_SESSION);
+    $rs->close();
 
     }//End oneChar()
 
+    //Deletes selected char.
     function deleteChar($connection){
         $charId = $_SESSION['loadChar'][0]['charId'];
         $query = "DELETE FROM tblchar WHERE charId =" . "'$charId'";
         $rs = $connection->query($query);
     }//End deleteChar();.
-
+    $rs->close();
 
 ?>
