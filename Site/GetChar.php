@@ -29,9 +29,9 @@ if(isset($_GET['action'])){
             //Get each character from the db
             array_push($listArray, $info);
         }//End while
-    $rs->close();
 
     echo json_encode($listArray);
+    $rs->close();
     }//End char();
 
     //Loads one character into the character creation page.
@@ -48,7 +48,7 @@ if(isset($_GET['action'])){
         }//End while
         
         echo json_encode($_SESSION);
-    $rs->close();
+        $rs->close();
 
     }//End oneChar()
 
@@ -57,7 +57,7 @@ if(isset($_GET['action'])){
         $charId = $_SESSION['loadChar'][0]['charId'];
         $query = "DELETE FROM tblchar WHERE charId =" . "'$charId'";
         $rs = $connection->query($query);
+        $rs->close();
     }//End deleteChar();.
-    $rs->close();
 
 ?>
