@@ -1,25 +1,21 @@
 <?php
 	require_once('connect.php');
 	session_start();
-	$_SESSION['username'] = "";
-	
-	//if the session has started previously, skip to next page
-	if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		header("location: account.php");
-	}
+	$_SESSION['userid'] = "temp_user_id";
 	
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-		$_SESSION['username'] = $_POST['username'];
-	
-		$username = $_SESSION['username'];
-		$isUser = $conn->query("SELECT * FROM user_info WHERE user_name = '".$username."' LIMIT 1");
+		if (isset($_POST['username']) && isset($_POST['password'])) {
+			$username = $_POST['username'];
+			$isUser = $conn->query("SELECT * FROM user_info WHERE user_name = '".$username."' LIMIT 1");
 
-		if (isset($username) && $isUser->num_rows == 1) {
-			//user already exists, so don't make another user entry
-			header ("location: content.php");
-		} 
-	
+			if ($isUser->num_rows == 1) {
+				//$_SESSION['userid'] = $_POST['username'];
+				$username = $_SESSION['userid'];
+				header ("location: content.php");
+			} 
+		}
 	} //end server post method check
+	
 ?>
 
 <!DOCTYPE html>
