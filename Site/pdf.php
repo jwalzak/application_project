@@ -1,11 +1,12 @@
 <?php
+session_start();
 require_once('fpdf/fpdf.php');
 require_once('connect.php');
 
 //SQL filth
+//pulls specified character, not linked to session variable yet
 $sqlPull = "SELECT charId, name, age, gender, height, weight, race, class FROM tblchar";
 $result = $conn->query($sqlPull);
-
 
 
 if ($result->num_rows > 0) {

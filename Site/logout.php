@@ -1,8 +1,8 @@
 <?php
-	session_start();
-    require("connect.php");
-	
-	session_destroy();
+session_start();
+require("connect.php");
+
+session_destroy();
 ?>
 
 <!DOCTYPE html>
