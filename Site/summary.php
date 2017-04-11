@@ -23,6 +23,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/subcontent.css"/>
+	<script src="pdf.php"></script>
 	
 	<style>
 	body {
@@ -56,9 +57,17 @@
 				</div>
 				
 				<div id="print">
-					<button type="button" class="button">Print PDF</button>
+					<button type="button" class="button" id="printPDFButton">Print PDF</button>
 				</div>
 			</div>
+
+			<!-- Simple script to redirect onclick of PDF button -->
+			<!-- Absolute file path will need to be corrected once deployed to server -->
+			<script type="text/javascript">
+				document.getElementById("printPDFButton").onclick = function () {
+					window.open('http://localhost/application_project/Site/pdf.php');
+				};
+			</script>
 			
 			<?php 
 				if (!isset($_SESSION)) {
