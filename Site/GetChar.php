@@ -22,7 +22,7 @@ if(isset($_GET['action'])){
         $listArray = array();
         $userId = $_SESSION['userId'];
         
-        $query = "SELECT * FROM tblchar WHERE userid= ". "'.$userId.'";
+        $query = "SELECT * FROM tblchar WHERE userId= ". $userId;
         $rs = $connection->query($query);
 
         while($info = $rs->fetch_assoc()){
