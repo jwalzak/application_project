@@ -69,3 +69,4 @@ Site/js/hp_and_skills.js
 # Ignoring connect.php
 
 Site/connect.php
+Site/ajax.php
