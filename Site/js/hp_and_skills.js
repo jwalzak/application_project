@@ -41,8 +41,7 @@ $('input.chkSkills').on('change', function(evt) {
 function rollHitPoints() {
 
 
-// IT DOESNT WORK RIHT NOW CAUSE LEVELS ISNT THE NAME OF THE BOX
-//This sets the roll button to work. Work it, roll button XDDDDDD
+//roll button features different depending on char so far
     var levels = document.getElementById('leveling'); 
     if(levels.value >= 2){
 

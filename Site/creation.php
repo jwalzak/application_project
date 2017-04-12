@@ -15,8 +15,6 @@
 	if(!isset($_SESSION['currentCharId'])) {
 		$_SESSION['currentCharId']="";
 	}
-
-
     
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$userId = $_SESSION['userId'];
@@ -72,7 +70,6 @@
 			$newName = $target_dir."characterImage".rand(1000,9999).".".$ext;
 			$success = move_uploaded_file($_FILES['charphoto']['tmp_name'], $newName);
 		} //image uploader validation stuff
-		
 		
 		$_SESSION['newChar'] = $char; 
 
@@ -491,8 +488,9 @@ body {
 			</div>
 		</div>
 		
-			
-        <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character"><br class="break"/>
+		<!-- Save and Delete buttons -->
+        <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character" id="saveCharButton"><br class="break"/>
+
 </form>
 <button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button></p>
 </body>
