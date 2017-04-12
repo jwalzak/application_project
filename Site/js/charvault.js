@@ -8,6 +8,7 @@ $(document).ready(function(){
 function getChar(){
     $.get("GetChar.php?action=char", function(res){
         let pJSON = $.parseJSON(res);
+        console.log(res);
         loadChar(pJSON);
     });
 }
@@ -29,8 +30,16 @@ function loadChar(character){
             } );
         });
         let $charImg = $("<img>").attr('src', img);
+        let $delChar = $("<a>").attr("href", "#").text("X").click(function(){
+            $.get("GetChar.php?action=deleteVault&vaultcharid=" + charId, function(res){
+                console.log(res);
+                $($container).empty();
+                getChar();
+            });
+        });
         $container.append($charImg);
         $container.append($charName);
+        $container.append($delChar);
 
         $("#content").append($container);
     }//End for
