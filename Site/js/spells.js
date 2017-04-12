@@ -35,7 +35,7 @@ function spellSet(slctClass) {
 
             for(var i = 0; i < spells.length; i++) {
                 if(spells[i] != "") { 
-                $('#spells').append('<input type="checkbox" name="spells" class="chkSpells" id="' + spells[i] + '" />' + spells[i]).append('<br />'); 
+                $('#spells').append('<input type="checkbox" value="' + spells[i] + '" name="spells[]" class="chkSpells" id="' + spells[i] + '" />' + spells[i]).append('<br />'); 
             }
             }//end for
             var limit = 4;

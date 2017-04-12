@@ -4,6 +4,7 @@
 	require("ajax.php");	
 				
 	$skillSet=array();
+	$spellSet=array();
 	$races = array();
 	$classes = array();
 	$target_dir = "charpics/"; //where the uploaded images will go
@@ -23,6 +24,9 @@
 		$skillSet = $_REQUEST['skills'];
 		$skills = implode(" ", $skillSet);
 
+		$spellSet = $_REQUEST['spells'];
+		$spells = implode(" ", $spellSet);
+
 		$char = (object) [ 
 			'name' => $_POST['charName'],
 			'age' => $_POST['charAge'],
@@ -32,7 +36,7 @@
 			'race' => str_replace('_', ' ', $_POST['raceSelect']),
 			'class' => $_POST['classSelect'],
 			'skills' => $skills, 
-			'spells' => array(), 
+			'spells' => $spells, 
 			'str' => $_POST['str'], 
 			'dex' => $_POST['dex'], 
 			'int' => $_POST['int'],
@@ -72,7 +76,7 @@
 		
 		$_SESSION['newChar'] = $char; 
 
-		$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race, class, skills, charpic) VALUES ("'.$userId.'", "'.$char->name.'", "'.$char->age.'", "'.$char->gender.'", "'.$char->height.'", "'.$char->weight.'", "'.$char->race.'", "'.$char->class.'", "'.$char->skills.'", "'.$newName.'");';
+		$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, languages, race, class, skills, spells, str, dex, con, wis, intel, cha, charpic) VALUES ("'.$userId.'", "'.$char->name.'", "'.$char->age.'", "'.$char->gender.'", "'.$char->height.'", "'.$char->weight.'", "'.$char->languages.'", "'.$char->race.'", "'.$char->class.'", "'.$char->skills.'", "'.$char->spells.'", "'.$char->str.'", "'.$char->dex.'", "'.$char->con.'", "'.$char->wis.'", "'.$char->int.'", "'.$char->cha.'", "'.$newName.'");';
 
 		if ($success) {
 			$conn->query($saveQry);
@@ -142,7 +146,8 @@
 	</script>
 	
 	<style>
-	body {
+
+body {
 		background: url("images/bg.png");
 		font-size: 14pt;		  
 	}
@@ -155,7 +160,6 @@
 	}
 	hr {
 		border: 3px solid #83ae1e;
-		width: 75%;
 	}
 	::-webkit-input-placeholder {
 		color: #83ae1e;
@@ -257,7 +261,7 @@
 				</select></p>
 				
 				<p class="category">Known Languages<br/>
-                <select id="languages" class="dropdown">
+                <select id="languages" class="dropdown" name='languages'>
 					<option value='common'>Common</option>
 					<option value='elven'>Elven</option>
 					<option value='dwarven'>Dwarven</option>
