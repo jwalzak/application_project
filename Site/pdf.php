@@ -10,28 +10,28 @@ $result = $conn->query($sqlPull);
 
 
 if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $pdfCharId = $row["charId"];
-            $pdfName = $row["name"];
-            $pdfAge = $row["age"];
-            $pdfGender = $row["gender"];
-            $pdfHeight = $row["height"];
-            $pdfWeight = $row["weight"];
-            $pdfRace = $row["race"];
-            $pdfClass = $row["class"];
-            $pdfSkills  = $row["skills"];
-            $pdfSpells  = $row["spells"];
-            $pdfStatStr = $row["str"];
-            $pdfStatDex = $row-["dex"];
-            $pdfStatCon = $row["con"];
-            $pdfStatWis = $row["wis"];
-            $pdfStatInt = $row["intel"];
-            $pdfStatCha = $row["cha"];
-            //echo "success";
-        }
-    } else {
-        echo "newp";
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $pdfCharId = $row["charId"];
+        $pdfName = $row["name"];
+        $pdfAge = $row["age"];
+        $pdfGender = $row["gender"];
+        $pdfHeight = $row["height"];
+        $pdfWeight = $row["weight"];
+        $pdfRace = $row["race"];
+        $pdfClass = $row["class"];
+        $pdfSkills  = $row["skills"];
+        $pdfSpells  = $row["spells"];
+        $pdfStatStr = $row["str"];
+        $pdfStatDex = $row-["dex"];
+        $pdfStatCon = $row["con"];
+        $pdfStatWis = $row["wis"];
+        $pdfStatInt = $row["intel"];
+        $pdfStatCha = $row["cha"];
+        //echo "success";
+    }
+} else {
+    echo "newp";
 }
 //end of filth
 

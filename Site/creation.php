@@ -492,6 +492,8 @@ body {
         <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character" id="saveCharButton"><br class="break"/>
 
         <!-- PDF generate if user is temp -->
+		<!-- Here, a hidden field value above tests if the user is legitimate or not -->
+		<!-- (currently hardcoded to 1 therefore user is legit), thus not redirecting to session based pdf -->
 		<input type="hidden" id="userStatus" value="1">
         <script>
 			document.getElementById("saveCharButton").onclick = function () {
