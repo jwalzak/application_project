@@ -43,7 +43,13 @@
 	<!-- CONTENT  -->
 	<div id="content" style="text-align: center">
 		<h1>Character Vault</h1>
-		<p align="left">Select a character to view their summary sheet.</p>
+		<p align="left">
+			<?php if(isset($_SESSION['userId'])) {
+				echo "Select a character to view their summary sheet.";
+			} else { 
+				echo "You must have a user account to access characters saved in the Vault.";
+			}?>
+		</p>
 	</div>
 
 </body>

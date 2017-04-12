@@ -9,11 +9,11 @@
 			$isUser = $conn->query("SELECT * FROM user_info WHERE user_name = '".$username."' LIMIT 1");
 
 			if ($isUser->num_rows == 1) {
-				//$_SESSION['userid'] = $_POST['username'];
-				$username = $_SESSION['userid'];
+				$username = $_SESSION['userId'];
 				header ("location: content.php");
-			} 
+			}
 		}
+		$_SESSION['userId'] = $_POST['username'];
 	} //end server post method check
 	
 ?>

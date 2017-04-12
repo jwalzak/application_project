@@ -1,11 +1,9 @@
 <?php
-	session_start();
 	require_once("connect.php");
-
-	//echo $_SESSION['userId'];
+	session_start();
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-		//if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		if (isset($_SESSION['userId']) {
 			
 			//declare variables
 			$_SESSION['email'] = $_POST['email'];

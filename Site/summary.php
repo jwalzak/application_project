@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	require("connect.php");
+	
+	//if there is no username or password
+	if(!isset($_SESSION['userId'])) {
+		$id = $_SESSION['temp_user_id'];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +46,7 @@
             <div class="col-xs-12 col-sm-4">
 				<div id="charname">
 				<?php 
-					if (!isset($_SESSION)) {
+					if (!isset($_SESSION['userId'])) {
 						echo "";
 					} else {
 						$characters = $conn->query("SELECT * FROM tblchar WHERE charid = '".$_SESSION['userId']."';");
@@ -53,11 +58,22 @@
 				</div>
 				
 				<div id="charpic">						  
-					<?php echo "<img src='".$row[charpic]."'>"; ?>
+					<?php if (!isset($_SESSION['userId'])) {
+						echo "";
+					} else {
+						$characters = $conn->query("SELECT * FROM tblchar WHERE charid = '".$_SESSION['userId']."';");
+						while($row = $characters->fetch_assoc()) {
+							echo "<img src='".$row[charpic]."'>";
+						}
+					} ?>
 				</div>
 				
 				<div id="print">
-					<button type="button" class="button" id="printPDFButton">Print PDF</button>
+					<?php if (!isset($_SESSION['userId'])) {
+						echo "";
+					} else {
+						echo "<button type='button' class='button' id='printPDFButton'>Print PDF</button>";
+					} ?>
 				</div>
 			</div>
 
@@ -70,8 +86,8 @@
 			</script>
 			
 			<?php 
-				if (!isset($_SESSION)) {
-						print "No characters available at this time.";
+				if (!isset($_SESSION['user_id'])) {
+						print "No characters available at this time. No time like the present to make one!";
 				} else {
 					$characters = $conn->query("SELECT * FROM tblchar WHERE charid = '".$_SESSION['userId']."';");
 		
