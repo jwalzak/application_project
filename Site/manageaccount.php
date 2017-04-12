@@ -1,32 +1,6 @@
 <?php
 	require_once("connect.php");
 	session_start();
-
-	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-		if (isset($_SESSION['userId']) {
-			
-			//declare variables
-			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['emailconf'] = $_POST['emailconf'];
-			$_SESSION['username'] = $_POST['username'];
-			$_SESSION['fname'] = $_POST['fname'];
-			$_SESSION['lname'] = $_POST['lname'];
-			$_SESSION['pword'] = $_POST['pword'];
-			$errors = array();
-			
-			//the SQL queries only run if both e-mail entries match
-			if ($_SESSION['email'] == $_SESSION['emailconf']) {
-				//edit user info and save to database
-				$conn->query("UPDATE user_info SET user_name = '".$_SESSION['username']."', first_name = '".$_SESSION['fname']."', last_name = '".$_SESSION['lname']."', email = '".$_SESSION['email']."',
-				password = '".$_SESSION['pword']."' WHERE user_id = '".$_SESSION['userId']."';");
-
-				$errors['success'] = "<font color=red>Your account has been updated!</font color>";
-			} 
-			else {
-				$errors['match'] = "<font color=red>" . "**E-mails do not match" . "</font color>";
-			}
-		//}
-	} //end server post method check
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +70,7 @@
             </div>		
 		</div>
 		</form>
-	</div>
-	
+	</div>	
 </body>
+
 </html>
