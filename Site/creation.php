@@ -3,7 +3,7 @@
     require("connect.php");
 	require("ajax.php");	
 				
-
+	$skillSet=array();
 	$races = array();
 	$classes = array();
 	$target_dir = "charpics/"; //where the uploaded images will go
@@ -14,9 +14,15 @@
 	if(!isset($_SESSION['currentCharId'])) {
 		$_SESSION['currentCharId']="";
 	}
+
+
     
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$userId = $_SESSION['userId'];
+		
+		$skillSet = $_REQUEST['skills'];
+		$skills = implode(" ", $skillSet);
+
 		$char = (object) [ 
 			'name' => $_POST['charName'],
 			'age' => $_POST['charAge'],
@@ -25,7 +31,7 @@
 			'weight' => $_POST['weight'],
 			'race' => str_replace('_', ' ', $_POST['raceSelect']),
 			'class' => $_POST['classSelect'],
-			'skills' => array(), 
+			'skills' => $skills, 
 			'spells' => array(), 
 			'str' => $_POST['str'], 
 			'dex' => $_POST['dex'], 
@@ -33,9 +39,9 @@
 			'wis' => $_POST['wis'],
 			'con' => $_POST['con'],
 			'cha' => $_POST['cha'],
-			//'alignment' => $_POST['alignment'],
-			'backstory' => $_POST['backstory']
-			//'languages' => $_POST['languages']  
+			'alignment' => $_POST['alignment'],
+			'backstory' => $_POST['backstory'],
+			'languages' => $_POST['languages']  
 		];
 
 		//IMAGE UPLOADER STUFF
@@ -57,7 +63,7 @@
 		//move the file if validation passes
 		if ($isValid) {
 			chmod($_FILES['charphoto']['tmp_name'], 420);
-		
+			
 			//make variable for randomly-generated file name
 			$newName = $target_dir."characterImage".rand(1000,9999).".".$ext;
 			$success = move_uploaded_file($_FILES['charphoto']['tmp_name'], $newName);
@@ -66,7 +72,7 @@
 		
 		$_SESSION['newChar'] = $char; 
 
-		$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race, class, charpic) VALUES ("'.$userId.'", "'.$char->name.'", "'.$char->age.'", "'.$char->gender.'", "'.$char->height.'", "'.$char->weight.'", "'.$char->race.'", "'.$char->class.'", "'.$newName.'");';
+		$saveQry = 'INSERT INTO tblChar (userId, name, age, gender, height, weight, race, class, skills, charpic) VALUES ("'.$userId.'", "'.$char->name.'", "'.$char->age.'", "'.$char->gender.'", "'.$char->height.'", "'.$char->weight.'", "'.$char->race.'", "'.$char->class.'", "'.$char->skills.'", "'.$newName.'");';
 
 		if ($success) {
 			$conn->query($saveQry);

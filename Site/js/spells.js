@@ -37,8 +37,15 @@ function spellSet(slctClass) {
                 if(spells[i] != "") { 
                 $('#spells').append('<input type="checkbox" name="spells" class="chkSpells" id="' + spells[i] + '" />' + spells[i]).append('<br />'); 
             }
-            }
-        }
+            }//end for
+            var limit = 4;
+$('input.chkSpells').on('change', function(evt) {
+   if($(this).siblings(':checked').length >= limit) {
+       this.checked = false;
+       alert("You are limited to 4 spells");
+   }
+});
+        }//end success
     });
 
 }
