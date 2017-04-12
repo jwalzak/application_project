@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2017 at 03:33 PM
--- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- Generation Time: Apr 12, 2017 at 05:35 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,8 +34,19 @@ CREATE TABLE `tblchar` (
   `gender` varchar(20) NOT NULL,
   `height` varchar(20) NOT NULL,
   `weight` varchar(20) NOT NULL,
+  `languages` varchar(15) NOT NULL,
   `race` varchar(30) NOT NULL,
   `class` varchar(40) NOT NULL,
+  `skills` varchar(200) NOT NULL,
+  `spells` varchar(250) NOT NULL,
+  `str` int(2) NOT NULL,
+  `dex` int(2) NOT NULL,
+  `intel` int(2) NOT NULL,
+  `wis` int(2) NOT NULL,
+  `con` int(2) NOT NULL,
+  `cha` int(2) NOT NULL,
+  `align` varchar(30) NOT NULL,
+  `story` varchar(255) NOT NULL,
   `charpic` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,10 +54,8 @@ CREATE TABLE `tblchar` (
 -- Dumping data for table `tblchar`
 --
 
-INSERT INTO `tblchar` (`charId`, `userId`, `name`, `age`, `gender`, `height`, `weight`, `race`, `class`, `charpic`) VALUES
-(2, 1, 'Guy Smiley', '5000yrs', 'male', '12ft', '400lbs', 'High Elf', 'Sorcerer', ''),
-(3, 1, 'Frank N. Stein', '3yrs', 'other', 'Tall', 'Heavy', 'Half Orc', 'Barbarian', ''),
-(7, 2, 'Al Yankovic', '40', 'other', '6ft', '170lbs', 'Human', 'Bard', '');
+INSERT INTO `tblchar` (`charId`, `userId`, `name`, `age`, `gender`, `height`, `weight`, `languages`, `race`, `class`, `skills`, `spells`, `str`, `dex`, `intel`, `wis`, `con`, `cha`, `align`, `story`, `charpic`) VALUES
+(55, 17, 'Big Cheez', '25', 'female', '5ft 9in', '160lbs', '0', 'High Elf', 'Bard', 'Acrobatics Animal Handling Arcana', '', 12, 14, 14, 16, 12, 14, '', '', 'charpics/characterImage5413.jpg');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +75,7 @@ ALTER TABLE `tblchar`
 -- AUTO_INCREMENT for table `tblchar`
 --
 ALTER TABLE `tblchar`
-  MODIFY `charId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `charId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
