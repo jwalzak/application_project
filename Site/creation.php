@@ -488,9 +488,19 @@ body {
 			</div>
 		</div>
 		
-		<!-- Save and Delete buttons -->
+        <!-- Save and Delete buttons -->
         <p><br/><input type="submit" class="button" style="width: 230px; margin-right: 10px;" value="Save Character" id="saveCharButton"><br class="break"/>
 
+        <!-- PDF generate if user is temp -->
+		<input type="hidden" id="userStatus" value="1">
+        <script>
+			document.getElementById("saveCharButton").onclick = function () {
+				if(document.getElementById("userStatus").value == "0"){
+					alert("Hello! I am an alert box!!");
+					window.open("http://localhost/application_project/Site/unregistered_pdf.php");
+				}
+			};
+        </script>
 </form>
 <button class="button" style="width: 230px;" onclick="deleteChar();">Delete Character</button></p>
 </body>

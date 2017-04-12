@@ -5,7 +5,7 @@ require_once('connect.php');
 
 //SQL filth
 //pulls specified character, not linked to session variable yet
-$sqlPull = "SELECT charId, name, age, gender, height, weight, race, class FROM tblchar";
+$sqlPull = "SELECT charId, name, age, gender, height, weight, race, class FROM tblchar WHERE charId = '7' ";
 $result = $conn->query($sqlPull);
 
 

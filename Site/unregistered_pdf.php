@@ -71,7 +71,7 @@ $pdf->Rect(2, 2, 206, 293, 'D');
 
 //Add name under header title becuase A~E~S~T~H~E~T~I~C
 $pdf->SetFont('Helvetica','',26);
-$pdf->Cell(212,-22,$pdfName,0,0,'C');
+$pdf->Cell(212,-22,"Unregistered Hero: " . $pdfName,0,0,'C');
 
 //set font
 $pdf->SetFont('Times','',12);
