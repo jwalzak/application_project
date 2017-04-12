@@ -28,6 +28,8 @@ if ($result->num_rows > 0) {
         $pdfStatWis = $row["wis"];
         $pdfStatInt = $row["intel"];
         $pdfStatCha = $row["cha"];
+        $pdfAlign = $row["align"];
+        $pdfStory = $row["story"];
         //echo "success";
     }
 } else {
@@ -118,7 +120,7 @@ $pdf->Rect(4, 129, 202, 60, 'D');
 
 $pdf->Cell(0,2,'', 0, 1);
 
-$pdf->Cell(0,10,'Alignment: ', 0, 1);
+$pdf->Cell(0,10,'Alignment: ' . $pdfAlign, 0, 1);
 $pdf->Cell(0,10,'Known Languages: ' . $pdfLang, 0, 1);
 $pdf->Cell(0,10,'Weapon Proficiencies: ', 0, 1);
 $pdf->Cell(0,10,'Armor Proficiencies: ', 0, 1);
@@ -126,7 +128,7 @@ $pdf->Rect(4, 191, 202, 40, 'D');
 
 $pdf->Cell(0,2,'', 0, 1);
 
-$pdf->Cell(0,10,'Backstory: ', 0, 1);
+$pdf->Cell(0,10,'Backstory: ' . $pdfStory, 0, 1);
 $pdf->Rect(4, 233, 202, 45, 'D');
 
 //output
