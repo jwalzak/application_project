@@ -20,6 +20,14 @@ if ($result->num_rows > 0) {
             $pdfWeight = $row["weight"];
             $pdfRace = $row["race"];
             $pdfClass = $row["class"];
+            $pdfSkills  = $row["skills"];
+            $pdfSpells  = $row["spells"];
+            $pdfStatStr = $row["str"];
+            $pdfStatDex = $row-["dex"];
+            $pdfStatCon = $row["con"];
+            $pdfStatWis = $row["wis"];
+            $pdfStatInt = $row["intel"];
+            $pdfStatCha = $row["cha"];
             //echo "success";
         }
     } else {
@@ -94,24 +102,24 @@ $pdf->Cell(0,2,'', 0, 1);
 
 $pdf->Cell(0,10,'Race: ' . $pdfRace, 0, 1);
 $pdf->Cell(0,10,'Class: ' . $pdfClass, 0, 1);
-$pdf->Cell(0,10,'Skills: ', 0, 1);
-$pdf->Cell(0,10,'Spells: ', 0, 1);
+$pdf->Cell(0,10,'Skills: ' . $pdfSkills, 0, 1);
+$pdf->Cell(0,10,'Spells: ' . $pdfSpells, 0, 1);
 $pdf->Rect(4, 87, 202, 40, 'D');
 
 $pdf->Cell(0,2,'', 0, 1);
 
-$pdf->Cell(0,10,'Strength: ', 0, 1);
-$pdf->Cell(0,10,'Dexterity: ', 0, 1);
-$pdf->Cell(0,10,'Constitution: ', 0, 1);
-$pdf->Cell(0,10,'Wisdom: ', 0, 1);
-$pdf->Cell(0,10,'Intelligence: ', 0, 1);
-$pdf->Cell(0,10,'Charisma: ', 0, 1);
+$pdf->Cell(0,10,'Strength: ' . $pdfStatStr, 0, 1);
+$pdf->Cell(0,10,'Dexterity: ' . $pdfStatDex, 0, 1);
+$pdf->Cell(0,10,'Constitution: ' . $pdfStatCon, 0, 1);
+$pdf->Cell(0,10,'Wisdom: ' . $pdfStatWis, 0, 1);
+$pdf->Cell(0,10,'Intelligence: ' . $pdfStatInt, 0, 1);
+$pdf->Cell(0,10,'Charisma: ' . $pdfStatCha, 0, 1);
 $pdf->Rect(4, 129, 202, 60, 'D');
 
 $pdf->Cell(0,2,'', 0, 1);
 
 $pdf->Cell(0,10,'Alignment: ', 0, 1);
-$pdf->Cell(0,10,'Known Languages: ', 0, 1);
+$pdf->Cell(0,10,'Known Languages: ' . $pdfLang, 0, 1);
 $pdf->Cell(0,10,'Weapon Proficiencies: ', 0, 1);
 $pdf->Cell(0,10,'Armor Proficiencies: ', 0, 1);
 $pdf->Rect(4, 191, 202, 40, 'D');
